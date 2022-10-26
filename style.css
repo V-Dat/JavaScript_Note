@@ -1,0 +1,208 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.8rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+}
+
+table {
+    width: 100%;
+}
+
+table,
+th,
+td {
+    border: 1px solid;
+    vertical-align: top;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    white-space: pre-wrap;
+    min-height: 75px;
+}
+
+.note-th {
+    text-align: left;
+}
+
+h2 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(41, 38, 223);
+}
+
+textarea {
+    min-height: 46px;
+    min-width: 120px;
+    width: 100%;
+    max-width: 100%;
+}
+
+table .button-actions {
+    white-space: initial;
+}
+
+.button-download {
+    margin-top: 6px;
+}
+
+.button-actions img {
+    border: 1px solid rgb(46, 44, 44);
+    padding: 5px;
+    border-radius: 3px;
+}
+.button-feature-group {
+    padding: 10px 0 5px;
+}
+
+.button-feature-group button {
+    margin-right: 10px;
+    padding: 5px 3px;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.button-feature-group button[active="true"] {
+    background-color: beige;
+}
+
+.button-feature-group button:active {
+    box-shadow: 0px 4px 8px #ccc !important;
+}
+
+.import-place {
+    padding-top: 10px;
+}
+
+.features-place button {
+    margin-right: 10px;
+    padding: 5px 3px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    border-color: transparent;
+    background-color: transparent;
+    transition: 0s 0.21s;
+}
+.features-place button:hover {
+    cursor: pointer;
+}
+
+.features-place button:active {
+    box-shadow: 0px 4px 8px #ccc !important;
+    transition: 0s;
+}
+
+table tr {
+    display: grid;
+    grid-template-areas: "stt method syntax equal description action";
+    grid-template-columns: 55px 240px 380px 380px 1fr 120px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.column-stt {
+    grid-area: stt;
+    text-align: center;
+}
+
+.column-method {
+    grid-area: method;
+}
+
+.column-syntax {
+    grid-area: syntax;
+}
+.column-equal {
+    grid-area: equal;
+}
+.column-description {
+    grid-area: description;
+    min-width: 400px;
+}
+
+.button-actions {
+    align-items: center;
+    grid-area: action;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.content-notes {
+    display: block;
+    position: relative;
+    min-height: 60px;
+}
+.content-notes img {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+
+a:hover,
+table img:hover,
+button:hover,
+.button-edit-main-content:hover {
+    cursor: pointer;
+}
+
+table img[type="undo"]:hover {
+    cursor: auto;
+}
+thead tr th {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+::-webkit-scrollbar {
+    width: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(65, 61, 61, 0.6);
+}
+
+::-webkit-scrollbar-thumb :hover {
+    background: rgba(117, 115, 115, 0.9);
+}
+
+::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+}
+
+a.github-cover {
+    position: absolute;
+    top: -22px;
+    left: -8px;
+    transform: rotate(270deg);
+}
+
+tr[isedit="true"] textarea {
+    height: 280px;
+}
+
+.main-content textarea {
+    min-height: 600px;
+}
