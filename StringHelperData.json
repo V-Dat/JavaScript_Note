@@ -1,0 +1,9 @@
+[
+    {
+        "index": 0,
+        "method": "<a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at >at()</>",
+        "syntax": "[😄,😠,🔴,⏺].at(1) => return 😠 ",
+        "equal": "[ 😄, 😠 , 🔴 , ⏺ ][1]",
+        "description": "- At Aceept both Positive and  Number \n- <a href = \"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#bracket_notation\" title=\"Permalink to Bracket notation\">Bracket notation</a>   \n- (Property accessors)"
+    }
+]

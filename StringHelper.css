@@ -1,0 +1,115 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+table {
+    width: 100%;
+}
+
+table,
+th,
+td {
+    border: 1px solid;
+    vertical-align: top;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    white-space: pre-wrap;
+}
+
+.note-th {
+    text-align: left;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(41, 38, 223);
+}
+
+textarea {
+    min-height: 46px;
+    min-width: 120px;
+    width: 100%;
+    max-width: 100%;
+}
+
+table .button-actions {
+    white-space: initial;
+}
+
+.button-download {
+    margin-top: 6px;
+}
+
+.button-actions img {
+    border: 1px solid rgb(46, 44, 44);
+    padding: 5px;
+    border-radius: 3px;
+}
+.button-feature {
+    padding: 10px 0 5px;
+}
+
+.button-feature button {
+    margin-right: 10px;
+    height: 30px;
+}
+
+.button-feature button[active="true"] {
+    background-color: red;
+}
+
+.import-place {
+    padding-top: 10px;
+}
+
+.features-place button {
+    margin-right: 10px;
+    height: 22px;
+}
+
+table tr {
+    display: grid;
+    grid-template-areas: "stt method syntax equal description action";
+    grid-template-columns: 60px 200px 350px 350px 1fr 120px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.column-stt {
+    grid-area: stt;
+    text-align: center;
+}
+
+.column-method {
+    grid-area: method;
+}
+
+.column-syntax {
+    grid-area: syntax;
+}
+.column-equal {
+    grid-area: equal;
+}
+.column-description {
+    grid-area: description;
+    min-width: 400px;
+}
+
+.button-actions {
+    grid-area: action;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}

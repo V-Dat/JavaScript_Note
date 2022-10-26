@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./StringHelper.css" />
+</head>
+
+<body>
+  <h1>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String Helper</a>
+  </h1>
+  <table id="table">
+    <thead>
+      <tr>
+        <th contenteditable class="column-stt">STT</th>
+        <th contenteditable class="column-method">Method Name</th>
+        <th contenteditable class="column-syntax">Syntax</th>
+        <th contenteditable class="column-equal">Equal With</th>
+        <th contenteditable class="column-description">Description</th>
+        <th contenteditable class="button-actions">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="crud-group">
+        <td class="column-stt">0</td>
+        <td class="column-method"><textarea data-key="method"></textarea></td>
+        <td class="column-syntax"><textarea data-key="syntax"></textarea></td>
+        <td class="column-equal"><textarea data-key="equal"></textarea></td>
+        <td class="column-description"><textarea data-key="description"></textarea></td>
+        <td class="button-actions">
+          <img key="new-record" type="save" src="./Assets/send-icon.svg" width="16px" height="16px"></img>
+          <img key="new-record" type="clear" src="./Assets/eraser-icon.svg" width="16px" height="16px"></img>
+        </td>
+      </tr>
+    </tbody>
+
+
+  </table>
+
+  <div class="button-feature">
+    <button class="button-feature__row"
+      title="click on table cell to change row color. Combine with alt or ctrl + click to remove color">HighLight
+      Row</button>
+    <button class="button-feature__cell"
+      title="click on table cell to change cell color. Combine with alt or ctrl + click to remove color">HighLight
+      Cell</button>
+    <button class="button-feature__eraser" title="click on table cell to remove cell color">
+      Eraser Cell
+    </button>
+  </div>
+  <hr />
+
+  <section class="features-place">
+    <button class="button-download">Save As Json</button>
+    <button class="button-save-local-storage">Save Local storage</button>
+    <button class="button-cleanup-local-storage">Clean up Local storage</button>
+  </section>
+  <section class="import-place">
+    <form>
+      <label for="reading-file">Import Data</label>
+      <input id="reading-file" type="file">
+    </form>
+  </section>
+
+  <section class="referance-place">
+    <h2>Referance :</h2>
+    <ol>
+      <li>
+        <a href="https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore">You Dont Need Lodash Underscore</a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Mozilla
+          Array</a>
+      </li>
+      <li>
+        <a href="https://stephengrider.github.io/JSPlaygrounds/">Playgrounds</a>
+      </li>
+      <li>
+        <a
+          href="https://medium.com/frontend-canteen/with-these-articles-you-will-not-be-confused-when-learning-typescript-d96a5c99e229">TS</a>
+      </li>
+      <li>
+        <a href="https://github.com/zloirock/core-js#ecmascript-array">Core JS</a>
+      </li>
+      <li>
+        <a href="https://www.totaltypescript.com/tutorials">TS totorial</a>
+      </li>
+
+    </ol>
+
+
+  </section>
+  <script src="./StringHelper.js" type="module"></script>
+</body>
+
+</html>
