@@ -1,3 +1,4 @@
+/* default config  */
 html {
     font-size: 62.5%;
 }
@@ -10,28 +11,28 @@ body {
     position: relative;
 }
 
-table {
-    width: 100%;
+/* reset css */
+
+div,
+span,
+p,
+pre,
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
 }
 
-table,
-th,
-td {
-    border: 1px solid;
-    vertical-align: top;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 12px 0;
 }
-
-th,
-td {
-    padding: 5px 10px;
-    white-space: pre-wrap;
-    min-height: 75px;
-}
-
-.note-th {
-    text-align: left;
-}
-
+/* css */
 h2 {
     text-align: center;
 }
@@ -43,9 +44,8 @@ a {
 
 textarea {
     min-height: 46px;
-    min-width: 120px;
+    min-width: 220px;
     width: 100%;
-    max-width: 100%;
 }
 
 table .button-actions {
@@ -103,42 +103,8 @@ table .button-actions {
     transition: 0s;
 }
 
-table tr {
-    display: grid;
-    grid-template-areas: "stt method syntax equal description action";
-    grid-template-columns: 55px 240px 380px 380px 1fr 120px;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-.column-stt {
-    grid-area: stt;
-    text-align: center;
-}
-
-.column-method {
-    grid-area: method;
-}
-
-.column-syntax {
-    grid-area: syntax;
-}
-.column-equal {
-    grid-area: equal;
-}
-.column-description {
-    grid-area: description;
-    min-width: 400px;
-}
-
 .button-actions {
-    align-items: center;
-    grid-area: action;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    flex-wrap: wrap;
-    align-content: center;
+    vertical-align: middle;
 }
 
 .content-notes {
@@ -161,12 +127,6 @@ button:hover,
 
 table img[type="undo"]:hover {
     cursor: auto;
-}
-thead tr th {
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
 }
 
 ::-webkit-scrollbar {
@@ -226,24 +186,69 @@ tr[isedit="true"] textarea {
     margin-right: -50%;
 }
 
-/* reset css */
+/* css table */
 
-div,
-span,
-p,
-pre,
-a {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
+table {
+    position: relative;
+    width: 100%;
+}
+table,
+th,
+td {
+    border: 1px solid;
+    vertical-align: top;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 12px 0;
+th,
+td {
+    padding: 5px 10px;
+    white-space: pre-wrap;
+    min-height: 75px;
+}
+
+.note-th {
+    text-align: left;
+}
+
+table thead tr th {
+    background: #edf2f7;
+    padding: 0.75rem 1.5rem;
+    vertical-align: middle;
+}
+
+table tbody tr:nth-child(odd) td {
+    background: #fff;
+}
+table tbody tr:nth-child(even) td {
+    background: #edf2f7;
+}
+
+.column-stt {
+    text-align: center;
+    width: 30px;
+}
+
+.column-method {
+    min-width: 260px;
+}
+
+.column-syntax {
+    min-width: 420px;
+}
+.column-equal {
+    min-width: 420px;
+}
+.column-description {
+    min-width: 420px;
+    width: 600px;
+}
+
+.column-actions {
+    min-width: 80px;
+    width: 80px;
+}
+table tr > th:nth-child(2),
+table tr > td:nth-child(2) {
+    position: sticky;
+    left: 0;
 }
