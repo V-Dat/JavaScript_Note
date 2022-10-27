@@ -148,7 +148,7 @@ table tr {
 }
 .content-notes img {
     position: absolute;
-    top: 5px;
+    top: -30px;
     right: 20px;
 }
 
@@ -205,4 +205,45 @@ tr[isedit="true"] textarea {
 
 .main-content textarea {
     min-height: 600px;
+}
+
+.main-content h3 {
+    overflow: hidden;
+    color: blue;
+}
+
+.main-content h3:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.main-content h3:after {
+    margin-right: -50%;
+}
+
+/* reset css */
+
+div,
+span,
+p,
+pre,
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 12px 0;
 }
