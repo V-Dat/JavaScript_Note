@@ -113,3 +113,15 @@ export function activeAllButtonEdit() {
 export function decodeInnerHTML(str) {
   return str.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
 }
+
+export function activeButtonSaveEditContent() {
+  const target = $(".button-edit-main-content");
+  target.src = "./Assets/save-main-content-icon.svg";
+  target.title = "save content";
+}
+
+export function activeButtonEditContent() {
+  const target = $(".button-edit-main-content");
+  target.src = "./Assets/pen-icon.svg";
+  target.title = "edit content";
+}

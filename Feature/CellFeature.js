@@ -124,10 +124,10 @@ export function selectFeatureHighlight(event) {
 
 export function getButtonEdit(key) {
   return `<td class="button-actions">
-         <img key=${key} class="save" src="./Assets/create-unactive-icon.svg" width="28px" height="28px"></img>
-         <img key=${key} class="edit active" src="./Assets/edit-active-icon.svg" width="28px" height="28px" ></img>
-         <img key=${key} class="eraser" src="./Assets/delete-icon.svg" width="28px" height="28px"></img> 
-         <img key=${key} class="undo" src="./Assets/undo-unactive-icon.svg" width="28px" height="28px" ></img> 
+         <img key=${key} title="save" class="save" src="./Assets/create-unactive-icon.svg" width="28px" height="28px"></img>
+         <img key=${key} title="edit" class="edit active" src="./Assets/edit-active-icon.svg" width="28px" height="28px" ></img>
+         <img key=${key} title="eraser" class="eraser" src="./Assets/delete-icon.svg" width="28px" height="28px"></img> 
+         <img key=${key} title="undo" class="undo" src="./Assets/undo-unactive-icon.svg" width="28px" height="28px" ></img> 
       </td>`;
 }
 
