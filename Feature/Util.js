@@ -115,7 +115,6 @@ export function decodeInnerHTML(str) {
 }
 
 export function highlightNode(node) {
-  console.log(node);
   node.querySelectorAll("pre code:not(.hljs)").forEach((el) => {
     hljs.highlightElement(el);
   });

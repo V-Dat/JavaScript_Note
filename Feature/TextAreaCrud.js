@@ -149,7 +149,6 @@ export function hanlePreRender() {
   for (let i = 0; i < listDataNodes.length; i++) {
     listDataNodes[i].remove();
   }
-  console.log(listDataNodes);
 }
 
 function resetEditRow() {
