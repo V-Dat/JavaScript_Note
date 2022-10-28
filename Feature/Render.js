@@ -1,6 +1,6 @@
 import { getButtonEdit } from "./CellFeature.js";
 import { hanlePreRender } from "./TextAreaCrud.js";
-import { $ } from "./Util.js";
+import { $, highlightNode } from "./Util.js";
 
 function processRow(data) {
   let tableRow = "";
@@ -23,7 +23,7 @@ function processRow(data) {
 export function handleRender(data) {
   const tableRow = processRow(data.methodHelper);
   const tbody = table.querySelector("tbody");
-  hanlePreRender();
+
   tbody.insertAdjacentHTML("beforeend", tableRow);
 
   /// first render and import data to render
@@ -39,9 +39,11 @@ export async function renderDataImport(event, app) {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      hanlePreRender();
+      console.log("read data from import file");
       app.JsonData = JSON.parse(JSON.stringify(data));
-      handleRender(data);
+      hanlePreRender();
+      handleRender(app.JsonData);
+      highlightNode($("body"));
       // saveLocalStorage(data); // Do not save localStorage when open file
     });
 }

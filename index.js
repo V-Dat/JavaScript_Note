@@ -1,4 +1,10 @@
-import { buttonFeature, $, AlertAfterClose, $$ } from "./Feature/Util.js";
+import {
+  buttonFeature,
+  $,
+  AlertAfterClose,
+  $$,
+  highlightNode,
+} from "./Feature/Util.js";
 import {
   readData,
   handleClickFeaturesPlace,
@@ -12,6 +18,7 @@ import {
 import {
   handleEditMainContent,
   handleInputCrudTextArea,
+  hanlePreRender,
 } from "./Feature/TextAreaCrud.js";
 
 const downloadButton = $(".features-place");
@@ -57,14 +64,18 @@ const app = {
     readData().then((data) => {
       if (data) {
         _this.JsonData = JSON.parse(data);
+        hanlePreRender();
         handleRender(_this.JsonData);
+        highlightNode($("body"));
       }
       return _this;
     });
   },
 
   render: function () {
+    hanlePreRender();
     handleRender(this.JsonData);
+    highlightNode($("body"));
   },
 };
 

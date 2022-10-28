@@ -16,6 +16,7 @@ import {
   unActiveButtonUndo,
   activeAllButtonEdit,
   decodeInnerHTML,
+  highlightNode,
 } from "./Util.js";
 
 const textAreaGroup = $$("textarea");
@@ -48,6 +49,8 @@ export function handleSaveRecord(rowNode, app) {
   app.isFillAllCrudState = false;
   unActiveButtonCreate(rowNode);
   unActiveButtonEraserNewNode(rowNode);
+  // highlightNode($("table tbody"));
+  app.render();
 }
 
 export function handleClickEraser(event, app) {
@@ -140,10 +143,11 @@ export function handleClickUndo(event, app) {
 }
 
 export function hanlePreRender() {
-  const listDataNodes = $$("tr[data-key]");
+  const listDataNodes = $$("table tr[data-key]");
   for (let i = 0; i < listDataNodes.length; i++) {
     listDataNodes[i].remove();
   }
+  console.log(listDataNodes);
 }
 
 function resetEditRow() {
@@ -168,6 +172,7 @@ export function handleEditMainContent(JsonData) {
     const newContent = mainContent.children[0].value;
     mainContent.innerHTML = newContent;
     JsonData.mainContent = newContent;
+    highlightNode(mainContent);
   } else {
     mainContent.classList.add("edit");
     mainContent.innerHTML = `<textarea style="width: 95%; max-width: 95%">${content}</textarea>`;

@@ -113,3 +113,10 @@ export function activeAllButtonEdit() {
 export function decodeInnerHTML(str) {
   return str.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
 }
+
+export function highlightNode(node) {
+  console.log(node);
+  node.querySelectorAll("pre code:not(.hljs)").forEach((el) => {
+    hljs.highlightElement(el);
+  });
+}

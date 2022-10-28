@@ -11,6 +11,8 @@ import {
   buttonFeature,
   unActiveButtonEraserNewNode,
   unActiveButtonCreate,
+  highlightNode,
+  $,
 } from "./Util.js";
 export let buttonFeatureActive = BUTTON_FEATURE.ERASER;
 
@@ -38,6 +40,7 @@ export function handleLeftClickTable(event, app) {
     if (!className) return;
     if (className.includes("save")) {
       handleSaveAfterEdit(event, app);
+      highlightNode($("body"));
     } else if (className.includes("eraser")) {
       handleClickEraser(event, app);
     } else if (className.includes("edit")) {
