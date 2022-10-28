@@ -17,6 +17,8 @@ import {
   activeAllButtonEdit,
   decodeInnerHTML,
   highlightNode,
+  activeButtonEditContent,
+  activeButtonSaveEditContent,
 } from "./Util.js";
 
 const textAreaGroup = $$("textarea");
@@ -173,9 +175,11 @@ export function handleEditMainContent(JsonData) {
     mainContent.innerHTML = newContent;
     JsonData.mainContent = newContent;
     highlightNode(mainContent);
+    activeButtonEditContent();
   } else {
     mainContent.classList.add("edit");
     mainContent.innerHTML = `<textarea style="width: 95%; max-width: 95%">${content}</textarea>`;
+    activeButtonSaveEditContent();
   }
 }
 
