@@ -114,6 +114,13 @@ export function decodeInnerHTML(str) {
   return str.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
 }
 
+export function highlightNode(node) {
+  console.log(node);
+  node.querySelectorAll("pre code:not(.hljs)").forEach((el) => {
+    hljs.highlightElement(el);
+  });
+}
+
 export function activeButtonSaveEditContent() {
   const target = $(".button-edit-main-content");
   target.src = "./Assets/save-main-content-icon.svg";

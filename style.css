@@ -32,6 +32,10 @@ h5,
 h6 {
     margin: 12px 0;
 }
+
+pre code.hljs {
+    padding: 0 0 10px !important;
+}
 /* css */
 h2 {
     text-align: center;
