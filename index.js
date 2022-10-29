@@ -21,14 +21,17 @@ import {
   hanlePreRender,
 } from "./Feature/TextAreaCrud.js";
 import { embedProject, toggleStackBlitz } from "./Feature/StackBlitz.js";
-
+import {
+  arrowFeature,
+  handleClickArrowFeature,
+} from "./Feature/ArrowFeature.js";
 const downloadButton = $(".features-place");
 const inputFile = $("#reading-file");
 const table = $("#table");
 const buttonEditmainContent = $(".button-edit-main-content");
 const crudTextArea = $$(".crud-group textarea");
 const buttonOpenStackBlitz = $(".open-stackblitz");
-buttonOpenStackBlitz.addEventListener("click", toggleStackBlitz);
+const arrowFeatureBlock = $(".arrow-features");
 
 const app = {
   JsonData: { mainContent: "", methodHelper: [] },
@@ -55,8 +58,10 @@ const app = {
     crudTextArea.forEach((item) => {
       item.addEventListener("input", () => handleInputCrudTextArea(_this));
     });
-    window.onload = embedProject;
     buttonOpenStackBlitz.addEventListener("click", toggleStackBlitz);
+    arrowFeatureBlock.addEventListener("click", handleClickArrowFeature);
+    window.onload = embedProject;
+    window.onscroll = arrowFeature;
 
     return this;
   },
