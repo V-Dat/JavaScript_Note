@@ -1,0 +1,30 @@
+.content-notes {
+    display: block;
+    position: relative;
+    min-height: 60px;
+}
+.content-notes .button-edit-main-content {
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+.content-notes .main-content textarea {
+    min-height: 600px;
+}
+
+.content-notes .main-content h3 {
+    overflow: hidden;
+    color: blue;
+}
+
+.content-notes .main-content h3:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+    margin-right: -50%;
+}

@@ -1,0 +1,35 @@
+div,
+span,
+p,
+pre,
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 12px 0;
+}
+
+pre code.hljs {
+    padding: 0 0 10px !important;
+}
+
+html {
+    font-size: 62.5%;
+}
+h2 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(41, 38, 223);
+}

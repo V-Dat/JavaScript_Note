@@ -1,0 +1,95 @@
+.table-block {
+    margin-top: 30px;
+}
+.table-block table {
+    position: relative;
+    width: 100%;
+}
+.table-block table {
+    border: 1px solid;
+    vertical-align: top;
+}
+
+.table-block th,
+.table-block td {
+    padding: 5px 10px;
+    white-space: pre-wrap;
+    min-height: 75px;
+    border: 1px solid;
+    vertical-align: top;
+}
+
+.table-block thead tr th {
+    background: #edf2f7;
+    padding: 0.75rem 1.5rem;
+    vertical-align: middle;
+}
+
+.table-block .column-stt {
+    text-align: center;
+    width: 30px;
+}
+
+.table-block .column-method {
+    min-width: 260px;
+}
+
+.table-block .column-syntax {
+    min-width: 420px;
+}
+.table-block .column-equal {
+    min-width: 420px;
+}
+.table-block .column-description {
+    min-width: 420px;
+    width: 600px;
+}
+
+.table-block .column-actions {
+    min-width: 80px;
+    width: 80px;
+}
+.table-block table tr > th:nth-child(2),
+.table-block table tr > td:nth-child(2) {
+    position: sticky;
+    left: 0;
+}
+
+/* css text area  */
+.table-block table .crud-group textarea {
+    min-height: 46px;
+    min-width: 220px;
+    width: 100%;
+}
+
+.table-block table tr[isedit="true"] textarea {
+    height: 280px;
+}
+
+/* disable cursor */
+.table-block table img.undo:not(.active):hover {
+    cursor: auto;
+}
+.table-block table img.save:not(.active):hover {
+    cursor: auto;
+}
+
+/* row color */
+.table-block tbody tr:nth-child(odd) td {
+    background: #fff;
+}
+.table-block tbody tr:nth-child(even) td {
+    background: #edf2f7;
+}
+
+/* table action */
+
+.table-block table .button-actions {
+    vertical-align: middle;
+    white-space: initial;
+}
+.table-block table .button-actions img {
+    border: 1px solid rgb(46, 44, 44);
+    padding: 5px;
+    border-radius: 3px;
+}
