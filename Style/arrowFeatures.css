@@ -1,0 +1,26 @@
+.arrow-features {
+    position: fixed;
+    top: 50%;
+    right: 30px;
+    flex-direction: column;
+    z-index: 1000;
+    transform: translateY(-50%);
+    width: 40px;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    row-gap: 10px;
+}
+
+.arrow-features .up,
+.arrow-features .down {
+    padding: 5px;
+    border: 2px solid transparent;
+    opacity: 0.5;
+}
+.arrow-features .up:hover,
+.arrow-features .down:hover {
+    border: 2px solid rgb(53, 75, 220);
+    border-radius: 50%;
+    opacity: 1;
+}
