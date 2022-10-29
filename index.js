@@ -20,7 +20,7 @@ import {
   handleInputCrudTextArea,
   hanlePreRender,
 } from "./Feature/TextAreaCrud.js";
-import { toggleStackBlitz } from "./Feature/StackBlitz.js";
+import { embedProject, toggleStackBlitz } from "./Feature/StackBlitz.js";
 
 const downloadButton = $(".features-place");
 const inputFile = $("#reading-file");
@@ -28,6 +28,7 @@ const table = $("#table");
 const buttonEditmainContent = $(".button-edit-main-content");
 const crudTextArea = $$(".crud-group textarea");
 const buttonOpenStackBlitz = $(".open-stackblitz");
+buttonOpenStackBlitz.addEventListener("click", toggleStackBlitz);
 
 const app = {
   JsonData: { mainContent: "", methodHelper: [] },
@@ -44,6 +45,7 @@ const app = {
     );
     buttonFeature.addEventListener("click", selectFeatureHighlight);
     window.addEventListener("beforeunload", AlertAfterClose);
+
     inputFile.addEventListener("change", (event) =>
       renderDataImport(event, _this)
     );
@@ -53,6 +55,7 @@ const app = {
     crudTextArea.forEach((item) => {
       item.addEventListener("input", () => handleInputCrudTextArea(_this));
     });
+    window.onload = embedProject;
     buttonOpenStackBlitz.addEventListener("click", toggleStackBlitz);
 
     return this;

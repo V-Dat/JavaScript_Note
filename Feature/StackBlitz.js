@@ -39,3 +39,12 @@ function changeImageDefault(buttonStackBlitz) {
   buttonStackBlitz.classList.remove("active");
   buttonStackBlitz.src = "./Assets/thunder-active-icon.svg";
 }
+
+// the id of "embed" with https://stackblitz.com/edit/js-vhav1j?file=index.js embedded in an iframe.
+export function embedProject() {
+  if (StackBlitzSDK) {
+    StackBlitzSDK.embedProjectId("embed", "js-vhav1j", {
+      openFile: "index.js",
+    });
+  }
+}
