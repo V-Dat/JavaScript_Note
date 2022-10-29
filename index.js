@@ -20,12 +20,14 @@ import {
   handleInputCrudTextArea,
   hanlePreRender,
 } from "./Feature/TextAreaCrud.js";
+import { toggleStackBlitz } from "./Feature/StackBlitz.js";
 
 const downloadButton = $(".features-place");
 const inputFile = $("#reading-file");
 const table = $("#table");
 const buttonEditmainContent = $(".button-edit-main-content");
 const crudTextArea = $$(".crud-group textarea");
+const buttonOpenStackBlitz = $(".open-stackblitz");
 
 const app = {
   JsonData: { mainContent: "", methodHelper: [] },
@@ -51,6 +53,7 @@ const app = {
     crudTextArea.forEach((item) => {
       item.addEventListener("input", () => handleInputCrudTextArea(_this));
     });
+    buttonOpenStackBlitz.addEventListener("click", toggleStackBlitz);
 
     return this;
   },
