@@ -12,6 +12,7 @@
     integrity="sha512-p8yi+TFFlSnC5MTPpjKsJguTczJYkt5Dj3Iyxdyb5Yd7vk7nR+Y8Xiqr7oRgWEINvrgdNnA7kc+JQ0m5EKHZ4g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/highlight.min.js"></script>
+  <script src="https://unpkg.com/@stackblitz/sdk@1/bundles/sdk.umd.js"></script>
 </head>
 
 <body>
@@ -28,10 +29,12 @@
 
   <!-- Stackblitz modal -->
   <img class="open-stackblitz" src="./Assets/thunder-active-icon.svg" />
-  <div class="modal-stackblitz">
-    <div class="modal-stackblitz-content">
-      <iframe class="stackblitz-iframe"
-        src="https://stackblitz.com/edit/js-qrubb2?embed=1&file=index.html" allowfullscreen title="StackBlitz"></iframe>
+  <div class="modal-stackblitz" style="display: none">
+    <div class="modal-stackblitz-content" >
+      <div id="embed">
+        <p>Embed will go here</p>
+      </div>
+      <!-- <iframe class="stackblitz-iframe" src="about:blank" allowfullscreen title="StackBlitz">...Loading</iframe> -->
     </div>
   </div>
 
@@ -65,7 +68,7 @@
       </tbody>
     </table>
   </div>
-
+<!-- button feature group -->
   <div class="button-feature-group">
     <button class="button-feature button-feature__row"
       title="click on table cell to change row color. Combine with alt or ctrl + click to remove color">
@@ -105,7 +108,7 @@
   </section>
 
   <hr />
-
+<!-- feature place -->
   <section class="features-place">
     <button type="button-download" class="button-download">
       <img src="./Assets/download-icon.svg" width="46px" height="46px" />
@@ -128,7 +131,7 @@
       <input id="reading-file" type="file">
     </form>
   </section>
-
+<!-- Referance -->
   <section class="referance-place">
     <h3>Referance :</h3>
     <ol>
@@ -153,10 +156,9 @@
         <a href="https://www.totaltypescript.com/tutorials">TS totorial</a>
       </li>
     </ol>
-
-
   </section>
   <script src="./index.js" type="module"></script>
+
 </body>
 
 </html>
