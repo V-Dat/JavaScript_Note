@@ -18,7 +18,6 @@
 }
 
 .modal-stackblitz {
-    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1000; /* Sit on top */
     left: 0;
@@ -29,12 +28,13 @@
 }
 .modal-stackblitz-content {
     background-color: #fefefe;
-    border: 1px solid #888;
-    width: 100vw;
-    height: 100vh;
+    border-right: 1px solid #888;
+    border-left: 1px solid #888;
+    width: 100%;
+    height: 100%;
 }
-.modal-stackblitz-content .stackblitz-iframe {
-    border: unset;
-    width: 100vw;
-    height: 100vh;
+.modal-stackblitz-content iframe {
+    border: none;
+    width: 100vw !important;
+    height: 100vh !important;
 }
