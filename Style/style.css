@@ -1,0 +1,21 @@
+body {
+    font-size: 1.8rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+}
+
+a.github-cover {
+    position: absolute;
+    top: -22px;
+    left: -8px;
+    transform: rotate(270deg);
+}
+
+a:hover,
+table img:hover,
+button:hover,
+.button-edit-main-content:hover {
+    cursor: pointer;
+}

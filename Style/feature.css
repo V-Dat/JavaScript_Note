@@ -1,0 +1,44 @@
+.button-feature-group {
+    padding: 10px 0 5px;
+}
+
+.button-feature-group button {
+    margin-right: 10px;
+    padding: 5px 3px;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.button-feature-group button[active="true"] {
+    background-color: beige;
+}
+
+.button-feature-group button:active {
+    box-shadow: 0px 4px 8px #ccc !important;
+}
+.button-download {
+    margin-top: 6px;
+}
+
+.import-place {
+    padding-top: 10px;
+}
+
+.features-place button {
+    margin-right: 10px;
+    padding: 5px 3px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    border-color: transparent;
+    background-color: transparent;
+    transition: 0s 0.21s;
+}
+.features-place button:hover {
+    cursor: pointer;
+}
+
+.features-place button:active {
+    box-shadow: 0px 4px 8px #ccc !important;
+    transition: 0s;
+}
