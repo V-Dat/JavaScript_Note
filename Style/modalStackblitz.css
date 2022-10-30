@@ -1,4 +1,5 @@
-.open-stackblitz {
+.open-stackblitz,
+.open-JSPlaygrounds {
     width: 50px;
     height: 50px;
     position: fixed;
@@ -9,7 +10,12 @@
     bottom: 20px;
     right: 20px;
 }
-.open-stackblitz.active {
+.open-JSPlaygrounds {
+    bottom: 100px;
+}
+
+.open-stackblitz.active,
+.open-JSPlaygrounds.active {
     border: none;
     border-radius: unset;
     right: 25px;
@@ -17,7 +23,8 @@
     height: 55px;
 }
 
-.modal-stackblitz {
+.modal-stackblitz,
+.modal-JSPlaygrounds {
     position: fixed; /* Stay in place */
     z-index: 1000; /* Sit on top */
     left: 0;
@@ -26,15 +33,21 @@
     background-color: rgb(0, 0, 0); /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
-.modal-stackblitz-content {
+.modal-stackblitz-content,
+.modal-JSPlaygrounds-content {
     background-color: #fefefe;
     border-right: 1px solid #888;
     border-left: 1px solid #888;
     width: 100%;
     height: 100%;
 }
-.modal-stackblitz-content iframe {
+.modal-stackblitz-content iframe,
+.modal-JSPlaygrounds-content iframe {
     border: none;
     width: 100vw !important;
     height: 100vh !important;
+}
+
+.modal-JSPlaygrounds-content .CodeMirror-gutter .CodeMirror-linenumbers {
+    background-color: red;
 }

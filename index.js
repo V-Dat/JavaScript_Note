@@ -21,7 +21,11 @@ import {
   handleInputCrudTextArea,
   hanlePreRender,
 } from "./Feature/TextAreaCrud.js";
-import { embedProject, toggleStackBlitz } from "./Feature/StackBlitz.js";
+import {
+  embedProject,
+  toggleJSPlaygrounds,
+  toggleStackBlitz,
+} from "./Feature/StackBlitz.js";
 import {
   arrowFeature,
   handleClickArrowFeature,
@@ -32,6 +36,7 @@ const table = $("#table");
 const buttonEditmainContent = $(".button-edit-main-content");
 const crudTextArea = $$(".crud-group textarea");
 const buttonOpenStackBlitz = $(".open-stackblitz");
+const buttonOpenJSPlaygrounds = $(".open-JSPlaygrounds");
 const arrowFeatureBlock = $(".arrow-features");
 
 const app = {
@@ -61,6 +66,7 @@ const app = {
       item.addEventListener("input", () => handleInputCrudTextArea(_this));
     });
     buttonOpenStackBlitz.addEventListener("click", toggleStackBlitz);
+    buttonOpenJSPlaygrounds.addEventListener("click", toggleJSPlaygrounds);
     arrowFeatureBlock.addEventListener("click", handleClickArrowFeature);
     window.onload = embedProject;
     window.onscroll = arrowFeature;
