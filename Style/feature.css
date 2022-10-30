@@ -42,22 +42,3 @@
     box-shadow: 0px 4px 8px #ccc !important;
     transition: 0s;
 }
-
-.features-place .button-save-local-storage {
-    position: relative;
-}
-.features-place .button-save-local-storage .timmer {
-    font-size: 1.2rem;
-    position: absolute;
-    top: -15px;
-    right: 8px;
-    border-radius: 50%;
-
-    width: 24px;
-    height: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: red;
-    color: white;
-}
