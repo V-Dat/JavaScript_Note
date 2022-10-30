@@ -8,6 +8,7 @@ import {
 import {
   readData,
   handleClickFeaturesPlace,
+  countTimeSaveLocalStorage,
 } from "./Feature/FeatureLocalStorage.js";
 import { handleRender, renderDataImport } from "./Feature/Render.js";
 import {
@@ -37,6 +38,7 @@ const app = {
   JsonData: { mainContent: "", methodHelper: [] },
   editState: [],
   isFillAllCrudState: false,
+  counterId: null,
   handler: function () {
     const _this = this;
     downloadButton.addEventListener("click", (event) => {
@@ -66,12 +68,13 @@ const app = {
     return this;
   },
 
-  defaultFeature: function () {
+  defaultFeature: function (app) {
     buttonFeatureActive.setAttribute("active", true);
+    countTimeSaveLocalStorage(app);
   },
   firstRender: function () {
     const _this = this;
-    this.defaultFeature();
+    this.defaultFeature(_this);
     readData().then((data) => {
       if (data) {
         _this.JsonData = JSON.parse(data);

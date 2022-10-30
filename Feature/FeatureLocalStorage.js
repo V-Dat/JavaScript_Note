@@ -1,4 +1,5 @@
 import { readTextFile, downloadFile } from "./ControlFile.js";
+import { $ } from "./Util.js";
 
 function downloadJson(JsonData) {
   const data = JSON.stringify(JsonData);
@@ -40,10 +41,22 @@ export function handleClickFeaturesPlace(event, app) {
       downloadJson(app.JsonData);
       break;
     case "button-save-local-storage":
+      countTimeSaveLocalStorage(app);
       saveLocalStorage(app.JsonData);
       break;
     case "button-cleanup-local-storage":
       cleanupLocalStorage(app.JsonData);
       break;
   }
+}
+
+export function countTimeSaveLocalStorage(app) {
+  const timerBlock = $(".button-save-local-storage .timmer");
+  if (app.counterId !== null) {
+    clearInterval(app.counterId);
+  }
+  timerBlock.textContent = 0;
+  setInterval(() => {
+    timerBlock.textContent = +timerBlock.textContent + 1;
+  }, 60000);
 }
