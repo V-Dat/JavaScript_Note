@@ -8,10 +8,11 @@ body {
 }
 
 a.github-cover {
-    position: absolute;
+    position: fixed;
     top: -3px;
     left: -6px;
     transform: rotate(270deg);
+    z-index: 3000;
 }
 
 a:hover,
