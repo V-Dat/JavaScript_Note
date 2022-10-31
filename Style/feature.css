@@ -1,5 +1,6 @@
 .button-feature-group {
-    padding: 10px 0 5px;
+    height: 80px;
+    margin: 10px 0 5px;
 }
 
 .button-feature-group button {

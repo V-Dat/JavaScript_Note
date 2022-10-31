@@ -7,15 +7,16 @@
 }
 
 .table-block {
+    height: calc(100vh - 185px);
     width: 100%;
-    border: 1px solid;
 }
 
 .table-block table {
     position: relative;
     width: 100%;
-    border: 1px solid;
+    border: 1.25px solid #808080;
     vertical-align: top;
+    height: 100%;
 }
 
 .table-block table thead tr {
@@ -26,7 +27,7 @@
 .table-block td {
     padding: 5px 10px;
     min-height: 75px;
-    border: 1px solid;
+    border: 2.25px solid #808080;
     vertical-align: top;
 }
 .table-block thead tr {
@@ -100,7 +101,7 @@
     white-space: initial;
 }
 .table-block table .button-actions img {
-    border: 1px solid rgb(46, 44, 44);
+    border: 1px solid #808080;
     padding: 5px;
     border-radius: 3px;
 }
@@ -109,8 +110,14 @@
 .table-block table tr > th:nth-child(2),
 .table-block table tr > td:nth-child(2) {
     position: sticky;
-    left: 0;
+    left: 0px;
 }
 .table-block table .button-actions img.edit:not(.active) {
     cursor: auto;
+}
+
+.table-block table thead {
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
 }
