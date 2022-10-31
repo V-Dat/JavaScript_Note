@@ -10,6 +10,7 @@
     box-sizing: border-box;
     justify-content: center;
     row-gap: 10px;
+    cursor: pointer;
 }
 
 .arrow-features .up,

@@ -3,7 +3,7 @@ import { $ } from "./Util.js";
 export function toggleStackBlitz() {
   const modalStackBlitz = $(".modal-stackblitz");
   const buttonStackBlitz = $(".open-stackblitz");
-  const buttonOpenJSPlaygrounds = $(".open-JSPlaygrounds");
+  const buttonOpenJSPlaygrounds = $(".open-javascript-playgrounds");
 
   if (modalStackBlitz.style.display === "none") {
     buttonOpenJSPlaygrounds.style.display = "none";
@@ -64,7 +64,7 @@ export function embedProject() {
 // JS playgrounds
 export function toggleJSPlaygrounds() {
   const modalJSPlaygrounds = $(".modal-JSPlaygrounds");
-  const buttonOpenJSPlaygrounds = $(".open-JSPlaygrounds");
+  const buttonOpenJSPlaygrounds = $(".open-javascript-playgrounds");
   const JsPlaygroundsIframe = $(".modal-JSPlaygrounds iframe");
   if (JsPlaygroundsIframe.src === "about:blank") {
     JsPlaygroundsIframe.src = "https://stephengrider.github.io/JSPlaygrounds/"; // reload frame
