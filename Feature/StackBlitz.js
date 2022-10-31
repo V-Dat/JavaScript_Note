@@ -7,9 +7,11 @@ export function toggleStackBlitz() {
 
   if (modalStackBlitz.style.display === "none") {
     buttonOpenJSPlaygrounds.style.display = "none";
+    disableGitLabel();
     showModal(modalStackBlitz, buttonStackBlitz, "./Assets/back-icon.svg");
   } else {
     buttonOpenJSPlaygrounds.style.display = "block";
+    enableGitLabel();
     hideModal(
       modalStackBlitz,
       buttonStackBlitz,
@@ -64,7 +66,6 @@ export function toggleJSPlaygrounds() {
   const modalJSPlaygrounds = $(".modal-JSPlaygrounds");
   const buttonOpenJSPlaygrounds = $(".open-JSPlaygrounds");
   const JsPlaygroundsIframe = $(".modal-JSPlaygrounds iframe");
-  console.log(333, JsPlaygroundsIframe);
   if (JsPlaygroundsIframe.src === "about:blank") {
     JsPlaygroundsIframe.src = "https://stephengrider.github.io/JSPlaygrounds/"; // reload frame
   }
@@ -72,6 +73,7 @@ export function toggleJSPlaygrounds() {
   const buttonStackBlitz = $(".open-stackblitz");
   if (modalJSPlaygrounds.style.display === "none") {
     buttonStackBlitz.style.display = "none";
+    disableGitLabel();
     showModal(
       modalJSPlaygrounds,
       buttonOpenJSPlaygrounds,
@@ -79,10 +81,21 @@ export function toggleJSPlaygrounds() {
     );
   } else {
     buttonStackBlitz.style.display = "block";
+    enableGitLabel();
     hideModal(
       modalJSPlaygrounds,
       buttonOpenJSPlaygrounds,
       "./Assets/Js-icon.svg"
     );
   }
+}
+
+function disableGitLabel() {
+  const gitLabel = $(".github-cover");
+  gitLabel.style.display = "none";
+}
+
+function enableGitLabel() {
+  const gitLabel = $(".github-cover");
+  gitLabel.style.display = "inline-block";
 }
