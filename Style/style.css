@@ -4,12 +4,13 @@ body {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     position: relative;
+    margin-top: 0;
 }
 
 a.github-cover {
     position: absolute;
-    top: -22px;
-    left: -8px;
+    top: -3px;
+    left: -6px;
     transform: rotate(270deg);
 }
 

@@ -2,7 +2,7 @@ import { $ } from "./Util.js";
 
 export function arrowFeature() {
   const arrowFeatureBlock = $(".arrow-features");
-  window.pageYOffset / $("body").scrollHeight > 0.3
+  window.pageYOffset / $("body").scrollHeight > 0.2
     ? (arrowFeatureBlock.style.display = "flex")
     : (arrowFeatureBlock.style.display = "none");
 }
