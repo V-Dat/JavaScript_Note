@@ -1,13 +1,25 @@
-.table-block {
-    margin-top: 30px;
+.method-helper {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
+
+.table-block {
+    width: 100%;
+    border: 1px solid;
+}
+
 .table-block table {
     position: relative;
     width: 100%;
-}
-.table-block table {
     border: 1px solid;
     vertical-align: top;
+}
+
+.table-block table thead tr {
+    position: sticky;
 }
 
 .table-block th,
@@ -17,7 +29,9 @@
     border: 1px solid;
     vertical-align: top;
 }
-
+.table-block thead tr {
+    height: 50px;
+}
 .table-block thead tr th {
     background: #edf2f7;
     padding: 0.75rem 1.5rem;
@@ -47,11 +61,6 @@
 .table-block .column-actions {
     min-width: 80px;
     width: 80px;
-}
-.table-block table tr > th:nth-child(2),
-.table-block table tr > td:nth-child(2) {
-    position: sticky;
-    left: 0;
 }
 
 /* css text area  */
@@ -94,4 +103,11 @@
     border: 1px solid rgb(46, 44, 44);
     padding: 5px;
     border-radius: 3px;
+}
+
+/* fixed first colums table */
+.table-block table tr > th:nth-child(2),
+.table-block table tr > td:nth-child(2) {
+    position: sticky;
+    left: 0;
 }
