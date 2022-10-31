@@ -111,3 +111,6 @@
     position: sticky;
     left: 0;
 }
+.table-block table .button-actions img.edit:not(.active) {
+    cursor: auto;
+}

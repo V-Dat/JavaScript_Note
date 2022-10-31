@@ -36,7 +36,7 @@ const table = $("#table");
 const buttonEditmainContent = $(".button-edit-main-content");
 const crudTextArea = $$(".crud-group textarea");
 const buttonOpenStackBlitz = $(".open-stackblitz");
-const buttonOpenJSPlaygrounds = $(".open-JSPlaygrounds");
+const buttonOpenJSPlaygrounds = $(".open-javascript-playgrounds");
 const arrowFeatureBlock = $(".arrow-features");
 
 const app = {
