@@ -58,11 +58,14 @@
 .table-block table .crud-group textarea {
     min-height: 46px;
     min-width: 220px;
-    width: 100%;
+    width: calc(100% - 6px);
 }
 
 .table-block table tr[isedit="true"] textarea {
-    height: 280px;
+    width: calc(100% - 6px);
+    height: 95%;
+    min-height: 200px;
+    min-width: 200px;
 }
 
 /* disable cursor */
