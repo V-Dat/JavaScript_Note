@@ -9,6 +9,7 @@
 .table-block {
     width: 100%;
     border: 1px solid;
+    font-size: 1.4rem;
 }
 
 .table-block table {
@@ -119,4 +120,8 @@
 .table-block table tbody h3 {
     margin: 0;
     margin-bottom: 3px;
+}
+
+.table-block table tbody tr td.column-method > * {
+    word-break: break-all;
 }
