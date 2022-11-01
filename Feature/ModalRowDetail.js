@@ -60,9 +60,11 @@ function embedDataModalDetail(rowData) {
 
 function showNodeModalRowDetail() {
   const modalDetail = $(".modal-row-detail");
+  modalDetail.classList.add("active");
   modalDetail.style.display = "block";
 }
-function hideNodeModalRowDetail() {
+export function hideNodeModalRowDetail() {
   const modalDetail = $(".modal-row-detail");
   modalDetail.style.display = "none";
+  modalDetail.classList.remove("active");
 }
