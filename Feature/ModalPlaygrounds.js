@@ -25,22 +25,22 @@ export function toggleStackBlitz() {
 
 function hideModal(modal, button, src) {
   modal.style.display = "none";
-  resetBodyCss();
+  unlimitHeightAndWidthBody();
   changeImageDefault(button, src);
 }
 
 function showModal(modal, button, src) {
-  showStackBlitzWithoutScroll();
+  limitHeightAndWidthBody();
   modal.style.display = "block";
   changeImageActive(button, src);
 }
 
-function showStackBlitzWithoutScroll() {
+export function limitHeightAndWidthBody() {
   $(
     "body"
   ).style.cssText = `width: 100vw ; height: 100vh; overflow:hidden;margin: 0px`;
 }
-function resetBodyCss() {
+export function unlimitHeightAndWidthBody() {
   $(
     "body"
   ).style.cssText = `width: auto ; height: auto; overflow:unset; margin: 8px`;
@@ -103,12 +103,4 @@ function disableGitLabel() {
 function enableGitLabel() {
   const gitLabel = $(".github-cover");
   gitLabel.style.display = "inline-block";
-}
-
-//
-export function getDataRowNode(rowNode, app) {
-  const rowData = app.JsonData.methodHelper.find(
-    (item) => item.index === +rowNode.dataset.key
-  );
-  return rowData;
 }

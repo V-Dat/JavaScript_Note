@@ -1,5 +1,4 @@
 import { handleRender } from "./Render.js";
-import { getDataRowNode } from "./StackBlitz.js";
 import {
   $,
   $$,
@@ -21,6 +20,7 @@ import {
   activeButtonEditContent,
   activeButtonSaveEditContent,
 } from "./Util.js";
+import { showModalRowDetail, getDataRowNode } from "./ModalRowDetail.js";
 
 const textAreaGroup = $$("textarea");
 
@@ -212,5 +212,5 @@ function getIndexRowEdit(rowNode) {
 export function handleClickViewRow(event, app) {
   const rowNode = event.target.closest("tr");
   const rowData = getDataRowNode(rowNode, app);
-  console.log(rowData);
+  showModalRowDetail(rowData);
 }
