@@ -9,6 +9,7 @@
 .table-block {
     width: 100%;
     border: 1px solid;
+    font-size: 1.4rem;
 }
 
 .table-block table {
@@ -110,6 +111,7 @@
 .table-block table tr > td:nth-child(2) {
     position: sticky;
     left: 0;
+    z-index: 999;
 }
 .table-block table .button-actions img.edit:not(.active) {
     cursor: auto;
@@ -119,4 +121,8 @@
 .table-block table tbody h3 {
     margin: 0;
     margin-bottom: 3px;
+}
+
+.table-block table tbody tr td.column-method > * {
+    word-break: break-all;
 }
