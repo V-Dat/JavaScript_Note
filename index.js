@@ -25,11 +25,12 @@ import {
   embedProject,
   toggleJSPlaygrounds,
   toggleStackBlitz,
-} from "./Feature/StackBlitz.js";
+} from "./Feature/ModalPlaygrounds.js";
 import {
   arrowFeature,
   handleClickArrowFeature,
 } from "./Feature/ArrowFeature.js";
+import { hideModalRowDetail } from "./Feature/ModalRowDetail.js";
 const downloadButton = $(".features-place");
 const inputFile = $("#reading-file");
 const table = $("#table");
@@ -38,6 +39,7 @@ const crudTextArea = $$(".crud-group textarea");
 const buttonOpenStackBlitz = $(".open-stackblitz");
 const buttonOpenJSPlaygrounds = $(".open-javascript-playgrounds");
 const arrowFeatureBlock = $(".arrow-features");
+const buttonCloseModalRowDetail = $(".button-close-modal-row-detail");
 
 const app = {
   JsonData: { mainContent: "", methodHelper: [] },
@@ -70,6 +72,7 @@ const app = {
     arrowFeatureBlock.addEventListener("click", handleClickArrowFeature);
     window.onload = embedProject;
     window.onscroll = arrowFeature;
+    buttonCloseModalRowDetail.addEventListener("click", hideModalRowDetail);
 
     return this;
   },

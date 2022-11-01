@@ -1,4 +1,4 @@
-@import "./Style/modalStackblitz.css";
+@import "./Style/modalPlaygrounds.css";
 @import "./Style/table.css";
 @import "./Style/reset.css";
 @import "./Style/feature.css";
@@ -7,3 +7,4 @@
 @import "./Style/mainContent.css";
 @import "./Style/arrowFeatures.css";
 @import "./Style/footer.css";
+@import "./Style/modalRowDetail.css";
