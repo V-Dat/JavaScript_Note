@@ -1,10 +1,9 @@
 import { $ } from "./Util.js";
 
 export function arrowFeature() {
-  const arrowFeatureBlock = $(".arrow-features");
   window.pageYOffset / $("body").scrollHeight > 0.3
-    ? (arrowFeatureBlock.style.display = "flex")
-    : (arrowFeatureBlock.style.display = "none");
+    ? enableArrowBlock()
+    : disableArrowBlock();
 }
 
 export function handleClickArrowFeature(event) {
@@ -12,4 +11,22 @@ export function handleClickArrowFeature(event) {
   targetClass === "up"
     ? window.scrollTo({ top: 0, behavior: "smooth" })
     : window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+}
+
+function enableArrowBlock() {
+  const arrowFeatureBlock = $(".arrow-features");
+  arrowFeatureBlock.style.display = "flex";
+}
+
+function disableArrowBlock() {
+  const arrowFeatureBlock = $(".arrow-features");
+  arrowFeatureBlock.style.display = "none";
+}
+
+export function toggleArrowBlock(isNavigateHome = false) {
+  if (isNavigateHome) {
+    arrowFeature();
+  } else {
+    disableArrowBlock();
+  }
 }

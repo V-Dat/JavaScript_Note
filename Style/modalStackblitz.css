@@ -24,8 +24,7 @@
     height: 55px;
 }
 
-.modal-stackblitz,
-.modal-JSPlaygrounds {
+.modal {
     position: fixed; /* Stay in place */
     z-index: 1000; /* Sit on top */
     left: 0;
@@ -34,16 +33,15 @@
     background-color: rgb(0, 0, 0); /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
-.modal-stackblitz-content,
-.modal-JSPlaygrounds-content {
+.modal-content {
     background-color: #fefefe;
     border-right: 1px solid #888;
     border-left: 1px solid #888;
     width: 100%;
     height: 100%;
 }
-.modal-stackblitz-content iframe,
-.modal-JSPlaygrounds-content iframe {
+
+.modal-content iframe {
     border: none;
     width: 100vw !important;
     height: 100vh !important;
