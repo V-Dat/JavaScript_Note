@@ -22,7 +22,7 @@ export function processDataModalDetail(rowData) {
       ${rowData.syntax}
     </div>
     <div class="content-involved">
-      <h2>II - Involved
+      <h2>II - Involved </h2>
       ${rowData.involved}
     </div>
     <div class="content-description">
