@@ -21,9 +21,9 @@ export function processDataModalDetail(rowData) {
       <h2>I - Syntax  </h2>
       ${rowData.syntax}
     </div>
-    <div class="content-equal">
-      <h2>II - Equal  </h2>
-      ${rowData.equal}
+    <div class="content-involved">
+      <h2>II - Involved
+      ${rowData.involved}
     </div>
     <div class="content-description">
       <h2>III - Description  </h2>

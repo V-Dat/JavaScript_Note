@@ -11,8 +11,8 @@ function processRow(data) {
       row.method
     }</td><td class="column-data column-syntax" data-key="syntax">${
       row.syntax
-    }</td><td class="column-data column-equal" data-key="equal">${
-      row.equal
+    }</td><td class="column-data column-involved" data-key="involved">${
+      row.involved
     }</td><td class="column-data column-description" data-key="description">${
       row.description
     }</td>${getButtonEdit(+row.index)}</tr>`;
