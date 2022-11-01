@@ -1,3 +1,4 @@
+import { toggleArrowBlock } from "./ArrowFeature.js";
 import { $ } from "./Util.js";
 
 export function toggleStackBlitz() {
@@ -8,10 +9,12 @@ export function toggleStackBlitz() {
   if (modalStackBlitz.style.display === "none") {
     buttonOpenJSPlaygrounds.style.display = "none";
     disableGitLabel();
+    toggleArrowBlock(false);
     showModal(modalStackBlitz, buttonStackBlitz, "./Assets/back-icon.svg");
   } else {
     buttonOpenJSPlaygrounds.style.display = "block";
     enableGitLabel();
+    toggleArrowBlock(true);
     hideModal(
       modalStackBlitz,
       buttonStackBlitz,
@@ -74,6 +77,7 @@ export function toggleJSPlaygrounds() {
   if (modalJSPlaygrounds.style.display === "none") {
     buttonStackBlitz.style.display = "none";
     disableGitLabel();
+    toggleArrowBlock(false);
     showModal(
       modalJSPlaygrounds,
       buttonOpenJSPlaygrounds,
@@ -82,6 +86,7 @@ export function toggleJSPlaygrounds() {
   } else {
     buttonStackBlitz.style.display = "block";
     enableGitLabel();
+    toggleArrowBlock(true);
     hideModal(
       modalJSPlaygrounds,
       buttonOpenJSPlaygrounds,
