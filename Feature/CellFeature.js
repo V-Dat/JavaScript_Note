@@ -5,6 +5,7 @@ import {
   handleResetInput,
   handleEditRow,
   handleClickUndo,
+  handleClickViewRow,
 } from "./TextAreaCrud.js";
 import {
   BUTTON_FEATURE,
@@ -47,6 +48,8 @@ export function handleLeftClickTable(event, app) {
       handleEditRow(event, app);
     } else if (className.includes("undo")) {
       handleClickUndo(event, app);
+    } else if (className.includes("view-detail")) {
+      handleClickViewRow(event, app);
     } else {
       handleClickOnRow(event, node);
     }
@@ -131,6 +134,7 @@ export function getButtonEdit(key) {
          <img key=${key} title="edit" class="edit active" src="./Assets/edit-active-icon.svg" width="28px" height="28px" ></img>
          <img key=${key} title="eraser" class="eraser" src="./Assets/delete-icon.svg" width="28px" height="28px"></img> 
          <img key=${key} title="undo" class="undo" src="./Assets/undo-unactive-icon.svg" width="28px" height="28px" ></img> 
+         <img key=${key} title="view-detail" class="view-detail" src="./Assets/view-detail-icon.svg" width="28px" height="28px" ></img> 
       </td>`;
 }
 

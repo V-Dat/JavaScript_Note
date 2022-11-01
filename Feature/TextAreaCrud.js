@@ -1,4 +1,5 @@
 import { handleRender } from "./Render.js";
+import { getDataRowNode } from "./StackBlitz.js";
 import {
   $,
   $$,
@@ -206,4 +207,10 @@ export function handleInputCrudTextArea(app) {
 
 function getIndexRowEdit(rowNode) {
   return rowNode.dataset.key;
+}
+
+export function handleClickViewRow(event, app) {
+  const rowNode = event.target.closest("tr");
+  const rowData = getDataRowNode(rowNode, app);
+  console.log(rowData);
 }

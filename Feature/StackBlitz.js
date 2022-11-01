@@ -104,3 +104,11 @@ function enableGitLabel() {
   const gitLabel = $(".github-cover");
   gitLabel.style.display = "inline-block";
 }
+
+//
+export function getDataRowNode(rowNode, app) {
+  const rowData = app.JsonData.methodHelper.find(
+    (item) => item.index === +rowNode.dataset.key
+  );
+  return rowData;
+}
