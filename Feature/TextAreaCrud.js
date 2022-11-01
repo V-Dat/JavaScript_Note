@@ -188,13 +188,13 @@ export function handleInputCrudTextArea(app) {
   const crudSyntax = $(".crud-group .column-syntax textarea").value.length;
   const crudDescription = $(".crud-group .column-description textarea").value
     .length;
-  const crudEqual = $(".crud-group .column-equal textarea").value.length;
+  const crudInvolved = $(".crud-group .column-involved textarea").value.length;
   const rowNode = $(".crud-group");
-  if (crudMethod && crudSyntax && crudDescription && crudEqual) {
+  if (crudMethod && crudSyntax && crudDescription && crudInvolved) {
     activeButtonCreate(rowNode);
     activeButtonEraserNewNode(rowNode);
     return (app.isFillAllCrudState = true);
-  } else if (crudMethod || crudSyntax || crudDescription || crudEqual) {
+  } else if (crudMethod || crudSyntax || crudDescription || crudInvolved) {
     activeButtonEraserNewNode(rowNode);
     unActiveButtonCreate(rowNode);
     return (app.isFillAllCrudState = false);
