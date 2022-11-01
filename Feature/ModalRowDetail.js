@@ -18,12 +18,15 @@ export function processDataModalDetail(rowData) {
       ${rowData.method}
     </div>
     <div class="content-syntax">
+      <h2>I - Syntax  </h2>
       ${rowData.syntax}
     </div>
     <div class="content-equal">
+      <h2>II - Equal  </h2>
       ${rowData.equal}
     </div>
     <div class="content-description">
+      <h2>III - Description  </h2>
       ${rowData.description}
     </div>`;
 

@@ -1,3 +1,4 @@
+/* css button & mocal */
 .modal-row-detail {
     background-color: rgba(255, 255, 255, 1);
     right: 0;
@@ -14,7 +15,7 @@
 }
 
 .modal-row-detail .modal-row-detail-content {
-    margin: 50px 120px 70px;
+    margin: 50px 120px 70px 152px;
     width: auto;
     height: auto;
 }
@@ -33,4 +34,33 @@
 }
 .button-close-modal-row-detail:hover {
     border-color: purple;
+}
+/* css content */
+.modal-row-detail-content .content-method a {
+    display: block;
+}
+.modal-row-detail-content .content-method > *:first-child {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    padding-bottom: 6px;
+}
+
+.modal-row-detail-content h2 {
+    text-align: left;
+    padding: 14px 0 6px;
+    margin: 0;
+    overflow: hidden;
+    margin-left: -32px;
+}
+
+.modal-row-detail-content h2:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+    margin-right: -50%;
 }
