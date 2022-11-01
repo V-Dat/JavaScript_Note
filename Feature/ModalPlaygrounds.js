@@ -25,13 +25,15 @@ export function toggleStackBlitz() {
 
 function hideModal(modal, button, src) {
   modal.style.display = "none";
-  unlimitHeightAndWidthBody();
+  if (!$(".modal-row-detail.active")) {
+    unlimitHeightAndWidthBody();
+  }
   changeImageDefault(button, src);
 }
 
 function showModal(modal, button, src) {
-  limitHeightAndWidthBody();
   modal.style.display = "block";
+  limitHeightAndWidthBody();
   changeImageActive(button, src);
 }
 

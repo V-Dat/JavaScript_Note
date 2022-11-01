@@ -2,6 +2,7 @@
     background-color: rgba(255, 255, 255, 1);
     right: 0;
     height: 100vh;
+    z-index: 4000;
 }
 
 .modal-row-detail .modal-row-detail-content {
@@ -16,21 +17,20 @@
     margin: 50px 120px 70px;
     width: auto;
     height: auto;
-    min-height: 100vh;
 }
 
 .button-close-modal-row-detail {
     position: fixed;
     top: 50px;
     right: 22px;
-    z-index: 2000;
-    width: 50px;
-    height: 50px;
+    z-index: 5000;
+    width: 46px;
+    height: 46px;
     cursor: pointer;
     padding: 3px;
     border-radius: 50%;
-    border: 2px solid transparent;
+    border: 2px solid rgb(224, 236, 114);
 }
 .button-close-modal-row-detail:hover {
-    border-color: blue;
+    border-color: purple;
 }
