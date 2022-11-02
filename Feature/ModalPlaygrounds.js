@@ -10,7 +10,11 @@ export function toggleStackBlitz() {
     buttonOpenJSPlaygrounds.style.display = "none";
     disableGitLabel();
     toggleArrowBlock(false);
-    showModal(modalStackBlitz, buttonStackBlitz, "./Assets/back-icon.svg");
+    showModal(
+      modalStackBlitz,
+      buttonStackBlitz,
+      "./Assets/Icons/back-icon.svg"
+    );
   } else {
     buttonOpenJSPlaygrounds.style.display = "block";
     enableGitLabel();
@@ -18,7 +22,7 @@ export function toggleStackBlitz() {
     hideModal(
       modalStackBlitz,
       buttonStackBlitz,
-      "./Assets/thunder-active-icon.svg"
+      "./Assets/Icons/thunder-active-icon.svg"
     );
   }
 }
@@ -83,7 +87,7 @@ export function toggleJSPlaygrounds() {
     showModal(
       modalJSPlaygrounds,
       buttonOpenJSPlaygrounds,
-      "./Assets/back-icon.svg"
+      "./Assets/Icons/back-icon.svg"
     );
   } else {
     buttonStackBlitz.style.display = "block";
@@ -92,7 +96,7 @@ export function toggleJSPlaygrounds() {
     hideModal(
       modalJSPlaygrounds,
       buttonOpenJSPlaygrounds,
-      "./Assets/Js-icon.svg"
+      "./Assets/Icons/Js-icon.svg"
     );
   }
 }

@@ -130,11 +130,11 @@ export function selectFeatureHighlight(event) {
 
 export function getButtonEdit(key) {
   return `<td class="button-actions">
-         <img key=${key} title="save" class="save" src="./Assets/create-unactive-icon.svg" width="28px" height="28px"></img>
-         <img key=${key} title="edit" class="edit active" src="./Assets/edit-active-icon.svg" width="28px" height="28px" ></img>
-         <img key=${key} title="eraser" class="eraser" src="./Assets/delete-icon.svg" width="28px" height="28px"></img> 
-         <img key=${key} title="undo" class="undo" src="./Assets/undo-unactive-icon.svg" width="28px" height="28px" ></img> 
-         <img key=${key} title="view-detail" class="view-detail" src="./Assets/view-detail-icon.svg" width="28px" height="28px" ></img> 
+         <img key=${key} title="save" class="save" src="./Assets/Icons/create-unactive-icon.svg" width="28px" height="28px"></img>
+         <img key=${key} title="edit" class="edit active" src="./Assets/Icons/edit-active-icon.svg" width="28px" height="28px" ></img>
+         <img key=${key} title="eraser" class="eraser" src="./Assets/Icons/delete-icon.svg" width="28px" height="28px"></img> 
+         <img key=${key} title="undo" class="undo" src="./Assets/Icons/undo-unactive-icon.svg" width="28px" height="28px" ></img> 
+         <img key=${key} title="view-detail" class="view-detail" src="./Assets/Icons/view-detail-icon.svg" width="28px" height="28px" ></img> 
       </td>`;
 }
 
