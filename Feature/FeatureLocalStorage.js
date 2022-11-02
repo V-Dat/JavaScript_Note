@@ -9,12 +9,18 @@ function downloadJson(JsonData) {
 function saveLocalStorage(JsonData) {
   const data = JSON.stringify(JsonData);
   localStorage.setItem("data", data);
-  console.log("save local successed");
+  console.log(
+    `%c ${getCurrentDataTime()} - save local successed`,
+    "background: blue; color: white"
+  );
 }
 
 function cleanupLocalStorage() {
   localStorage.removeItem("data");
-  console.log("cleaning successed");
+  console.log(
+    `%c ${getCurrentDataTime()} - cleaning successed`,
+    "background: blue; color: white"
+  );
 }
 
 function readLocalStorage() {
@@ -25,11 +31,17 @@ function readLocalStorage() {
 export function readData() {
   let data = readLocalStorage();
   if (data.length === 0) {
-    console.log("read data from default file");
+    console.log(
+      `%c ${getCurrentDataTime()} - read data from default file`,
+      "background: blue; color: white"
+    );
     return readTextFile("./JsonData.json");
   }
 
-  console.log("read data from local store");
+  console.log(
+    `%c ${getCurrentDataTime()} - read data from local store`,
+    "background: blue; color: white"
+  );
   return new Promise((resolve) => resolve(data));
 }
 
@@ -59,4 +71,14 @@ export function countTimeSaveLocalStorage(app) {
   setInterval(() => {
     timerBlock.textContent = +timerBlock.textContent + 1;
   }, 60000);
+}
+
+export function getCurrentDataTime() {
+  const today = new Date();
+  const date =
+    today.getDate() + "-" + (+today.getMonth() + 1) + "-" + today.getFullYear();
+  const time =
+    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  const dateTime = time + " " + date;
+  return dateTime;
 }
