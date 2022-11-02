@@ -28,3 +28,7 @@
     width: 100%;
     margin-right: -50%;
 }
+
+.content-notes .main-content {
+    min-height: 80px;
+}
