@@ -68,7 +68,7 @@ export function countTimeSaveLocalStorage(app) {
     clearInterval(app.counterId);
   }
   timerBlock.textContent = 0;
-  setInterval(() => {
+  app.counterId = setInterval(() => {
     timerBlock.textContent = +timerBlock.textContent + 1;
   }, 60000);
 }
