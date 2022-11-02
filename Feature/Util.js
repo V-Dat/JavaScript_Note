@@ -120,14 +120,12 @@ export function highlightNode(node) {
   });
 }
 
-export function activeButtonSaveEditContent() {
-  const target = $(".button-edit-main-content");
-  target.src = "./Assets/save-main-content-icon.svg";
-  target.title = "save content";
+export function activeButtonSaveEditContent(button) {
+  button.src = "./Assets/save-main-content-icon.svg";
+  button.title = "save content";
 }
 
-export function activeButtonEditContent() {
-  const target = $(".button-edit-main-content");
-  target.src = "./Assets/pen-icon.svg";
-  target.title = "edit content";
+export function activeButtonEditContent(button) {
+  button.src = "./Assets/pen-icon.svg";
+  button.title = "edit content";
 }
