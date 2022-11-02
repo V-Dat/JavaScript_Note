@@ -22,3 +22,7 @@ button:hover,
 .button-edit-main-content:hover {
     cursor: pointer;
 }
+
+* {
+    scroll-behavior: smooth;
+}
