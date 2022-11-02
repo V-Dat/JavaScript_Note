@@ -31,6 +31,7 @@ import {
   handleClickArrowFeature,
 } from "./Feature/ArrowFeature.js";
 import { hideModalRowDetail } from "./Feature/ModalRowDetail.js";
+import { renderHeading } from "./Feature/renderHeading.js";
 const downloadButton = $(".features-place");
 const inputFile = $("#reading-file");
 const table = $("#table");
@@ -77,17 +78,19 @@ const app = {
     return this;
   },
 
-  defaultFeature: function (app) {
+  defaultSetting: function (app) {
     buttonFeatureActive.setAttribute("active", true);
     countTimeSaveLocalStorage(app);
+    return app;
   },
   firstRender: function () {
     const _this = this;
-    this.defaultFeature(_this);
+    this.defaultSetting(_this);
     readData().then((data) => {
       if (data) {
         _this.JsonData = JSON.parse(data);
         hanlePreRender();
+        renderHeading(_this.JsonData);
         handleRender(_this.JsonData);
         highlightNode($("body"));
       }
