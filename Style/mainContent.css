@@ -6,7 +6,7 @@
 .content-notes .button-edit-main-content {
     position: absolute;
     top: 70px;
-    right: 20px;
+    right: 25px;
 }
 
 .content-notes .main-content textarea {
@@ -27,4 +27,8 @@
     vertical-align: middle;
     width: 100%;
     margin-right: -50%;
+}
+
+.content-notes .main-content {
+    min-height: 80px;
 }

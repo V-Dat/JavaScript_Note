@@ -17,7 +17,7 @@ export const BUTTON_ACTIONS = {
 
 export function AlertAfterClose(event) {
   event.preventDefault();
-  // return (event.returnValue = "Before closing, Saving data first !");
+  return (event.returnValue = "Before closing, Saving data first !");
 }
 
 //================= active & unactive ============================
