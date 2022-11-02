@@ -42,7 +42,7 @@ export function onChangeHeadingContent(JsonData) {
   const headingText = $(".content-notes .heading-text");
   const isEditing = headingText.querySelector("textarea");
   if (isEditing) {
-    JsonData.headingMethodHelper = isEditing.value;
+    JsonData.headingMainContent = isEditing.value;
     headingText.innerHTML = isEditing.value;
     activeButtonEditContent($(".content-notes .btn-edit"));
   } else {

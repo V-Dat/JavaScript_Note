@@ -42,10 +42,20 @@ export function handleSaveRecord(rowNode, app) {
   const isFillAll = app.isFillAllCrudState;
   if (!isFillAll || !rowNode) return;
   const textAreaInput = getValueTextArea();
-  app.JsonData.methodHelper.push({
-    ...textAreaInput,
-    index: app.JsonData.methodHelper.length,
-  });
+
+  if (app.JsonData.methodHelper) {
+    app.JsonData.methodHelper.push({
+      ...textAreaInput,
+      index: app.JsonData.methodHelper.length,
+    });
+  } else {
+    app.JsonData.methodHelper = [
+      {
+        ...textAreaInput,
+        index: 0,
+      },
+    ];
+  }
 
   handleResetInput();
   handleRender(app.JsonData);

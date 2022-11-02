@@ -3,6 +3,7 @@ import { hanlePreRender } from "./TextAreaCrud.js";
 import { $, highlightNode } from "./Util.js";
 
 function processRow(data) {
+  if (!data) return;
   let tableRow = "";
   data.forEach((row) => {
     tableRow += `<tr data-key=${+row.index}><td class="column-stt">${
@@ -21,10 +22,11 @@ function processRow(data) {
 }
 
 export function handleRender(data) {
-  const tableRow = processRow(data.methodHelper);
-  const tbody = table.querySelector("tbody");
-
-  tbody.insertAdjacentHTML("beforeend", tableRow);
+  const tableRowData = processRow(data.methodHelper);
+  if (tableRowData) {
+    const tbody = table.querySelector("tbody");
+    tbody.insertAdjacentHTML("beforeend", tableRowData);
+  }
 
   /// first render and import data to render
   const previousContent = $(".main-content").innerHTML;
