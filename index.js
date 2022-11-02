@@ -31,7 +31,11 @@ import {
   handleClickArrowFeature,
 } from "./Feature/ArrowFeature.js";
 import { hideModalRowDetail } from "./Feature/ModalRowDetail.js";
-import { renderHeading } from "./Feature/renderHeading.js";
+import {
+  onChangeHeadingContent,
+  onChangeHeadingMethod,
+  renderHeading,
+} from "./Feature/renderHeading.js";
 const downloadButton = $(".features-place");
 const inputFile = $("#reading-file");
 const table = $("#table");
@@ -41,6 +45,8 @@ const buttonOpenStackBlitz = $(".open-stackblitz");
 const buttonOpenJSPlaygrounds = $(".open-javascript-playgrounds");
 const arrowFeatureBlock = $(".arrow-features");
 const buttonCloseModalRowDetail = $(".button-close-modal-row-detail");
+const buttonEditHeadingContent = $(".content-notes .btn-edit");
+const buttonEditHeadingMethod = $(".heading-method-group .btn-edit");
 
 const app = {
   JsonData: { mainContent: "", methodHelper: [] },
@@ -74,6 +80,12 @@ const app = {
     window.onload = embedProject;
     window.onscroll = arrowFeature;
     buttonCloseModalRowDetail.addEventListener("click", hideModalRowDetail);
+    buttonEditHeadingContent.addEventListener("click", () =>
+      onChangeHeadingContent(_this.JsonData)
+    );
+    buttonEditHeadingMethod.addEventListener("click", () =>
+      onChangeHeadingMethod(_this.JsonData)
+    );
 
     return this;
   },

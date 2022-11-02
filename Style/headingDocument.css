@@ -1,0 +1,24 @@
+.heading-method-group {
+    position: relative;
+}
+.heading-method-group .btn-edit,
+.content-notes .btn-edit {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+}
+.heading-method-group .heading-text textarea,
+.content-notes .heading-text textarea {
+    width: 70%;
+    max-width: 70%;
+    height: 30px;
+    min-height: 20px;
+    max-height: 30px;
+    min-width: 60%;
+    resize: vertical;
+}
+
+.heading-method-group .heading-text,
+.content-notes .heading-text {
+    height: 33px;
+}

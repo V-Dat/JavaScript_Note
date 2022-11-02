@@ -1,11 +1,3 @@
-.method-helper {
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-}
-
 .table-block {
     width: 100%;
     border: 1px solid;

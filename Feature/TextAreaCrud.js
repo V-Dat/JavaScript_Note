@@ -175,11 +175,11 @@ export function handleEditMainContent(JsonData) {
     mainContent.innerHTML = newContent;
     JsonData.mainContent = newContent;
     highlightNode(mainContent);
-    activeButtonEditContent();
+    activeButtonEditContent($(".button-edit-main-content"));
   } else {
     mainContent.classList.add("edit");
     mainContent.innerHTML = `<textarea style="width: 95%; max-width: 95%">${content}</textarea>`;
-    activeButtonSaveEditContent();
+    activeButtonSaveEditContent($(".button-edit-main-content"));
   }
 }
 
