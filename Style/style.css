@@ -26,3 +26,16 @@ button:hover,
 * {
     scroll-behavior: smooth;
 }
+
+.button-edit-main-content,
+.btn-edit {
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+.button-edit-main-content:hover,
+.btn-edit:hover {
+    border-color: purple;
+}

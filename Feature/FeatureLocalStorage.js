@@ -46,7 +46,7 @@ export function readData() {
 }
 
 export function handleClickFeaturesPlace(event, app) {
-  const targetButton = event.target.closest("button");
+  const targetButton = event.target.closest("img");
   if (!targetButton) return;
   switch (targetButton.getAttribute("type")) {
     case "button-download":
@@ -63,7 +63,7 @@ export function handleClickFeaturesPlace(event, app) {
 }
 
 export function countTimeSaveLocalStorage(app) {
-  const timerBlock = $(".button-save-local-storage .timmer");
+  const timerBlock = $(".features-localstorage .timmer");
   if (app.counterId !== null) {
     clearInterval(app.counterId);
   }

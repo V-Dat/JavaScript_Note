@@ -130,32 +130,21 @@
     <img class="button-edit-main-content" src="./Assets/Icons/pen-icon.svg" title="edit content" width="32px"
       height="32px"></img>
   </section>
-  <hr />
 
-  <!-- feature place -->
-  <section class="features-place">
-    <button type="button-download" class="button-download">
-      <img src="./Assets/Icons/download-icon.svg" width="46px" height="46px" />
-      <figcaption>
-        Save As Json
-      </figcaption>
-    </button>
-    <button type="button-save-local-storage" class="button-save-local-storage">
-      <img src="./Assets/Icons/save-icon.svg" width="46px" height="46px" />
-      <figcaption>Save Local storage</figcaption>
+  <!-- feature localstorage -->
+  <section class="features-localstorage">
+
+      <form class="upload-file-section">
+        <label for="reading-file"><img src="./Assets/Icons/upload-icon.svg" width="30px" height="30px" /></label>
+        <input id="reading-file" type="file" style="display:none">
+      </form>
+
+      <img type="button-download" class="button-download" src="./Assets/Icons/download-icon.svg"  title="Save As Json" />
+      <img type="button-save-local-storage" class="button-save-local-storage" src="./Assets/Icons/save-icon.svg"  title="Save Local Storage"/>
       <span class="timmer">0</span>
-    </button>
-    <button type="button-cleanup-local-storage" class="button-cleanup-local-storage">
-      <img src="./Assets/Icons/clear-local-storage-icon.svg" width="46px" height="46px" />
-      <figcaption>Clean up Local storage</figcaption>
-    </button>
-  </section>
-  <section class="import-place">
-    <form>
-      <label for="reading-file">Import Data</label>
-      <input id="reading-file" type="file">
-    </form>
-  </section>
+      <img type="button-cleanup-local-storage" class="button-cleanup-local-storage" src="./Assets/Icons/clear-local-storage-icon.svg"  title="Clean Local Storage"/>
+    </section>
+
 
   <!-- Referance -->
   <section class="referance-section">

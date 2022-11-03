@@ -4,8 +4,8 @@
 .heading-method-group .btn-edit,
 .content-notes .btn-edit {
     position: absolute;
-    top: 0px;
-    right: 25px;
+    top: -8px;
+    right: 16px;
 }
 .heading-method-group .heading-text textarea,
 .content-notes .heading-text textarea {
