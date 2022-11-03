@@ -13,11 +13,13 @@
     min-height: 600px;
 }
 
+.referance-section h3,
 .content-notes .main-content h3 {
     overflow: hidden;
     color: blue;
 }
 
+.referance-section h3:after,
 .content-notes .main-content h3:after {
     background-color: #000;
     content: "";

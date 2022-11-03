@@ -1,0 +1,19 @@
+.referance-section h3 {
+    color: red;
+}
+.referance-section {
+    position: relative;
+    min-height: 80px;
+}
+
+.referance-section .btn-edit {
+    position: absolute;
+    top: 30px;
+    right: 25px;
+}
+
+.referance-section textarea {
+    width: 95%;
+    max-width: 95%;
+    min-height: 300px;
+}
