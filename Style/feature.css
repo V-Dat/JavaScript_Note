@@ -16,41 +16,45 @@
 .button-feature-group button:active {
     box-shadow: 0px 4px 8px #ccc !important;
 }
-.button-download {
-    margin-top: 6px;
+.upload-file-section label {
+    font-size: 0;
 }
 
-.import-place {
-    padding-top: 10px;
-}
-
-.features-place button {
-    margin-right: 10px;
-    padding: 5px 3px;
-    display: inline-flex;
-    flex-direction: column;
+.features-localstorage {
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    right: 100px;
+    gap: 22px;
+    z-index: 4000;
     align-items: center;
+}
+.features-localstorage .upload-file-section {
+    width: 58px;
+    height: 58px;
+}
+
+.features-localstorage img {
     border-color: transparent;
     background-color: transparent;
-    transition: 0s 0.21s;
-}
-.features-place button:hover {
+
+    border-radius: 50%;
+    border: 2px solid rgb(224, 236, 114);
+    padding: 2px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
 }
 
-.features-place button:active {
-    box-shadow: 0px 4px 8px #ccc !important;
-    transition: 0s;
+.features-localstorage img:hover {
+    border-color: purple;
 }
 
-.features-place .button-save-local-storage {
-    position: relative;
-}
-.features-place .button-save-local-storage .timmer {
+.features-localstorage .timmer {
     font-size: 1.2rem;
     position: absolute;
-    top: -15px;
-    right: 8px;
+    top: 35px;
+    right: 80px;
     border-radius: 50%;
 
     width: 24px;
@@ -59,5 +63,6 @@
     justify-content: center;
     align-items: center;
     background-color: red;
+    z-index: 5000;
     color: white;
 }
