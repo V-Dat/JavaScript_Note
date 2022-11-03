@@ -3,9 +3,12 @@
     position: relative;
     min-height: 60px;
 }
+.main-content-group {
+    position: relative;
+}
 .content-notes .button-edit-main-content {
     position: absolute;
-    top: 70px;
+    top: 30px;
     right: 16px;
 }
 
