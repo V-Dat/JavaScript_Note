@@ -36,6 +36,7 @@ import {
   onChangeHeadingMethod,
   renderHeading,
 } from "./Feature/renderHeading.js";
+import { onChangeReferanceContent } from "./Feature/Referance.js";
 const downloadButton = $(".features-place");
 const inputFile = $("#reading-file");
 const table = $("#table");
@@ -47,6 +48,7 @@ const arrowFeatureBlock = $(".arrow-features");
 const buttonCloseModalRowDetail = $(".button-close-modal-row-detail");
 const buttonEditHeadingContent = $(".content-notes .btn-edit");
 const buttonEditHeadingMethod = $(".heading-method-group .btn-edit");
+const buttonEditReferance = $(".referance-section .btn-edit");
 
 const app = {
   JsonData: { mainContent: "", methodHelper: [] },
@@ -86,7 +88,9 @@ const app = {
     buttonEditHeadingMethod.addEventListener("click", () =>
       onChangeHeadingMethod(_this.JsonData)
     );
-
+    buttonEditReferance.addEventListener("click", () =>
+      onChangeReferanceContent(_this.JsonData)
+    );
     return this;
   },
 

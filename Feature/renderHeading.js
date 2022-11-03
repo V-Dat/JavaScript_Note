@@ -19,10 +19,15 @@ function renderHeadingContent(JsonData) {
     $(".content-notes .heading-text").innerHTML = JsonData.headingMainContent;
 }
 
+function renderReferanceContent(JsonData) {
+  if (JsonData.referanceContent)
+    $(".referance-content").innerHTML = JsonData.referanceContent;
+}
 export function renderHeading(JsonData) {
   changDocumentTitle(JsonData);
   renderHeadingMethod(JsonData);
   renderHeadingContent(JsonData);
+  renderReferanceContent(JsonData);
 }
 
 export function onChangeHeadingMethod(JsonData) {
