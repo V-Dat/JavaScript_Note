@@ -9,16 +9,30 @@
 }
 .heading-method-group .heading-text textarea,
 .content-notes .heading-text textarea {
-    width: 70%;
-    max-width: 70%;
+    width: 95%;
+    max-width: 95%;
     height: 30px;
-    min-height: 20px;
-    max-height: 30px;
+    min-height: 50px;
     min-width: 60%;
     resize: vertical;
 }
 
-.heading-method-group .heading-text,
 .content-notes .heading-text {
-    height: 33px;
+    min-height: 33px;
+    text-align: unset;
+}
+
+.content-notes h2.heading-text a {
+    text-align: center;
+    display: block;
+}
+
+.heading-method-group .heading-text {
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading-method-group .btn-edit {
+    top: 0 !important;
 }

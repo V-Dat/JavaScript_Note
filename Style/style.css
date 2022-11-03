@@ -4,8 +4,7 @@ body {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     position: relative;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0 78px;
 }
 
 a.github-cover {
