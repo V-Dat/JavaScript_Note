@@ -16,4 +16,5 @@
     width: 95%;
     max-width: 95%;
     min-height: 300px;
+    resize: vertical;
 }

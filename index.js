@@ -30,7 +30,11 @@ import {
   arrowFeature,
   handleClickArrowFeature,
 } from "./Feature/ArrowFeature.js";
-import { hideModalRowDetail } from "./Feature/ModalRowDetail.js";
+import {
+  handleActionNote,
+  hideModalRowDetail,
+  onEditNote,
+} from "./Feature/ModalRowDetail.js";
 import {
   onChangeHeadingContent,
   onChangeHeadingMethod,
@@ -49,12 +53,14 @@ const buttonCloseModalRowDetail = $(".button-close-modal-row-detail");
 const buttonEditHeadingContent = $(".content-notes .btn-edit");
 const buttonEditHeadingMethod = $(".heading-method-group .btn-edit");
 const buttonEditReferance = $(".referance-section .btn-edit");
-
+const buttonEditNote = $(".button-edit-note");
+const actionsNote = $(".note-block .actions");
 const app = {
   JsonData: { mainContent: "", methodHelper: [] },
   editState: [],
   isFillAllCrudState: false,
   counterId: null,
+  indexActiveViewDetail: null,
   handler: function () {
     const _this = this;
     downloadButton.addEventListener("click", (event) => {
@@ -90,6 +96,10 @@ const app = {
     );
     buttonEditReferance.addEventListener("click", () =>
       onChangeReferanceContent(_this.JsonData)
+    );
+    buttonEditNote.addEventListener("click", () => onEditNote(_this));
+    actionsNote.addEventListener("click", (event) =>
+      handleActionNote(event, _this)
     );
     return this;
   },
