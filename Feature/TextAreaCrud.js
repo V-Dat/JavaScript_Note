@@ -222,5 +222,10 @@ function getIndexRowEdit(rowNode) {
 export function handleClickViewRow(event, app) {
   const rowNode = event.target.closest("tr");
   const rowData = getDataRowNode(rowNode, app);
+  setIndexActiveViewDetail(app, rowData.index);
   showModalRowDetail(rowData);
+}
+
+export function setIndexActiveViewDetail(app, index) {
+  app.indexActiveViewDetail = index;
 }
