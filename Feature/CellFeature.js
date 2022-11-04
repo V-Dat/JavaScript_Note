@@ -18,44 +18,25 @@ import {
 export let buttonFeatureActive = BUTTON_FEATURE.ERASER;
 
 export function handleLeftClickTable(event, app) {
-  const node = event.target;
-
-  //1. click on header
-  if (node.getAttribute("key") === "new-record") {
-    const rowNode = node.closest("tr");
-
-    if (node.getAttribute("type") === "save") {
-      handleSaveRecord(rowNode, app);
-    } else if (node.getAttribute("type") === "clear") {
-      unActiveButtonEraserNewNode(rowNode);
-      unActiveButtonCreate(rowNode);
-      handleResetInput();
-    }
-
-    return;
+  const target = event.target;
+  const isClickOnCell = checkIsClickOnCell(target);
+  if (isClickOnCell) {
+    // 1 click on cell
+    return handleClickOnCell(event);
   }
 
-  // 2. click on row
-  if (Number(node.getAttribute("key")) >= 0) {
-    const className = node.getAttribute("class");
-    if (!className) return;
-    if (className.includes("save")) {
-      handleSaveAfterEdit(event, app);
-      highlightNode($("body"));
-    } else if (className.includes("eraser")) {
-      handleClickEraser(event, app);
-    } else if (className.includes("edit")) {
-      handleEditRow(event, app);
-    } else if (className.includes("undo")) {
-      handleClickUndo(event, app);
-    } else if (className.includes("view-detail")) {
-      handleClickViewRow(event, app);
-    } else {
-      handleClickOnRow(event, node);
-    }
+  const node = target.closest("img"); // img as a button
+  const rowNode = node.closest("tr");
+  const isHeaderFeature = checkIsHeaderFeature(rowNode);
+  if (isHeaderFeature) {
+    //2. click on header button feature
+    handleClickHeaderFeature(target, rowNode, app);
+  } else {
+    //3. click on row button feature
+    handleClickRowFeature(rowNode, app, target);
   }
 }
-function handleClickOnRow(event) {
+function handleClickOnCell(event) {
   const highlighttNode = getNodeForHighlight(event);
   const targetNode = event.target;
 
@@ -144,4 +125,45 @@ function highlightRow() {
 
 function checkIsHighlight(targetNode) {
   return targetNode.style.backgroundColor !== "";
+}
+
+function checkIsHeaderFeature(rowNode) {
+  return rowNode.classList.contains("crud-group");
+}
+function checkIsClickOnCell(target) {
+  const node = target.closest("img");
+  return !node;
+}
+function handleClickHeaderFeature(node, rowNode, app) {
+  if (
+    node.getAttribute("key") === "new-record" &&
+    node.getAttribute("type") === "save"
+  ) {
+    handleSaveRecord(rowNode, app);
+  } else if (
+    node.getAttribute("key") === "new-record" &&
+    node.getAttribute("type") === "clear"
+  ) {
+    unActiveButtonEraserNewNode(rowNode);
+    unActiveButtonCreate(rowNode);
+    handleResetInput();
+  }
+}
+
+function handleClickRowFeature(rowNode, app, node) {
+  const className = node.getAttribute("class");
+  if (!className && !Number(node.getAttribute("key")) >= 0) return;
+
+  if (className.includes("save")) {
+    handleSaveAfterEdit(rowNode, app);
+    highlightNode($("body"));
+  } else if (className.includes("eraser")) {
+    handleClickEraser(rowNode, app);
+  } else if (className.includes("edit")) {
+    handleEditRow(rowNode, app);
+  } else if (className.includes("undo")) {
+    handleClickUndo(rowNode, app);
+  } else if (className.includes("view-detail")) {
+    handleClickViewRow(rowNode, app);
+  }
 }

@@ -25,9 +25,8 @@ import {
   getRowDataActiveViewDetail,
 } from "./ModalRowDetail.js";
 
-const textAreaGroup = $$("textarea");
-
 function getValueTextArea() {
+  const textAreaGroup = $$(".crud-group textarea");
   const dataAreaInput = {};
   textAreaGroup.forEach((item) => {
     dataAreaInput[item.dataset.key] = item.value;
@@ -36,6 +35,7 @@ function getValueTextArea() {
 }
 
 export function handleResetInput() {
+  const textAreaGroup = $$(".crud-group textarea");
   for (let elem of textAreaGroup) {
     elem.value = "";
   }
@@ -69,8 +69,7 @@ export function handleSaveRecord(rowNode, app) {
   app.render();
 }
 
-export function handleClickEraser(event, app) {
-  const rowNode = event.target.closest("tr");
+export function handleClickEraser(rowNode, app) {
   if (rowNode && rowNode.getAttribute("isedit") !== "true") {
     handleDeleteRow(app, rowNode);
   } else {
@@ -94,8 +93,7 @@ export function handleEraserValueInTextArea(rowNode) {
   }
   textAreaGroup[0].focus();
 }
-export function handleSaveAfterEdit(event, app) {
-  const rowNode = event.target.closest("tr");
+export function handleSaveAfterEdit(rowNode, app) {
   const isEdit = rowNode.getAttribute("isedit");
   if (isEdit === "false" || isEdit === null) return;
 
@@ -118,8 +116,7 @@ export function handleSaveAfterEdit(event, app) {
   activeButtonDelete(rowNode);
   unActiveButtonUndo(rowNode);
 }
-export function handleEditRow(event, app) {
-  const rowNode = event.target.closest("tr");
+export function handleEditRow(rowNode, app) {
   const isEdit = rowNode.getAttribute("isedit");
   if (isEdit === "true") return;
 
@@ -133,23 +130,9 @@ export function handleEditRow(event, app) {
   activeButtonUndo(rowNode);
   activeButtonEraserInput(rowNode); // active button eraser => auto hide button delete
 
-  const columnsData = rowNode.querySelectorAll(".column-data");
-  rowNode.setAttribute("isedit", true);
-  const rowData = getRowDataActiveViewDetail(app); // row data in json file
-  console.log(111, rowNode);
-  console.log(222, rowData);
-
-  for (let i = 0; i < columnsData.length; i++) {
-    const tdNode = rowNode.querySelector(
-      `td[data-key=${columnsData[i].dataset.key}]`
-    );
-    tdNode.innerHTML = `<textarea>${
-      rowData[columnsData[i].dataset.key]
-    }</textarea>`;
-  }
+  replaceNodeWithTextareaNode(rowNode, app);
 }
-export function handleClickUndo(event, app) {
-  const rowNode = event.target.closest("tr");
+export function handleClickUndo(rowNode, app) {
   const isEdit = rowNode.getAttribute("isedit");
   if (isEdit === "false" || isEdit === null) return;
 
@@ -227,8 +210,7 @@ function getIndexRowEdit(rowNode) {
   return rowNode.dataset.key;
 }
 
-export function handleClickViewRow(event, app) {
-  const rowNode = event.target.closest("tr");
+export function handleClickViewRow(rowNode, app) {
   const rowData = getDataRowNode(rowNode, app);
   setactiveRow(app, rowData.index);
   showModalRowDetail(rowData);
@@ -236,4 +218,19 @@ export function handleClickViewRow(event, app) {
 
 export function setactiveRow(app, index) {
   app.activeRow = index;
+}
+
+function replaceNodeWithTextareaNode(rowNode, app) {
+  const columnsData = rowNode.querySelectorAll(".column-data");
+  rowNode.setAttribute("isedit", true);
+  const rowData = getRowDataActiveViewDetail(app); // row data in json file
+
+  for (let i = 0; i < columnsData.length; i++) {
+    const tdNode = rowNode.querySelector(
+      `td[data-key=${columnsData[i].dataset.key}]`
+    );
+    tdNode.innerHTML = `<textarea>${
+      rowData[columnsData[i].dataset.key]
+    }</textarea>`;
+  }
 }
