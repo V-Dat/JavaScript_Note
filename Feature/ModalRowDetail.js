@@ -140,7 +140,7 @@ export function handleActionNote(event, app) {
       clearNote(app);
       break;
     case "action__preview":
-      console.log(3);
+      console.log("in developing");
       break;
   }
 }
@@ -155,17 +155,16 @@ function checkIsEditNote() {
   const editNode = $(".modal-row-detail .modal-row-detail-note");
   return editNode.style.display === "block";
 }
+function enableButtonWhenFinishedEdit() {
+  const buttonEditNote = $(".button-edit-note");
+  const buttonCloseModalRowDetail = $(".button-close-modal-row-detail");
+  buttonEditNote.src = "./Assets/Icons/comment-active-icon.svg";
+  buttonCloseModalRowDetail.src = "./Assets/Icons/home-active-icon.svg";
+}
 
 function disableButtonWhenEditing() {
   const buttonEditNote = $(".button-edit-note");
   const buttonCloseModalRowDetail = $(".button-close-modal-row-detail");
-  buttonEditNote.src = "./Assets/Icons/comment-unactive-icon.svg"; // button edit disable
-  buttonCloseModalRowDetail.src = "./Assets/Icons/home-unactive-icon.svg"; // change color button edit
-}
-
-function enableButtonWhenFinishedEdit() {
-  const buttonEditNote = $(".button-edit-note");
-  const buttonCloseModalRowDetail = $(".button-close-modal-row-detail");
-  buttonEditNote.src = "./Assets/Icons/comment-active-icon.svg"; // button edit disable
-  buttonCloseModalRowDetail.src = "./Assets/Icons/home-active-icon.svg"; // change color button edit
+  buttonEditNote.src = "./Assets/Icons/comment-unactive-icon.svg";
+  buttonCloseModalRowDetail.src = "./Assets/Icons/home-unactive-icon.svg";
 }
