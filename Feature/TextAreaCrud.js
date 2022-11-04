@@ -15,12 +15,15 @@ import {
   activeButtonDelete,
   unActiveButtonUndo,
   activeAllButtonEdit,
-  decodeInnerHTML,
   highlightNode,
   activeButtonEditContent,
   activeButtonSaveEditContent,
 } from "./Util.js";
-import { showModalRowDetail, getDataRowNode } from "./ModalRowDetail.js";
+import {
+  showModalRowDetail,
+  getDataRowNode,
+  getRowDataActiveViewDetail,
+} from "./ModalRowDetail.js";
 
 const textAreaGroup = $$("textarea");
 
@@ -115,11 +118,12 @@ export function handleSaveAfterEdit(event, app) {
   activeButtonDelete(rowNode);
   unActiveButtonUndo(rowNode);
 }
-export function handleEditRow(event) {
+export function handleEditRow(event, app) {
   const rowNode = event.target.closest("tr");
   const isEdit = rowNode.getAttribute("isedit");
   if (isEdit === "true") return;
 
+  app.activeRow = rowNode.dataset.key;
   activeAllButtonEdit();
   unActiveButtonEdit(rowNode);
 
@@ -131,11 +135,17 @@ export function handleEditRow(event) {
 
   const columnsData = rowNode.querySelectorAll(".column-data");
   rowNode.setAttribute("isedit", true);
+  const rowData = getRowDataActiveViewDetail(app); // row data in json file
+  console.log(111, rowNode);
+  console.log(222, rowData);
 
   for (let i = 0; i < columnsData.length; i++) {
-    const newNode = document.createElement("textarea");
-    newNode.value = decodeInnerHTML(columnsData[i].innerHTML);
-    columnsData[i].replaceChildren(newNode);
+    const tdNode = rowNode.querySelector(
+      `td[data-key=${columnsData[i].dataset.key}]`
+    );
+    tdNode.innerHTML = `<textarea>${
+      rowData[columnsData[i].dataset.key]
+    }</textarea>`;
   }
 }
 export function handleClickUndo(event, app) {
@@ -176,7 +186,6 @@ function resetEditRow() {
 export function handleEditMainContent(JsonData) {
   const mainContent = $(".main-content");
   const isEditing = mainContent.classList.contains("edit");
-  const content = mainContent.innerHTML;
 
   if (isEditing) {
     mainContent.classList.remove("edit");
@@ -187,7 +196,7 @@ export function handleEditMainContent(JsonData) {
     activeButtonEditContent($(".button-edit-main-content"));
   } else {
     mainContent.classList.add("edit");
-    mainContent.innerHTML = `<textarea style="width: 95%; max-width: 95%">${content}</textarea>`;
+    mainContent.innerHTML = `<textarea style="width: 95%; max-width: 95%">${JsonData.mainContent}</textarea>`;
     activeButtonSaveEditContent($(".button-edit-main-content"));
   }
 }
@@ -221,10 +230,10 @@ function getIndexRowEdit(rowNode) {
 export function handleClickViewRow(event, app) {
   const rowNode = event.target.closest("tr");
   const rowData = getDataRowNode(rowNode, app);
-  setIndexActiveViewDetail(app, rowData.index);
+  setactiveRow(app, rowData.index);
   showModalRowDetail(rowData);
 }
 
-export function setIndexActiveViewDetail(app, index) {
-  app.indexActiveViewDetail = index;
+export function setactiveRow(app, index) {
+  app.activeRow = index;
 }

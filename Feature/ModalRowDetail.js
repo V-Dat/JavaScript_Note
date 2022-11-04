@@ -2,7 +2,7 @@ import {
   limitHeightAndWidthBody,
   unlimitHeightAndWidthBody,
 } from "./ModalPlaygrounds.js";
-import { $ } from "./Util.js";
+import { $, highlightNode } from "./Util.js";
 
 export function processDataModalDetail(rowData) {
   if (!rowData) return;
@@ -31,10 +31,10 @@ export function processDataModalDetail(rowData) {
 
 export function showModalRowDetail(rowData) {
   limitHeightAndWidthBody();
-  embedDataModalDetail(rowData);
   showNodeModalRowDetail();
   showButtonCloseModalRowDetail();
   showButtonEditNote();
+  embedDataModalDetail(rowData);
 }
 
 function showButtonCloseModalRowDetail() {
@@ -66,6 +66,7 @@ function hideButtonEditNote() {
 function embedDataModalDetail(rowData) {
   const embed = $(".modal-row-detail-content");
   embed.innerHTML = processDataModalDetail(rowData);
+  highlightNode(embed);
 }
 
 function showNodeModalRowDetail() {
@@ -95,7 +96,7 @@ export function hideEditNote() {
 }
 export function getRowDataActiveViewDetail(app) {
   const rowData = app.JsonData.methodHelper.find(
-    (row) => row.index === +app.indexActiveViewDetail
+    (row) => row.index === +app.activeRow
   );
   return rowData;
 }

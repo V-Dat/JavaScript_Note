@@ -60,7 +60,7 @@ const app = {
   editState: [],
   isFillAllCrudState: false,
   counterId: null,
-  indexActiveViewDetail: null,
+  activeRow: null,
   handler: function () {
     const _this = this;
     downloadButton.addEventListener("click", (event) => {
