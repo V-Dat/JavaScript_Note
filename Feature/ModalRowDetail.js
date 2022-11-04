@@ -47,6 +47,8 @@ function showButtonEditNote() {
 }
 
 export function hideModalRowDetail() {
+  const isEditing = checkIsEditNote();
+  if (isEditing) return;
   unlimitHeightAndWidthBody();
   hideButtonCloseModalRowDetail();
   hideNodeModalRowDetail();
@@ -81,16 +83,21 @@ export function hideNodeModalRowDetail() {
 }
 
 export function onEditNote(app) {
-  const editNode = $(".modal-row-detail .modal-row-detail-note");
-  if (editNode.style.display === "block") return;
-  editNode.style.display = "block";
+  const isEditing = checkIsEditNote();
+  if (isEditing) return;
+  disableButtonWhenEditing();
+  showEditNoteNode();
   const textareaNode = $(".modal-row-detail .modal-row-detail-note textarea");
   const rowData = getRowDataActiveViewDetail(app);
   textareaNode.value = rowData.note || "";
   textareaNode.scrollIntoView();
 }
 
-export function hideEditNote() {
+function showEditNoteNode() {
+  const editNode = $(".modal-row-detail .modal-row-detail-note");
+  editNode.style.display = "block";
+}
+export function hideEditNoteNode() {
   const editNode = $(".modal-row-detail .modal-row-detail-note");
   editNode.style.display = "none";
 }
@@ -124,8 +131,9 @@ export function handleActionNote(event, app) {
     case "action__send": {
       const rowData = saveRowData(app);
       if (!rowData) return;
-      hideEditNote();
+      hideEditNoteNode();
       embedDataModalDetail(rowData);
+      enableButtonWhenFinishedEdit();
       break;
     }
     case "action__clear":
@@ -141,4 +149,23 @@ export function getDataRowNode(rowNode, app) {
     (item) => item.index === +rowNode.dataset.key
   );
   return rowData;
+}
+
+function checkIsEditNote() {
+  const editNode = $(".modal-row-detail .modal-row-detail-note");
+  return editNode.style.display === "block";
+}
+
+function disableButtonWhenEditing() {
+  const buttonEditNote = $(".button-edit-note");
+  const buttonCloseModalRowDetail = $(".button-close-modal-row-detail");
+  buttonEditNote.src = "./Assets/Icons/comment-unactive-icon.svg"; // button edit disable
+  buttonCloseModalRowDetail.src = "./Assets/Icons/home-unactive-icon.svg"; // change color button edit
+}
+
+function enableButtonWhenFinishedEdit() {
+  const buttonEditNote = $(".button-edit-note");
+  const buttonCloseModalRowDetail = $(".button-close-modal-row-detail");
+  buttonEditNote.src = "./Assets/Icons/comment-active-icon.svg"; // button edit disable
+  buttonCloseModalRowDetail.src = "./Assets/Icons/home-active-icon.svg"; // change color button edit
 }
