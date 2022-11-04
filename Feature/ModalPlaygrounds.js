@@ -49,7 +49,7 @@ export function limitHeightAndWidthBody() {
 export function unlimitHeightAndWidthBody() {
   $(
     "body"
-  ).style.cssText = `width: auto ; height: auto; overflow:unset; margin: 0 78px`;
+  ).style.cssText = `width: auto ; height: auto; overflow:unset; padding: 0 78px`;
 }
 
 function changeImageActive(button, src) {
@@ -64,7 +64,7 @@ function changeImageDefault(button, src) {
 // the id of "embed" with https://stackblitz.com/edit/js-vhav1j?file=index.js embedded in an iframe.
 export function embedProject() {
   if (StackBlitzSDK) {
-    StackBlitzSDK.embedProjectId("embed", "js-vhav1j", {
+    StackBlitzSDK.embedProjectId("embed-stackblitz", "js-vhav1j", {
       openFile: "index.js",
     });
   }

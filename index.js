@@ -41,7 +41,8 @@ import {
   renderHeading,
 } from "./Feature/renderHeading.js";
 import { onChangeReferanceContent } from "./Feature/Referance.js";
-const downloadButton = $(".features-localstorage");
+import { onClickSwitchDoc } from "./Feature/SwitchDocument.js";
+const buttonFeatureLocalStorage = $(".features-localstorage");
 const inputFile = $("#reading-file");
 const table = $("#table");
 const buttonEditmainContent = $(".button-edit-main-content");
@@ -55,6 +56,7 @@ const buttonEditHeadingMethod = $(".heading-method-group .btn-edit");
 const buttonEditReferance = $(".referance-section .btn-edit");
 const buttonEditNote = $(".button-edit-note");
 const actionsNote = $(".note-block .actions");
+const buttonSwitchDoc = $(".switch-document-group .btn-switch");
 const app = {
   JsonData: { mainContent: "", methodHelper: [] },
   editState: [],
@@ -63,7 +65,7 @@ const app = {
   activeRow: null,
   handler: function () {
     const _this = this;
-    downloadButton.addEventListener("click", (event) => {
+    buttonFeatureLocalStorage.addEventListener("click", (event) => {
       handleClickFeaturesPlace(event, _this);
     });
 
@@ -101,6 +103,7 @@ const app = {
     actionsNote.addEventListener("click", (event) =>
       handleActionNote(event, _this)
     );
+    buttonSwitchDoc.addEventListener("click", onClickSwitchDoc);
     return this;
   },
 

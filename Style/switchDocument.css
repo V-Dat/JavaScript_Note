@@ -1,0 +1,21 @@
+.switch-document-group .btn-switch {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    z-index: 9000;
+}
+
+.switch-document-group .side-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 75%;
+    bottom: 0;
+    background-color: antiquewhite;
+    z-index: 8000;
+}
+.switch-document-group .side-bar__content {
+    position: absolute;
+    top: 6px;
+    left: 5%;
+}
