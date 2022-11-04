@@ -24,6 +24,7 @@ import {
   getDataRowNode,
   getRowDataActiveViewDetail,
 } from "./ModalRowDetail.js";
+import { toggleNode } from "./SwitchDocument.js";
 
 function getValueTextArea() {
   const textAreaGroup = $$(".crud-group textarea");
@@ -214,6 +215,7 @@ export function handleClickViewRow(rowNode, app) {
   const rowData = getDataRowNode(rowNode, app);
   setactiveRow(app, rowData.index);
   showModalRowDetail(rowData);
+  toggleNode($(".switch-document-group .btn-switch"));
 }
 
 export function setactiveRow(app, index) {

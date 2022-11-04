@@ -20,7 +20,7 @@ import {
 import {
   onChangeHeadingContent,
   onChangeHeadingMethod,
-} from "./renderHeading.js";
+} from "./RenderHeading.js";
 import { onChangeReferanceContent } from "./Referance.js";
 import { onClickSwitchDoc } from "./SwitchDocument.js";
 const buttonFeatureLocalStorage = $(".features-localstorage");
