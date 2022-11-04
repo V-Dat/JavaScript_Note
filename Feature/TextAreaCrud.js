@@ -143,15 +143,14 @@ export function handleClickUndo(event, app) {
   const isEdit = rowNode.getAttribute("isedit");
   if (isEdit === "false" || isEdit === null) return;
 
-  const indexOfRowEdit = getIndexRowEdit(rowNode);
-  const rowDataBeforeEdit = Object.values(
-    app.JsonData.methodHelper[indexOfRowEdit]
-  );
+  const rowData = getDataRowNode(rowNode, app);
+
   const columnsData = rowNode.querySelectorAll(".column-data");
 
   for (let i = 0; i < columnsData.length; i++) {
     const textAreaNode = columnsData[i].querySelector("textarea");
-    textAreaNode.value = rowDataBeforeEdit[i];
+    const textAreaValue = rowData[columnsData[i].dataset.key];
+    textAreaNode.value = textAreaValue;
   }
 }
 

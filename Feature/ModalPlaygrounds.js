@@ -49,7 +49,7 @@ export function limitHeightAndWidthBody() {
 export function unlimitHeightAndWidthBody() {
   $(
     "body"
-  ).style.cssText = `width: auto ; height: auto; overflow:unset; margin: 8px`;
+  ).style.cssText = `width: auto ; height: auto; overflow:unset; margin: 0 78px`;
 }
 
 function changeImageActive(button, src) {

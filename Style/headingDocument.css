@@ -1,4 +1,5 @@
 .heading-method-group {
+    min-height: 50px;
     position: relative;
 }
 .heading-method-group .btn-edit,
@@ -17,22 +18,20 @@
     resize: vertical;
 }
 
+.heading-method-group .heading-text,
 .content-notes .heading-text {
-    min-height: 33px;
     text-align: unset;
 }
+.content-notes .heading-text {
+    min-height: 33px;
+}
 
+.heading-method-group .heading-text a,
 .content-notes h2.heading-text a {
     text-align: center;
     display: block;
 }
 
-.heading-method-group .heading-text {
-    min-height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .heading-method-group .btn-edit {
     top: 0 !important;
 }
