@@ -18,23 +18,47 @@
 
 <body>
   <!-- Subject -->
-  <section class="heading-method-group" >
-    <h2 class="heading-text" >
+  <section class="heading-method-group">
+    <h2 class="heading-text">
       <a>Method Helper</a>
     </h2>
-    <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px"/>
-</section>
+    <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px" />
+  </section>
 
   <!-- Github cover -->
   <a class="github-cover" href="https://github.com/V-Dat/JavaScript_Note" aria-label="View source on Github">
     <img src="./Assets/Icons//github-icon.svg" alt="github-cover">
   </a>
 
+  <!-- Switch Document -->
+  <section class="switch-document-group">
+    <img class="btn-switch btn-edit" src="./Assets/Icons/menu-icon.svg" width="30px" height="30px" />
+    <aside class="side-bar" style="display: none;">
+      <div class="side-bar__content" >
+          <h2>Chose Document</h2>
+          <div class="embed" >
+              <div>
+                <input type="radio" id="huey" name="drone" value="huey" checked>
+                <label for="huey">Huey</label>
+              </div>
+              <div>
+                <input type="radio" id="dewey" name="drone" value="dewey">
+                <label for="dewey">Dewey</label>
+              </div>
+              <div>
+                <input type="radio" id="louie" name="drone" value="louie">
+                <label for="louie">Louie</label>
+              </div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
   <!-- Stackblitz modal -->
   <img class="open-stackblitz" src="./Assets/Icons/thunder-active-icon.svg" title="open stackblitz" />
   <div class="modal modal-stackblitz" style="display: none">
     <div class="modal-content modal-stackblitz-content">
-      <div id="embed">
+      <div id="embed-stackblitz">
         <p>Embed will go here</p>
       </div>
     </div>
@@ -44,28 +68,33 @@
   <img class="open-javascript-playgrounds" src="./Assets/Icons/Js-icon.svg" title="open js playgrounds" />
   <div class="modal modal-JSPlaygrounds" style="display: none">
     <div class="modal-content modal-JSPlaygrounds-content">
-        <iframe src="about:blank"></iframe>
+      <iframe src="about:blank"></iframe>
     </div>
   </div>
 
-    <!-- Modal View Row Detail -->
-    <img class="button-close-modal-row-detail" src="./Assets/Icons/home-active-icon.svg" title="go back to homepage" style="display:none"/>
+  <!-- Modal View Row Detail -->
+  <img class="button-close-modal-row-detail" src="./Assets/Icons/home-active-icon.svg" title="go back to homepage"
+    style="display:none" />
 
-    <img class="button-edit-note" src="./Assets/Icons/comment-active-icon.svg" title="go back to homepage" style="display:none"/>
+  <img class="button-edit-note" src="./Assets/Icons/comment-active-icon.svg" title="go back to homepage"
+    style="display:none" />
 
-    <div class="modal modal-row-detail" style="display: none">
-      <div class="modal-content modal-row-detail-content">
-      </div>
-      <div class="modal-row-detail-note note-block" style="display: none">
-        <h2 class="take-note-title">Take Note</h2>
-        <textarea ></textarea>
-        <div class="actions">
-          <img class="action__send" type="action__send"  src="./Assets/Icons/create-active-icon.svg" width="45px" height="45px"/>
-          <img class="action__clear" type="action__clear"  src="./Assets/Icons/eraser-active-icon.svg" width="45px" height="45px"/>
-          <img class="action__preview" type="action__preview"  src="./Assets/Icons/preview-icon.svg" width="45px" height="45px"/>
-        </div>
+  <div class="modal modal-row-detail" style="display: none">
+    <div class="modal-content modal-row-detail-content">
+    </div>
+    <div class="modal-row-detail-note note-block" style="display: none">
+      <h2 class="take-note-title">Take Note</h2>
+      <textarea></textarea>
+      <div class="actions">
+        <img class="action__send" type="action__send" src="./Assets/Icons/create-active-icon.svg" width="45px"
+          height="45px" />
+        <img class="action__clear" type="action__clear" src="./Assets/Icons/eraser-active-icon.svg" width="45px"
+          height="45px" />
+        <img class="action__preview" type="action__preview" src="./Assets/Icons/preview-icon.svg" width="45px"
+          height="45px" />
       </div>
     </div>
+  </div>
 
   <!-- Table -->
   <div class="table-block" style="overflow-x:auto;">
@@ -127,20 +156,21 @@
   <!-- arrow group -->
   <div class="arrow-features" style="display:none">
     <img class="up" src="./Assets/Icons/arrow-up-icon.svg" width="40px" height="40px">
-    <img class="down" src="./Assets/Icons/arrow-up-icon.svg" width="40px" height="40px" style="transform:rotate(180deg)">
+    <img class="down" src="./Assets/Icons/arrow-up-icon.svg" width="40px" height="40px"
+      style="transform:rotate(180deg)">
   </div>
 
   <!-- content  group -->
   <section class="content-notes">
-    <h2 class="heading-text"  >
+    <h2 class="heading-text">
       <a>Content Summary</a>
     </h2>
-    <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px"/>
+    <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px" />
 
     <div class="main-content-group">
-    <div class="main-content">....</div>
-    <img class="button-edit-main-content" src="./Assets/Icons/pen-icon.svg" title="edit content" width="32px"
-      height="32px"></img>
+      <div class="main-content">....</div>
+      <img class="button-edit-main-content" src="./Assets/Icons/pen-icon.svg" title="edit content" width="32px"
+        height="32px"></img>
     </div>
 
   </section>
@@ -148,22 +178,24 @@
   <!-- feature localstorage -->
   <section class="features-localstorage">
 
-      <form class="upload-file-section">
-        <label for="reading-file"><img src="./Assets/Icons/upload-icon.svg" width="30px" height="30px" /></label>
-        <input id="reading-file" type="file" style="display:none">
-      </form>
+    <form class="upload-file-section">
+      <label for="reading-file"><img src="./Assets/Icons/upload-icon.svg" width="30px" height="30px" /></label>
+      <input id="reading-file" type="file" style="display:none">
+    </form>
 
-      <img type="button-download" class="button-download" src="./Assets/Icons/download-icon.svg"  title="Save As Json" />
-      <img type="button-save-local-storage" class="button-save-local-storage" src="./Assets/Icons/save-icon.svg"  title="Save Local Storage"/>
-      <span class="timmer">0</span>
-      <img type="button-cleanup-local-storage" class="button-cleanup-local-storage" src="./Assets/Icons/clear-local-storage-icon.svg"  title="Clean Local Storage"/>
-    </section>
+    <img type="button-download" class="button-download" src="./Assets/Icons/download-icon.svg" title="Save As Json" />
+    <img type="button-save-local-storage" class="button-save-local-storage" src="./Assets/Icons/save-icon.svg"
+      title="Save Local Storage" />
+    <span class="timmer">0</span>
+    <img type="button-cleanup-local-storage" class="button-cleanup-local-storage"
+      src="./Assets/Icons/clear-local-storage-icon.svg" title="Clean Local Storage" />
+  </section>
 
 
   <!-- Referance -->
   <section class="referance-section">
     <h3>Referance :</h3>
-    <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px"/>
+    <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px" />
     <div class="referance-content">
       <ol>
         <li>

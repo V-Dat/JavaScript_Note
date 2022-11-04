@@ -2,6 +2,7 @@
     min-height: 50px;
     position: relative;
 }
+
 .heading-method-group .btn-edit,
 .content-notes .btn-edit {
     position: absolute;
@@ -16,6 +17,10 @@
     min-height: 50px;
     min-width: 60%;
     resize: vertical;
+}
+.heading-method-group .heading-text {
+    margin: 0;
+    padding: 18px 0;
 }
 
 .heading-method-group .heading-text,
@@ -33,5 +38,5 @@
 }
 
 .heading-method-group .btn-edit {
-    top: 0 !important;
+    top: 8px !important;
 }
