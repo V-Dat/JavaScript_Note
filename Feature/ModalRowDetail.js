@@ -2,6 +2,7 @@ import {
   limitHeightAndWidthBody,
   unlimitHeightAndWidthBody,
 } from "./ModalPlaygrounds.js";
+import { toggleNode } from "./SwitchDocument.js";
 import { $, highlightNode } from "./Util.js";
 
 export function processDataModalDetail(rowData) {
@@ -53,6 +54,7 @@ export function hideModalRowDetail() {
   hideButtonCloseModalRowDetail();
   hideNodeModalRowDetail();
   hideButtonEditNote();
+  toggleNode($(".switch-document-group .btn-switch"));
 }
 
 export function hideButtonCloseModalRowDetail() {
