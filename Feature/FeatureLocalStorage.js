@@ -35,7 +35,7 @@ export function readData() {
       `%c ${getCurrentDataTime()} - read data from default file`,
       "background: green; color: white"
     );
-    return readTextFile("./JsonData.json");
+    return readTextFile("./DB/JsonData.json");
   }
 
   console.log(
