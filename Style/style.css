@@ -17,7 +17,7 @@ a.github-cover {
 }
 
 a:hover,
-table img:hover,
+.table-block table img:hover,
 button:hover,
 .button-edit-main-content:hover {
     cursor: pointer;
@@ -41,10 +41,21 @@ button:hover,
 }
 
 /* over-ride */
-.hljs-comment {
-    color: #bda6a1 !important;
-}
 
 a:hover {
     color: red !important;
+}
+
+/* table */
+table.rs-css,
+table.rs-css th,
+table.rs-css td {
+    border: 2px solid gray;
+    text-align: center;
+}
+
+table.rs-css td,
+table.rs-css th {
+    padding-right: 12px;
+    padding-left: 12px;
 }

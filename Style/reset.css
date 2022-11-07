@@ -2,7 +2,8 @@ div,
 span,
 p,
 pre,
-a {
+a,
+ol {
     margin: 0;
     padding: 0;
     border: 0;
@@ -20,10 +21,6 @@ h4 {
     margin: 0;
 }
 
-pre code.hljs {
-    padding: 0 15px 10px 10px !important;
-}
-
 html {
     font-size: 62.5%;
 }
@@ -34,4 +31,16 @@ h2 {
 a {
     text-decoration: none;
     color: rgb(41, 38, 223);
+}
+
+details :hover {
+    cursor: pointer;
+}
+
+details ol {
+    padding: 10px 0;
+    margin-left: 50px;
+}
+details {
+    padding-top: 10px;
 }

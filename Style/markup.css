@@ -1,0 +1,62 @@
+pre code.hljs {
+    padding: 0 15px 10px 10px !important;
+}
+.hljs-comment {
+    color: #bda6a1 !important;
+}
+
+pre.js::before {
+    content: "JavaScript";
+    background-color: #ffe000;
+    color: #000;
+    position: absolute;
+    font-weight: bold;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    top: 0px;
+    right: 8px;
+}
+
+pre.js {
+    position: relative;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* color */
+.white {
+    color: white;
+}
+.blue {
+    color: blue;
+}
+.green {
+    color: green;
+}
+.yellow {
+    color: yellow;
+}
+.orange {
+    color: orange;
+}
+.pink {
+    color: pink;
+}
+.gray {
+    color: gray;
+}
+.red {
+    color: red;
+}
+
+.purple {
+    color: purple;
+}
+
+.navy {
+    color: navy;
+}
