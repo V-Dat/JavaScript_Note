@@ -31,22 +31,22 @@
     vertical-align: middle;
 }
 
-.table-block .column-stt {
+.table-block .column-1 {
     text-align: center;
     width: 30px;
 }
 
-.table-block .column-method {
+.table-block .column-2 {
     min-width: 260px;
 }
 
-.table-block .column-syntax {
+.table-block .column-3 {
     min-width: 420px;
 }
-.table-block .column-involved {
+.table-block .column-4 {
     min-width: 420px;
 }
-.table-block .column-description {
+.table-block .column-5 {
     min-width: 420px;
     width: 600px;
 }
@@ -115,6 +115,6 @@
     margin-bottom: 3px;
 }
 
-.table-block table tbody tr td.column-method > * {
+.table-block table tbody tr td.column-2 > * {
     word-break: break-all;
 }

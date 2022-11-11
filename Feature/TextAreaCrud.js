@@ -186,11 +186,10 @@ export function handleEditMainContent(JsonData) {
 }
 
 export function handleInputCrudTextArea(app) {
-  const crudMethod = $(".crud-group .column-method textarea").value.length;
-  const crudSyntax = $(".crud-group .column-syntax textarea").value.length;
-  const crudDescription = $(".crud-group .column-description textarea").value
-    .length;
-  const crudInvolved = $(".crud-group .column-involved textarea").value.length;
+  const crudMethod = $(".crud-group .column-2 textarea").value.length;
+  const crudSyntax = $(".crud-group .column-3 textarea").value.length;
+  const crudDescription = $(".crud-group .column-5 textarea").value.length;
+  const crudInvolved = $(".crud-group .column-4 textarea").value.length;
   const rowNode = $(".crud-group");
   if (crudMethod && crudSyntax && crudDescription && crudInvolved) {
     activeButtonCreate(rowNode);

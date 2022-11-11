@@ -1,13 +1,1 @@
-{
-    "mainContent": "adasdad",
-    "methodHelper": [
-        {
-            "method": "asd",
-            "syntax": "ad",
-            "involved": "asd",
-            "description": "asdasdasda",
-            "index": 0
-        }
-    ],
-    "headingMethodHelper": "      <a>Method Helper</a>\n    das"
-}
+{"mainContent":"adasdad","methodHelper":[{"method":"asd","syntax":"ad","involved":"asd","description":"asdasdasda","index":0}],"headingMethodHelper":"      <a>Method Helper</a>"}
