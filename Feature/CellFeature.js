@@ -25,7 +25,7 @@ export function handleClickOnTable(event, app) {
   const isClickOnCell = event.target.closest(`td[type="cell"]`);
   const cellNode = isClickOnCell;
   if (isClickOnCell) {
-    handlePaintTable(cellNode, app);
+    handlePaintTable(event, cellNode, app);
   } else if (isClickOnFeature) {
     console.log("kkkkkkkkkkk");
   }

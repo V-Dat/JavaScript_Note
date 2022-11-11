@@ -3,7 +3,15 @@ import { getRowData } from "../ModalRowDetail.js";
 import { $ } from "../Util.js";
 import { saveStyleToJsonData } from "./SaveStyle.js";
 
-export function handlePaintTable(cellNode, app) {
+export function handlePaintTable(event, cellNode, app) {
+  const paintWithHotKey = event.shiftKey || event.altKey || event.ctrlKey;
+
+  paintWithHotKey
+    ? processPaintWithHotKey(cellNode, app)
+    : processPaint(cellNode, app);
+}
+
+function processPaint(cellNode, app) {
   const feature = getFeaturePaint();
   switch (feature) {
     case FEATURE.MAKE_UP_ROW:
@@ -13,20 +21,22 @@ export function handlePaintTable(cellNode, app) {
       processMakeUpCell(cellNode, app);
       break;
     case FEATURE.REMOVE_MAKE_UP_CELL:
+      processRemoveMakeUpCell(cellNode, app);
       break;
   }
+}
 
-  // if (!highlighttNode) return;
-  // const isHighlight = checkIsHighlight(targetNode);
-
-  // if (
-  //   (isHighlight && (event.shiftKey || event.altKey || event.ctrlKey)) ||
-  //   buttonFeatureActive === BUTTON_FEATURE.ERASER
-  // ) {
-  //   removeHighlight(highlighttNode, app);
-  // } else {
-  //   processMakeUpRow(highlighttNode, app);
-  // }
+function processPaintWithHotKey(cellNode, app) {
+  const feature = getFeaturePaint();
+  switch (feature) {
+    case FEATURE.MAKE_UP_ROW:
+      processRemoveMakeUpRow(cellNode, app);
+      break;
+    case FEATURE.MAKE_UP_CELL:
+    case FEATURE.REMOVE_MAKE_UP_CELL:
+      processRemoveMakeUpCell(cellNode, app);
+      break;
+  }
 }
 
 function processMakeUpRow(cellNode, app) {
@@ -48,38 +58,25 @@ function processMakeUpCell(cellNode, app) {
   saveStyleToJsonData(cellNode, cellData, backgroundColor);
 }
 
-function getFeaturePaint() {
-  const feature = $(".button-feature-group button[active]");
-  return feature.getAttribute("type");
-}
-function checkIsHighlight(targetNode) {
-  return targetNode.style.backgroundColor !== "";
-}
-
-const FEATURE = {
-  MAKE_UP_ROW: "make-up-row",
-  MAKE_UP_CELL: "make-up-cell",
-  REMOVE_MAKE_UP_CELL: "remove-make-up-cell",
-};
-
-function randomColor() {
-  return "hsl(" + 360 * Math.random() + ",50%,50%)";
+function processRemoveMakeUpCell(cellNode, app) {
+  const background = "";
+  const cellData = getCellData(cellNode, app);
+  cellNode.style.background = background;
+  saveStyleToJsonData(cellData, background);
 }
 
-function removeHighlight(targetNode, app) {
-  const rowData = getRowData(app);
+function processRemoveMakeUpRow(cellNode, app) {
+  const background = "";
+  const rowNode = cellNode.closest("tr");
 
-  if (buttonFeatureActive === BUTTON_FEATURE.ROW) {
-    for (const cell of targetNode.children) {
-      cell.style.backgroundColor = "";
-      saveStyleToJsonData(cell, rowData, "");
-    }
-  } else {
-    targetNode.style.backgroundColor = "";
-    saveStyleToJsonData(targetNode, rowData, "");
+  for (const cell of rowNode.children) {
+    const cellData = getCellData(cellNode, app);
+    cell.style.background = background;
+    saveStyleToJsonData(cellData, background);
   }
 }
-export function getCellData(cellNode, app) {
+
+function getCellData(cellNode, app) {
   const rowIndex = cellNode.dataset.rowIndex;
   switch (rowIndex) {
     case "0": {
@@ -103,4 +100,21 @@ export function getCellData(cellNode, app) {
       return rowData[cellNode.dataset.columnIndex];
     }
   }
+}
+
+const FEATURE = {
+  MAKE_UP_ROW: "make-up-row",
+  MAKE_UP_CELL: "make-up-cell",
+  REMOVE_MAKE_UP_CELL: "remove-make-up-cell",
+};
+
+function randomColor() {
+  return "hsl(" + 360 * Math.random() + ",50%,50%)";
+}
+function getFeaturePaint() {
+  const feature = $(".button-feature-group button[active]");
+  return feature.getAttribute("type");
+}
+function checkIsHighlight(targetNode) {
+  return targetNode.style.backgroundColor !== "";
 }
