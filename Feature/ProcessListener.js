@@ -43,6 +43,7 @@ export function processListener() {
   table.addEventListener("click", (event) =>
     handleLeftClickTable(event, _this)
   );
+
   buttonFeature.addEventListener("click", selectFeatureHighlight);
   window.addEventListener("beforeunload", AlertAfterClose);
 

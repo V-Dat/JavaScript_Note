@@ -36,6 +36,7 @@ export function handleLeftClickTable(event, app) {
     handleClickRowFeature(rowNode, app, target);
   }
 }
+
 function handleClickOnCell(event) {
   const highlighttNode = getNodeForHighlight(event);
   const targetNode = event.target;

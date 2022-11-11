@@ -31,27 +31,27 @@
     vertical-align: middle;
 }
 
-.table-block .column-1 {
+.table-block .cell column-1 {
     text-align: center;
     width: 30px;
 }
 
-.table-block .column-2 {
+.table-block .cell column-2 {
     min-width: 260px;
 }
 
-.table-block .column-3 {
+.table-block .cell column-3 {
     min-width: 420px;
 }
-.table-block .column-4 {
+.table-block .cell column-4 {
     min-width: 420px;
 }
-.table-block .column-5 {
+.table-block .cell column-5 {
     min-width: 420px;
     width: 600px;
 }
 
-.table-block .column-actions {
+.table-block .cell column-6 {
     min-width: 80px;
     width: 80px;
 }
@@ -115,6 +115,6 @@
     margin-bottom: 3px;
 }
 
-.table-block table tbody tr td.column-2 > * {
+.table-block table tbody tr td.cell column-2 > * {
     word-break: break-all;
 }

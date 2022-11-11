@@ -7,19 +7,19 @@ function processRow(data) {
   let tableRow = "";
   data.forEach((row) => {
     tableRow += `<tr data-key=${+row.index}>
-    <td class="column-1" style="background-color:${
+    <td class="cell column-1" style="background-color:${
       row["column-1-bg"] || "color"
     }" >${row.index + 1}</td>
-    <td class="column-data column-2" data-key="method" style="background-color:${
+    <td class="column-data cell column-2" data-key="method" style="background-color:${
       row["column-2-bg"] || "color"
     }" >${row.method}</td>
-    <td class="column-data column-3" data-key="syntax" style="background-color:${
+    <td class="column-data cell column-3" data-key="syntax" style="background-color:${
       row["column-3-bg"] || "color"
     }" >${row.syntax}</td>
-    <td class="column-data column-4" data-key="involved" style="background-color:${
+    <td class="column-data cell column-4" data-key="involved" style="background-color:${
       row["column-4-bg"] || "color"
     }" >${row.involved}</td>
-    <td class="column-data column-5" data-key="description" style="background-color:${
+    <td class="column-data cell column-5" data-key="description" style="background-color:${
       row["column-5-bg"] || "color"
     }" >${row.description}</td>${getButtonEdit(+row.index)}</tr>`;
   });
@@ -60,12 +60,12 @@ function renderTableHeader() {
   const tHead = $("#table thead");
   const newTHead = `
   <tr>
-    <th class="column-1">STT</th>
-    <th class="column-2">Method Name</th>
-    <th class="column-3">Syntax</th>
-    <th class="column-4">Involved</th>
-    <th class="column-5">Description</th>
-    <th class="column-actions button-actions">Action</th>
+    <th class="cell column-1">STT</th>
+    <th class="cell column-2">Method Name</th>
+    <th class="cell column-3">Syntax</th>
+    <th class="cell column-4">Involved</th>
+    <th class="cell column-5">Description</th>
+    <th class="cell column-6 button-actions">Action</th>
   </tr>
 `;
   if (tHead.innerHTML !== newTHead) {
@@ -86,12 +86,12 @@ function renderFirstRowTable(app) {
   if ($("#table tbody tr.crud-group")) return;
   const tbody = $("#table tbody");
   const firstTableRow = `<tr class="crud-group">
-  <td class="column-1">0</td>
-  <td class="column-2"><textarea data-key="method"></textarea></td>
-  <td class="column-3"><textarea data-key="syntax"></textarea></td>
-  <td class="column-4"><textarea data-key="involved"></textarea></td>
-  <td class="column-5"><textarea data-key="description"></textarea></td>
-  <td class="column-actions button-actions">
+  <td class="cell column-1">0</td>
+  <td class="cell column-2"><textarea data-key="method"></textarea></td>
+  <td class="cell column-3"><textarea data-key="syntax"></textarea></td>
+  <td class="cell column-4"><textarea data-key="involved"></textarea></td>
+  <td class="cell column-5"><textarea data-key="description"></textarea></td>
+  <td class="cell column-6 button-actions">
     <img key="new-record" title="create" class="save-new-record" type="save"
       src="./Assets/Icons/create-unactive-icon.svg" width="28px" height="28px"></img>
     <img key="new-record" type="clear" title="eraser" class="clear-new-node"
