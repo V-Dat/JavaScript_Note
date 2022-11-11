@@ -104,7 +104,7 @@ export function hideEditNoteNode() {
   editNode.style.display = "none";
 }
 export function getRowData(app) {
-  const rowData = app.JsonData.methodHelper.find(
+  const rowData = app.JsonData.dataTable.dataTableBody.find(
     (row) => row.index === +app.activeRow
   );
   return rowData;
@@ -147,7 +147,7 @@ export function handleActionNote(event, app) {
   }
 }
 export function getDataRowNode(rowNode, app) {
-  const rowData = app.JsonData.methodHelper.find(
+  const rowData = app.JsonData.dataTable.dataTableBody.find(
     (item) => item.index === +rowNode.dataset.key
   );
   return rowData;

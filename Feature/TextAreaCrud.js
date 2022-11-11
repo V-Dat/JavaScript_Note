@@ -1,4 +1,4 @@
-import { handleRender } from "./Render.js";
+import { handleRender } from "./RenderTable/RenderTable.js";
 import {
   $,
   $$,
@@ -47,13 +47,13 @@ export function handleSaveRecord(rowNode, app) {
   if (!isFillAll || !rowNode) return;
   const textAreaInput = getValueTextArea();
 
-  if (app.JsonData.methodHelper) {
-    app.JsonData.methodHelper.push({
+  if (app.JsonData.dataTable.dataTableBody) {
+    app.JsonData.dataTable.dataTableBody.push({
       ...textAreaInput,
-      index: app.JsonData.methodHelper.length,
+      index: app.JsonData.dataTable.dataTableBody.length,
     });
   } else {
-    app.JsonData.methodHelper = [
+    app.JsonData.dataTable.dataTableBody = [
       {
         ...textAreaInput,
         index: 0,
@@ -78,10 +78,10 @@ export function handleClickEraser(rowNode, app) {
   }
 }
 export function handleDeleteRow(app, rowNode) {
-  const newData = app.JsonData.methodHelper.filter((item) => {
+  const newData = app.JsonData.dataTable.dataTableBody.filter((item) => {
     return +item.index !== +getIndexRowEdit(rowNode);
   });
-  app.JsonData.methodHelper = newData.map((item, index) => ({
+  app.JsonData.dataTable.dataTableBody = newData.map((item, index) => ({
     ...item,
     index: index,
   }));
@@ -103,7 +103,7 @@ export function handleSaveAfterEdit(rowNode, app) {
   rowNode.setAttribute("isedit", false);
 
   const indexOfRowEdit = getIndexRowEdit(rowNode);
-  const objectDataEdit = app.JsonData.methodHelper[indexOfRowEdit];
+  const objectDataEdit = app.JsonData.dataTable.dataTableBody[indexOfRowEdit];
 
   for (let i = 0; i < columnsData.length; i++) {
     const textAreaNode = columnsData[i].querySelector("textarea");
@@ -149,7 +149,8 @@ export function handleClickUndo(rowNode, app) {
 }
 
 export function hanlePreRender() {
-  const listDataNodes = $$("table tr[data-key]");
+  // const listDataNodes = $$("table tr[data-key]");
+  const listDataNodes = $$("table tr"); // tạm thời xóa hết sau này chỉ xóa data row
   for (let i = 0; i < listDataNodes.length; i++) {
     listDataNodes[i].remove();
   }

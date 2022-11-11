@@ -5,7 +5,7 @@ export function processDefaultState() {
   let app = this;
   app = {
     ...app,
-    JsonData: { mainContent: "", methodHelper: [] },
+    JsonData: { mainContent: "", dataTableBody: [] },
     editState: [],
     isFillAllCrudState: false,
     counterId: null,

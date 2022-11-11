@@ -1,6 +1,6 @@
 import { buttonFeature, $, AlertAfterClose, $$ } from "./Util.js";
 import { handleClickFeaturesPlace } from "./FeatureLocalStorage.js";
-import { renderDataImport } from "./Render.js";
+import { renderDataImport } from "./RenderTable/RenderTable.js";
 import { handleLeftClickTable, selectFeatureHighlight } from "./CellFeature.js";
 import { handleEditMainContent } from "./TextAreaCrud.js";
 import {

@@ -1,6 +1,6 @@
 import { $, highlightNode } from "./Feature/Util.js";
 import { readData } from "./Feature/FeatureLocalStorage.js";
-import { handleRender } from "./Feature/Render.js";
+import { handleRender } from "./Feature/RenderTable/RenderTable.js";
 import { hanlePreRender } from "./Feature/TextAreaCrud.js";
 import { renderHeading } from "./Feature/RenderHeading.js";
 import { processListener } from "./Feature/ProcessListener.js";
@@ -14,8 +14,8 @@ const app = {
     readData().then((data) => {
       if (data) {
         _this.JsonData = JSON.parse(data);
-        hanlePreRender();
-        renderHeading(_this.JsonData);
+        hanlePreRender(); // xóa hết row
+        renderHeading(_this.JsonData); // render heading từ db
         handleRender(_this);
         highlightNode($("body"));
       }
