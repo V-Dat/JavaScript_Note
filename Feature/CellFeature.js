@@ -66,13 +66,17 @@ function processGetCellNode(event) {
   if (rowNodeHeader) return rowNodeHeader;
   return;
 }
-function removeHighlight(targetNode) {
+function removeHighlight(targetNode, app) {
+  const rowData = getRowData(app);
+
   if (buttonFeatureActive === BUTTON_FEATURE.ROW) {
     for (const cell of targetNode.children) {
       cell.style.backgroundColor = "";
+      saveStyleToJsonData(cell, rowData, "");
     }
   } else {
     targetNode.style.backgroundColor = "";
+    saveStyleToJsonData(targetNode, rowData, "");
   }
 }
 function processHighlightRow(targetNode, app) {
