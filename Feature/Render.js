@@ -6,15 +6,14 @@ function processRow(data) {
   if (!data) return;
   let tableRow = "";
   data.forEach((row) => {
-    tableRow += `<tr data-key=${+row.index}><td class="column-stt">${
-      row.index + 1
-    }</td><td class="column-data column-method" data-key="method">${
-      row.method
-    }</td><td class="column-data column-syntax" data-key="syntax">${
-      row.syntax
-    }</td><td class="column-data column-involved" data-key="involved">${
+    tableRow += `<tr data-key=${+row.index}>
+    <td class="column-stt">${row.index + 1}</td>
+    <td class="column-data column-method" data-key="method">${row.method}</td>
+    <td class="column-data column-syntax" data-key="syntax">${row.syntax}</td>
+    <td class="column-data column-involved" data-key="involved">${
       row.involved
-    }</td><td class="column-data column-description" data-key="description">${
+    }</td>
+    <td class="column-data column-description" data-key="description">${
       row.description
     }</td>${getButtonEdit(+row.index)}</tr>`;
   });
@@ -22,17 +21,9 @@ function processRow(data) {
 }
 
 export function handleRender(data) {
-  const tableRowData = processRow(data.methodHelper);
-  if (tableRowData) {
-    const tbody = table.querySelector("tbody");
-    tbody.insertAdjacentHTML("beforeend", tableRowData);
-  }
-
-  /// first render and import data to render
-  const previousContent = $(".main-content").innerHTML;
-  if (data?.mainContent !== "" && previousContent !== data.mainContent) {
-    rendermainContent(data.mainContent);
-  }
+  renderTableHeader();
+  renderTableBody(data);
+  rendermainContent(data.mainContent);
 }
 
 export async function renderDataImport(event, app) {
@@ -51,6 +42,35 @@ export async function renderDataImport(event, app) {
 }
 
 function rendermainContent(data) {
-  const stringContent = $(".main-content");
-  stringContent.innerHTML = data;
+  const mainContent = $(".main-content");
+  if (data?.mainContent !== "" && mainContent.innerHTML !== data.mainContent) {
+    mainContent.innerHTML = data;
+  }
+}
+
+// table
+
+function renderTableHeader() {
+  const tHead = $("#table thead");
+  const newTHead = `
+  <tr>
+    <th class="column-stt">STT</th>
+    <th class="column-method">Method Name</th>
+    <th class="column-syntax">Syntax</th>
+    <th class="column-involved">Involved</th>
+    <th class="column-description">Description</th>
+    <th class="column-actions button-actions">Action</th>
+  </tr>
+`;
+  if (tHead.innerHTML !== newTHead) {
+    tHead.innerHTML = newTHead;
+  }
+}
+
+function renderTableBody(data) {
+  const tableRowData = processRow(data.methodHelper);
+  if (tableRowData) {
+    const tbody = $("#table tbody");
+    tbody.insertAdjacentHTML("beforeend", tableRowData);
+  }
 }
