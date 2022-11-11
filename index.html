@@ -22,7 +22,7 @@
     <h2 class="heading-text">
       <a>Method Helper</a>
     </h2>
-    <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px" title="Edit"/>
+    <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px" title="Edit" />
   </section>
 
   <!-- Github cover -->
@@ -32,23 +32,24 @@
 
   <!-- Switch Document -->
   <section class="switch-document-group">
-    <img class="btn-switch btn-edit" src="./Assets/Icons/menu-icon.svg" width="30px" height="30px" title="Show MenuBar" />
+    <img class="btn-switch btn-edit" src="./Assets/Icons/menu-icon.svg" width="30px" height="30px"
+      title="Show MenuBar" />
     <aside class="side-bar" style="display: none;">
-      <div class="side-bar__content" >
-          <h2>Chose Document</h2>
-          <div class="embed" >
-              <div>
-                <input type="radio" id="huey" name="drone" value="huey" checked>
-                <label for="huey">Huey</label>
-              </div>
-              <div>
-                <input type="radio" id="dewey" name="drone" value="dewey">
-                <label for="dewey">Dewey</label>
-              </div>
-              <div>
-                <input type="radio" id="louie" name="drone" value="louie">
-                <label for="louie">Louie</label>
-              </div>
+      <div class="side-bar__content">
+        <h2>Chose Document</h2>
+        <div class="embed">
+          <div>
+            <input type="radio" id="huey" name="drone" value="huey" checked>
+            <label for="huey">Huey</label>
+          </div>
+          <div>
+            <input type="radio" id="dewey" name="drone" value="dewey">
+            <label for="dewey">Dewey</label>
+          </div>
+          <div>
+            <input type="radio" id="louie" name="drone" value="louie">
+            <label for="louie">Louie</label>
+          </div>
         </div>
       </div>
     </aside>
@@ -76,8 +77,7 @@
   <img class="button-close-modal-row-detail" src="./Assets/Icons/home-active-icon.svg" title="Go Back"
     style="display:none" />
 
-  <img class="button-edit-note" src="./Assets/Icons/comment-active-icon.svg" title="Edit Note"
-    style="display:none" />
+  <img class="button-edit-note" src="./Assets/Icons/comment-active-icon.svg" title="Edit Note" style="display:none" />
 
   <div class="modal modal-row-detail" style="display: none">
     <div class="modal-content modal-row-detail-content">
@@ -86,12 +86,12 @@
       <h2 class="take-note-title">Take Note</h2>
       <textarea></textarea>
       <div class="actions">
-        <img class="action__send" type="action__send" src="./Assets/Icons/create-active-icon.svg" width="45px"
-          height="45px" title="Save"/>
-        <img class="action__clear" type="action__clear" src="./Assets/Icons/eraser-active-icon.svg" width="45px"
-          height="45px" title="Clear"/>
-        <img class="action__preview" type="action__preview" src="./Assets/Icons/preview-icon.svg" width="45px"
-          height="45px" title="Preview"/>
+        <img class="save-note" type="save-note" src="./Assets/Icons/create-active-icon.svg" width="45px"
+          height="45px" title="Save" />
+        <img class="clear-note" type="clear-note" src="./Assets/Icons/eraser-active-icon.svg" width="45px"
+          height="45px" title="Clear" />
+        <img class="preview-note" type="preview-note" src="./Assets/Icons/preview-icon.svg" width="45px"
+          height="45px" title="Preview" />
       </div>
     </div>
   </div>
@@ -99,37 +99,14 @@
   <!-- Table -->
   <div class="table-block" style="overflow-x:auto;">
     <table id="table">
-      <thead>
-        <tr>
-          <th class="column-stt">STT</th>
-          <th class="column-method">Method Name</th>
-          <th class="column-syntax">Syntax</th>
-          <th class="column-involved">Involved</th>
-          <th class="column-description">Description</th>
-          <th class="column-actions button-actions">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="crud-group">
-          <td class="column-stt">0</td>
-          <td class="column-method"><textarea data-key="method"></textarea></td>
-          <td class="column-syntax"><textarea data-key="syntax"></textarea></td>
-          <td class="column-involved"><textarea data-key="involved"></textarea></td>
-          <td class="column-description"><textarea data-key="description"></textarea></td>
-          <td class="column-actions button-actions">
-            <img key="new-record" title="create" class="save-new-record" type="save"
-              src="./Assets/Icons/create-unactive-icon.svg" width="28px" height="28px"></img>
-            <img key="new-record" type="clear" title="eraser" class="clear-new-node"
-              src="./Assets/Icons/eraser-unactive-icon.svg" width="28px" height="28px"></img>
-          </td>
-        </tr>
-      </tbody>
+      <thead></thead>
+      <tbody></tbody>
     </table>
   </div>
 
   <!-- button feature group -->
   <div class="button-feature-group">
-    <button class="button-feature button-feature__row"
+    <button type="make-up-row" class="button-feature button-feature__row"
       title="click on table cell to change row color. Combine with alt or ctrl + click to remove color">
 
       <img src="./Assets/Icons/paint-row-icon.svg" width="46px" height="46px" />
@@ -137,14 +114,14 @@
         HighLight Row
       </figcaption>
     </button>
-    <button class="button-feature button-feature__cell"
+    <button type="make-up-cell" class="button-feature button-feature__cell"
       title="click on table cell to change cell color. Combine with alt or ctrl + click to remove color">
       <img src="./Assets/Icons/paint-cell-icon.svg" width="46px" height="46px" />
       <figcaption>
         HighLight Cell
       </figcaption>
     </button>
-    <button class="button-feature button-feature__eraser" title="click on table cell to remove cell color">
+    <button type="remove-make-up-cell" class="button-feature button-feature__eraser" title="click on table cell to remove cell color">
       <img src="./Assets/Icons/remove-color-icon.svg" width="46px" height="46px" />
       <figcaption>
         Remove Color
@@ -165,7 +142,7 @@
     <h2 class="heading-text">
       <a>Content Summary</a>
     </h2>
-    <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px" title="Edit"/>
+    <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px" title="Edit" />
 
     <div class="main-content-group">
       <div class="main-content">....</div>
@@ -179,7 +156,8 @@
   <section class="features-localstorage">
 
     <form class="upload-file-section">
-      <label for="reading-file"><img src="./Assets/Icons/upload-icon.svg" width="30px" height="30px" title="Upload Json File"/></label>
+      <label for="reading-file"><img src="./Assets/Icons/upload-icon.svg" width="30px" height="30px"
+          title="Upload Json File" /></label>
       <input id="reading-file" type="file" style="display:none">
     </form>
 
@@ -213,6 +191,22 @@
 
   <!-- footer -->
   <footer>© 2022<a href="https://github.com/V-Dat/JavaScript_Note"> V-Dat</a></footer>
+
+
+  <!-- Modal Place -->
+
+
+  <div class="modal modal-common" style="display: none">
+    <!-- Modal content -->
+    <div class="modal-content center" style="position: relative;">
+      <div style="position: relative;">
+        <dib class="button-modal-close" style="position: absolute;">&times;</dib>
+        <div class="embed">Some text in the Modal..</div>
+      </div>
+    </div>
+  </div>
+
+
 
   <script src="./index.js" type="module"></script>
 

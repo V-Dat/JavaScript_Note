@@ -53,7 +53,6 @@
     display: block;
 }
 .modal-row-detail-content .content-method > *:first-child {
-    text-align: center;
     font-size: 3rem;
     font-weight: bold;
     padding-bottom: 6px;

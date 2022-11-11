@@ -1,17 +1,17 @@
 import { countTimeSaveLocalStorage } from "./FeatureLocalStorage.js";
-import { buttonFeatureActive } from "./CellFeature.js";
+import { $ } from "./Util.js";
 
 export function processDefaultState() {
   let app = this;
   app = {
     ...app,
-    JsonData: { mainContent: "", methodHelper: [] },
-    editState: [],
-    isFillAllCrudState: false,
+    JsonData: { mainContent: "", dataTableBody: [] },
+    // isFillAllCrudState: false,
     counterId: null,
     activeRow: null,
+    previousActiveRow: null,
   };
-  buttonFeatureActive.setAttribute("active", true);
+  $(".button-feature.button-feature__eraser").setAttribute("active", true);
   countTimeSaveLocalStorage(app);
   return app;
 }
