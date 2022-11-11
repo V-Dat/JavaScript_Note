@@ -1,6 +1,6 @@
 import { getButtonEdit } from "./CellFeature.js";
-import { hanlePreRender } from "./TextAreaCrud.js";
-import { $, highlightNode } from "./Util.js";
+import { handleInputCrudTextArea, hanlePreRender } from "./TextAreaCrud.js";
+import { $, $$, highlightNode } from "./Util.js";
 
 function processRow(data) {
   if (!data) return;
@@ -20,10 +20,10 @@ function processRow(data) {
   return tableRow;
 }
 
-export function handleRender(data) {
+export function handleRender(app) {
   renderTableHeader();
-  renderTableBody(data);
-  rendermainContent(data.mainContent);
+  renderTableBody(app);
+  rendermainContent(app.JsonData?.mainContent);
 }
 
 export async function renderDataImport(event, app) {
@@ -35,16 +35,16 @@ export async function renderDataImport(event, app) {
       console.log("read data from import file");
       app.JsonData = JSON.parse(JSON.stringify(data));
       hanlePreRender();
-      handleRender(app.JsonData);
+      handleRender(app);
       highlightNode($("body"));
       // saveLocalStorage(data); // Do not save localStorage when open file
     });
 }
 
-function rendermainContent(data) {
-  const mainContent = $(".main-content");
-  if (data?.mainContent !== "" && mainContent.innerHTML !== data.mainContent) {
-    mainContent.innerHTML = data;
+function rendermainContent(mainContent) {
+  const mainContentNode = $(".main-content");
+  if (mainContent !== "" && mainContentNode.innerHTML !== mainContent) {
+    mainContentNode.innerHTML = mainContent;
   }
 }
 
@@ -67,10 +67,35 @@ function renderTableHeader() {
   }
 }
 
-function renderTableBody(data) {
-  const tableRowData = processRow(data.methodHelper);
+function renderTableBody(app) {
+  renderFirstRowTable(app);
+  const tableRowData = processRow(app.JsonData?.methodHelper);
   if (tableRowData) {
     const tbody = $("#table tbody");
     tbody.insertAdjacentHTML("beforeend", tableRowData);
   }
+}
+
+function renderFirstRowTable(app) {
+  if ($("#table tbody tr.crud-group")) return;
+  const tbody = $("#table tbody");
+  const firstTableRow = `<tr class="crud-group">
+  <td class="column-stt">0</td>
+  <td class="column-method"><textarea data-key="method"></textarea></td>
+  <td class="column-syntax"><textarea data-key="syntax"></textarea></td>
+  <td class="column-involved"><textarea data-key="involved"></textarea></td>
+  <td class="column-description"><textarea data-key="description"></textarea></td>
+  <td class="column-actions button-actions">
+    <img key="new-record" title="create" class="save-new-record" type="save"
+      src="./Assets/Icons/create-unactive-icon.svg" width="28px" height="28px"></img>
+    <img key="new-record" type="clear" title="eraser" class="clear-new-node"
+      src="./Assets/Icons/eraser-unactive-icon.svg" width="28px" height="28px"></img>
+  </td>
+</tr>`;
+  tbody.innerHTML = firstTableRow;
+  const crudTextArea = $$("#table .crud-group textarea");
+
+  crudTextArea.forEach((item) => {
+    item.addEventListener("input", () => handleInputCrudTextArea(app));
+  });
 }

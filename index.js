@@ -16,17 +16,18 @@ const app = {
         _this.JsonData = JSON.parse(data);
         hanlePreRender();
         renderHeading(_this.JsonData);
-        handleRender(_this.JsonData);
+        handleRender(_this);
         highlightNode($("body"));
       }
       return _this;
     });
+    return _this;
   },
   render: function () {
     hanlePreRender();
-    handleRender(this.JsonData);
+    handleRender(this);
     highlightNode($("body"));
   },
 };
 
-app.handleState().handler().firstRender();
+app.handleState().firstRender().handler();

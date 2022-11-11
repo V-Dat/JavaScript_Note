@@ -10,14 +10,9 @@ export const BUTTON_FEATURE = {
   ERASER: buttonFeature.children[2],
 };
 
-export const BUTTON_ACTIONS = {
-  SAVE: buttonActions.children[0],
-  EDIT: buttonActions.children[1],
-};
-
 export function AlertAfterClose(event) {
   event.preventDefault();
-  return (event.returnValue = "Before closing, Saving data first !");
+  // return (event.returnValue = "Before closing, Saving data first !");
 }
 
 //================= active & unactive ============================

@@ -2,10 +2,7 @@ import { buttonFeature, $, AlertAfterClose, $$ } from "./Util.js";
 import { handleClickFeaturesPlace } from "./FeatureLocalStorage.js";
 import { renderDataImport } from "./Render.js";
 import { handleLeftClickTable, selectFeatureHighlight } from "./CellFeature.js";
-import {
-  handleEditMainContent,
-  handleInputCrudTextArea,
-} from "./TextAreaCrud.js";
+import { handleEditMainContent } from "./TextAreaCrud.js";
 import {
   embedProject,
   toggleJSPlaygrounds,
@@ -27,7 +24,6 @@ const buttonFeatureLocalStorage = $(".features-localstorage");
 const inputFile = $("#reading-file");
 const table = $("#table");
 const buttonEditmainContent = $(".button-edit-main-content");
-const crudTextArea = $$(".crud-group textarea");
 const buttonOpenStackBlitz = $(".open-stackblitz");
 const buttonOpenJSPlaygrounds = $(".open-javascript-playgrounds");
 const arrowFeatureBlock = $(".arrow-features");
@@ -56,9 +52,7 @@ export function processListener() {
   buttonEditmainContent.addEventListener("click", () =>
     handleEditMainContent(_this.JsonData)
   );
-  crudTextArea.forEach((item) => {
-    item.addEventListener("input", () => handleInputCrudTextArea(_this));
-  });
+
   buttonOpenStackBlitz.addEventListener("click", toggleStackBlitz);
   buttonOpenJSPlaygrounds.addEventListener("click", toggleJSPlaygrounds);
   arrowFeatureBlock.addEventListener("click", handleClickArrowFeature);
