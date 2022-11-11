@@ -5,7 +5,6 @@ import { saveStyleToJsonData } from "./SaveStyle.js";
 
 export function handlePaintTable(cellNode, app) {
   const feature = getFeaturePaint();
-  const rowName = cellNode.dataset.rowName;
   switch (feature) {
     case FEATURE.MAKE_UP_ROW:
       processMakeUpRow(cellNode, app);
@@ -32,11 +31,12 @@ export function handlePaintTable(cellNode, app) {
 
 function processMakeUpRow(cellNode, app) {
   const backgroundColor = randomColor();
-  const rowData = getRowData(app);
+  const rowNode = cellNode.closest("tr");
 
-  for (const cell of cellNode.children) {
+  for (const cell of rowNode.children) {
+    const cellData = getCellData(cellNode, app);
     cell.style.backgroundColor = backgroundColor;
-    saveStyleToJsonData(cell, rowData, backgroundColor);
+    saveStyleToJsonData(cellData, backgroundColor);
   }
 }
 

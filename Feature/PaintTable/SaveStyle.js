@@ -1,3 +1,3 @@
-export function saveStyleToJsonData(cellNode, cellData, backgroundColor) {
+export function saveStyleToJsonData(cellData, backgroundColor) {
   cellData.bg = backgroundColor;
 }
