@@ -1,4 +1,4 @@
-import { handleInputCrudTextArea } from "../TextAreaCrud.js";
+import { handleInputCrudTextArea } from "../Actions/ActionFirstRow.js";
 import { $, $$ } from "../Util.js";
 
 export function renderFirstRowTable(app) {

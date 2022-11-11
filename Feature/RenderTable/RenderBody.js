@@ -12,6 +12,8 @@ function processRow(data) {
   if (!data) return;
   let tableRow = "";
 
+  console.log(33, data);
+
   data.forEach((row, rowIndex) => {
     tableRow += `<tr data-row-index=${rowIndex}>`;
     row.forEach((cell, cellIndex) => {

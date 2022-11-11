@@ -1,4 +1,4 @@
-import { buttonFeature, $, AlertAfterClose, $$ } from "./Util.js";
+import { $, AlertAfterClose } from "./Util.js";
 import { handleClickFeaturesPlace } from "./FeatureLocalStorage.js";
 import { renderDataImport } from "./RenderTable/RenderTable.js";
 import { handleClickOnTable, selectFeatureHighlight } from "./CellFeature.js";
@@ -34,6 +34,7 @@ const buttonEditReferance = $(".referance-section .btn-edit");
 const buttonEditNote = $(".button-edit-note");
 const actionsNote = $(".note-block .actions");
 const buttonSwitchDoc = $(".switch-document-group .btn-switch");
+const buttonFeature = $(".button-feature-group");
 export function processListener() {
   const _this = this;
   buttonFeatureLocalStorage.addEventListener("click", (event) => {

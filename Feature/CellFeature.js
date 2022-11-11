@@ -1,4 +1,3 @@
-import { getRowData } from "./ModalRowDetail.js";
 import { handlePaintTable } from "./PaintTable/PaintTable.js";
 import {
   handleSaveRecord,
@@ -9,13 +8,7 @@ import {
   handleClickUndo,
   handleClickViewRow,
 } from "./TextAreaCrud.js";
-import {
-  buttonFeature,
-  unActiveButtonEraserNewNode,
-  unActiveButtonCreate,
-  highlightNode,
-  $,
-} from "./Util.js";
+import { highlightNode, $ } from "./Util.js";
 
 export function handleClickOnTable(event, app) {
   const isClickOnFeature = event.target.closest(`img[type="feature"]`);
@@ -26,35 +19,14 @@ export function handleClickOnTable(event, app) {
   } else if (isClickOnFeature) {
     console.log("kkkkkkkkkkk");
   }
-
-  // case 1: click on type = cell
-
-  // case 2: click on type = feature
-  // case 2.1: click on header feature
-  // case 2.2: click on cell feature
-
-  // const isClickOnCell = checkIsClickOnCell(target);
-  // if (isClickOnCell) {
-  //   // 1 click on cell
-  //   return handlePaintTable(event, app);
-  // }
-
-  // const node = target.closest("img"); // img as a button
-  // const rowNode = node.closest("tr");
-  // const isHeaderFeature = checkIsHeaderFeature(rowNode);
-  // if (isHeaderFeature) {
-  //   //2. click on header button feature
-  //   handleClickHeaderFeature(target, rowNode, app);
-  // } else {
-  //   //3. click on row button feature
-  //   handleClickRowFeature(rowNode, app, target);
-  // }
 }
 
 // Footer Feature ========================================================================
 
 export function selectFeatureHighlight(event) {
   const activeButton = event.target.closest(".button-feature");
+  const buttonFeature = $(".button-feature-group");
+
   if (!activeButton) return;
   for (const btn of buttonFeature.children) {
     btn.removeAttribute("active");

@@ -42,7 +42,7 @@ function processMakeUpRow(cellNode, app) {
   const rowNode = cellNode.closest("tr");
 
   for (const cell of rowNode.children) {
-    const cellData = getCellData(cellNode, app);
+    const cellData = getCellData(cell, app);
     cell.style.backgroundColor = backgroundColor;
     saveStyleToJsonData(cellData, backgroundColor);
   }
@@ -68,7 +68,7 @@ function processRemoveMakeUpRow(cellNode, app) {
   const rowNode = cellNode.closest("tr");
 
   for (const cell of rowNode.children) {
-    const cellData = getCellData(cellNode, app);
+    const cellData = getCellData(cell, app);
     cell.style.background = background;
     saveStyleToJsonData(cellData, background);
   }

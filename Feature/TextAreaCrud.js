@@ -6,10 +6,6 @@ import {
   activeButtonEdit,
   activeButtonSave,
   unActiveButtonSave,
-  activeButtonCreate,
-  unActiveButtonCreate,
-  activeButtonEraserNewNode,
-  unActiveButtonEraserNewNode,
   activeButtonEraserInput,
   activeButtonUndo,
   activeButtonDelete,
@@ -25,6 +21,10 @@ import {
   getRowData,
 } from "./ModalRowDetail.js";
 import { toggleNode } from "./SwitchDocument.js";
+import {
+  unActiveButtonCreate,
+  unActiveButtonEraserNewNode,
+} from "./Actions/ActionUtil.js";
 
 function getValueTextArea() {
   const textAreaGroup = $$(".crud-group textarea");
@@ -183,27 +183,6 @@ export function handleEditMainContent(JsonData) {
     mainContent.classList.add("edit");
     mainContent.innerHTML = `<textarea style="width: 95%; max-width: 95%">${JsonData.mainContent}</textarea>`;
     activeButtonSaveEditContent($(".button-edit-main-content"));
-  }
-}
-
-export function handleInputCrudTextArea() {
-  const crudTextArea = $$(`#table td[data-row-type="first-row"] textarea`);
-  const rowNode = $(".crud-group");
-  let totalLength = 0;
-  const isFillAll = [...crudTextArea].every((textAreaNode) => {
-    totalLength += textAreaNode.value.length;
-    return textAreaNode.value.length > 0;
-  });
-
-  if (!isFillAll && totalLength === 0) {
-    unActiveButtonCreate(rowNode);
-    unActiveButtonEraserNewNode(rowNode);
-  } else if (!isFillAll && totalLength > 0) {
-    activeButtonEraserNewNode(rowNode);
-    unActiveButtonCreate(rowNode);
-  } else {
-    activeButtonCreate(rowNode);
-    activeButtonEraserNewNode(rowNode);
   }
 }
 
