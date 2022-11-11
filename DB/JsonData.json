@@ -4,27 +4,27 @@
         "dataTableHeader": [
             {
                 "text": "STT",
-                "buttonText": "add"
+                "buttonText": "Action"
             },
             {
                 "text": "Method Name",
-                "buttonText": "add"
+                "buttonText": "Action"
             },
             {
                 "text": "Syntax",
-                "buttonText": "add"
+                "buttonText": "Action"
             },
             {
                 "text": "Involved",
-                "buttonText": "add"
+                "buttonText": "Action"
             },
             {
                 "text": "Description",
-                "buttonText": "add"
+                "buttonText": "Action"
             },
             {
                 "text": "Action",
-                "buttonText": "add"
+                "buttonText": "Action"
             }
         ],
         "dataTableBody": [

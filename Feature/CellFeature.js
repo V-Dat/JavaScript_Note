@@ -1,4 +1,5 @@
 import { getRowData } from "./ModalRowDetail.js";
+import { handlePaintTable } from "./PaintTable/PaintTable.js";
 import {
   handleSaveRecord,
   handleClickEraser,
@@ -18,90 +19,39 @@ import {
 } from "./Util.js";
 export let buttonFeatureActive = BUTTON_FEATURE.ERASER;
 
-export function handleLeftClickTable(event, app) {
-  const target = event.target;
-  const isClickOnCell = checkIsClickOnCell(target);
+export function handleClickOnTable(event, app) {
+  const isClickOnFeature = event.target.closest(`img[type="feature"]`);
+  const featureNode = isClickOnFeature;
+  const isClickOnCell = event.target.closest(`td[type="cell"]`);
+  const cellNode = isClickOnCell;
   if (isClickOnCell) {
-    // 1 click on cell
-    return handleClickOnCell(event, app);
+    handlePaintTable(cellNode, app);
+  } else if (isClickOnFeature) {
+    console.log("kkkkkkkkkkk");
   }
 
-  const node = target.closest("img"); // img as a button
-  const rowNode = node.closest("tr");
-  const isHeaderFeature = checkIsHeaderFeature(rowNode);
-  if (isHeaderFeature) {
-    //2. click on header button feature
-    handleClickHeaderFeature(target, rowNode, app);
-  } else {
-    //3. click on row button feature
-    handleClickRowFeature(rowNode, app, target);
-  }
-}
+  // case 1: click on type = cell
 
-function handleClickOnCell(event, app) {
-  const highlighttNode = getNodeForHighlight(event);
-  const targetNode = event.target;
-  if (!highlighttNode) return;
-  const isHighlight = checkIsHighlight(targetNode);
+  // case 2: click on type = feature
+  // case 2.1: click on header feature
+  // case 2.2: click on cell feature
 
-  if (
-    (isHighlight && (event.shiftKey || event.altKey || event.ctrlKey)) ||
-    buttonFeatureActive === BUTTON_FEATURE.ERASER
-  ) {
-    removeHighlight(highlighttNode, app);
-  } else {
-    processHighlightRow(highlighttNode, app);
-  }
-}
+  // const isClickOnCell = checkIsClickOnCell(target);
+  // if (isClickOnCell) {
+  //   // 1 click on cell
+  //   return handlePaintTable(event, app);
+  // }
 
-function processGetRowNode(event) {
-  const rowNode = event.target.closest("tr");
-  if (!rowNode) return;
-  return rowNode;
-}
-function processGetCellNode(event) {
-  const rowNodeBody = event.target.closest("td");
-  const rowNodeHeader = event.target.closest("th");
-  if (rowNodeBody) return rowNodeBody;
-  if (rowNodeHeader) return rowNodeHeader;
-  return;
-}
-function removeHighlight(targetNode, app) {
-  const rowData = getRowData(app);
-
-  if (buttonFeatureActive === BUTTON_FEATURE.ROW) {
-    for (const cell of targetNode.children) {
-      cell.style.backgroundColor = "";
-      saveStyleToJsonData(cell, rowData, "");
-    }
-  } else {
-    targetNode.style.backgroundColor = "";
-    saveStyleToJsonData(targetNode, rowData, "");
-  }
-}
-function processHighlightRow(targetNode, app) {
-  const backgroundColor = highlightRow();
-  const rowData = getRowData(app);
-
-  if (targetNode.nodeName === "TR") {
-    for (const cell of targetNode.children) {
-      cell.style.backgroundColor = backgroundColor;
-      saveStyleToJsonData(cell, rowData, backgroundColor);
-    }
-  } else {
-    targetNode.style.backgroundColor = backgroundColor;
-    saveStyleToJsonData(targetNode, rowData, backgroundColor);
-  }
-}
-function getNodeForHighlight(event) {
-  if (buttonFeatureActive === BUTTON_FEATURE.ROW) {
-    return processGetRowNode(event);
-  } else if (
-    buttonFeatureActive === BUTTON_FEATURE.CELL ||
-    buttonFeatureActive === BUTTON_FEATURE.ERASER
-  ) {
-    return processGetCellNode(event);
-  }
+  // const node = target.closest("img"); // img as a button
+  // const rowNode = node.closest("tr");
+  // const isHeaderFeature = checkIsHeaderFeature(rowNode);
+  // if (isHeaderFeature) {
+  //   //2. click on header button feature
+  //   handleClickHeaderFeature(target, rowNode, app);
+  // } else {
+  //   //3. click on row button feature
+  //   handleClickRowFeature(rowNode, app, target);
+  // }
 }
 
 // Footer Feature ========================================================================
@@ -119,35 +69,27 @@ export function selectFeatureHighlight(event) {
 // =======================================================================================
 
 export function getButtonEdit(row, index) {
-  return `<td data-index=${
+  return `<td type="cell" data-index=${
     +index + 1
   }  data-column-name="column-6" class="cell column-6 button-actions"  data-key="actions"  style="background-color:${
     row[`column-${+index + 1}-bg`] || "color"
   }" >
-         <img key=${
+         <img type="feature" key=${
            +index + 1
          } title="Save" class="save" src="./Assets/Icons/create-unactive-icon.svg" width="28px" height="28px"></img>
-         <img key=${
+         <img type="feature" key=${
            +index + 1
          } title="Edit" class="edit active" src="./Assets/Icons/edit-active-icon.svg" width="28px" height="28px" ></img>
-         <img key=${
+         <img type="feature" key=${
            +index + 1
          } title="Eraser" class="eraser" src="./Assets/Icons/delete-icon.svg" width="28px" height="28px"></img> 
-         <img key=${
+         <img type="feature" key=${
            +index + 1
          } title="Undo" class="undo" src="./Assets/Icons/undo-unactive-icon.svg" width="28px" height="28px" ></img> 
-         <img key=${
+         <img type="feature" key=${
            +index + 1
          } title="View Detail" class="view-detail" src="./Assets/Icons/view-detail-icon.svg" width="28px" height="28px" ></img> 
       </td>`;
-}
-
-function highlightRow() {
-  return "hsl(" + 360 * Math.random() + ",50%,50%)";
-}
-
-function checkIsHighlight(targetNode) {
-  return targetNode.style.backgroundColor !== "";
 }
 
 function checkIsHeaderFeature(rowNode) {
@@ -189,9 +131,4 @@ function handleClickRowFeature(rowNode, app, node) {
   } else if (className.includes("view-detail")) {
     handleClickViewRow(rowNode, app);
   }
-}
-
-function saveStyleToJsonData(node, rowData, backgroundColor) {
-  const key = node.dataset["columnName"];
-  rowData[key + "-bg"] = backgroundColor;
 }

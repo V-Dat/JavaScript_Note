@@ -1,7 +1,7 @@
 import { buttonFeature, $, AlertAfterClose, $$ } from "./Util.js";
 import { handleClickFeaturesPlace } from "./FeatureLocalStorage.js";
 import { renderDataImport } from "./RenderTable/RenderTable.js";
-import { handleLeftClickTable, selectFeatureHighlight } from "./CellFeature.js";
+import { handleClickOnTable, selectFeatureHighlight } from "./CellFeature.js";
 import { handleEditMainContent } from "./TextAreaCrud.js";
 import {
   embedProject,
@@ -39,10 +39,7 @@ export function processListener() {
   buttonFeatureLocalStorage.addEventListener("click", (event) => {
     handleClickFeaturesPlace(event, _this);
   });
-
-  table.addEventListener("click", (event) =>
-    handleLeftClickTable(event, _this)
-  );
+  table.addEventListener("click", (event) => handleClickOnTable(event, _this));
 
   buttonFeature.addEventListener("click", selectFeatureHighlight);
   window.addEventListener("beforeunload", AlertAfterClose);
