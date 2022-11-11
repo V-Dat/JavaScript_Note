@@ -1,5 +1,3 @@
-import { buttonFeatureActive } from "../CellFeature.js";
-import { getRowData } from "../ModalRowDetail.js";
 import { $ } from "../Util.js";
 import { saveStyleToJsonData } from "./SaveStyle.js";
 
@@ -111,10 +109,8 @@ const FEATURE = {
 function randomColor() {
   return "hsl(" + 360 * Math.random() + ",50%,50%)";
 }
+
 function getFeaturePaint() {
   const feature = $(".button-feature-group button[active]");
   return feature.getAttribute("type");
-}
-function checkIsHighlight(targetNode) {
-  return targetNode.style.backgroundColor !== "";
 }

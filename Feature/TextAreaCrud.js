@@ -43,8 +43,8 @@ export function handleResetInput() {
 }
 
 export function handleSaveRecord(rowNode, app) {
-  const isFillAll = app.isFillAllCrudState;
-  if (!isFillAll || !rowNode) return;
+  // const isFillAll = app.isFillAllCrudState;
+  // if (!isFillAll || !rowNode) return;
   const textAreaInput = getValueTextArea();
 
   if (app.JsonData.dataTable.dataTableBody) {
@@ -63,7 +63,7 @@ export function handleSaveRecord(rowNode, app) {
 
   handleResetInput();
   handleRender(app.JsonData);
-  app.isFillAllCrudState = false;
+  // app.isFillAllCrudState = false;
   unActiveButtonCreate(rowNode);
   unActiveButtonEraserNewNode(rowNode);
   // highlightNode($("table tbody"));
@@ -186,24 +186,24 @@ export function handleEditMainContent(JsonData) {
   }
 }
 
-export function handleInputCrudTextArea(app) {
-  const crudMethod = $(".crud-group .cell.column-2 textarea").value.length;
-  const crudSyntax = $(".crud-group .cell.column-3 textarea").value.length;
-  const crudDescription = $(".crud-group .cell.column-5 textarea").value.length;
-  const crudInvolved = $(".crud-group .cell.column-4 textarea").value.length;
+export function handleInputCrudTextArea() {
+  const crudTextArea = $$(`#table td[data-row-type="first-row"] textarea`);
   const rowNode = $(".crud-group");
-  if (crudMethod && crudSyntax && crudDescription && crudInvolved) {
-    activeButtonCreate(rowNode);
-    activeButtonEraserNewNode(rowNode);
-    return (app.isFillAllCrudState = true);
-  } else if (crudMethod || crudSyntax || crudDescription || crudInvolved) {
-    activeButtonEraserNewNode(rowNode);
-    unActiveButtonCreate(rowNode);
-    return (app.isFillAllCrudState = false);
-  } else {
+  let totalLength = 0;
+  const isFillAll = [...crudTextArea].every((textAreaNode) => {
+    totalLength += textAreaNode.value.length;
+    return textAreaNode.value.length > 0;
+  });
+
+  if (!isFillAll && totalLength === 0) {
     unActiveButtonCreate(rowNode);
     unActiveButtonEraserNewNode(rowNode);
-    return (app.isFillAllCrudState = false);
+  } else if (!isFillAll && totalLength > 0) {
+    activeButtonEraserNewNode(rowNode);
+    unActiveButtonCreate(rowNode);
+  } else {
+    activeButtonCreate(rowNode);
+    activeButtonEraserNewNode(rowNode);
   }
 }
 
