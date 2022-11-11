@@ -118,26 +118,26 @@ export function selectFeatureHighlight(event) {
 
 // =======================================================================================
 
-export function getButtonEdit(row) {
+export function getButtonEdit(row, index) {
   return `<td data-index=${
-    row.index
+    +index + 1
   }  data-column-name="column-6" class="cell column-6 button-actions"  data-key="actions"  style="background-color:${
-    row["column-6-bg"] || "color"
+    row[`column-${+index + 1}-bg`] || "color"
   }" >
          <img key=${
-           row.index
+           +index + 1
          } title="Save" class="save" src="./Assets/Icons/create-unactive-icon.svg" width="28px" height="28px"></img>
          <img key=${
-           row.index
+           +index + 1
          } title="Edit" class="edit active" src="./Assets/Icons/edit-active-icon.svg" width="28px" height="28px" ></img>
          <img key=${
-           row.index
+           +index + 1
          } title="Eraser" class="eraser" src="./Assets/Icons/delete-icon.svg" width="28px" height="28px"></img> 
          <img key=${
-           row.index
+           +index + 1
          } title="Undo" class="undo" src="./Assets/Icons/undo-unactive-icon.svg" width="28px" height="28px" ></img> 
          <img key=${
-           row.index
+           +index + 1
          } title="View Detail" class="view-detail" src="./Assets/Icons/view-detail-icon.svg" width="28px" height="28px" ></img> 
       </td>`;
 }

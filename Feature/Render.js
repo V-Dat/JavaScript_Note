@@ -3,31 +3,33 @@ import { handleInputCrudTextArea, hanlePreRender } from "./TextAreaCrud.js";
 import { $, $$, highlightNode } from "./Util.js";
 
 function processRow(data) {
+  console.log(333, data);
   if (!data) return;
   let tableRow = "";
-  data.forEach((row) => {
-    tableRow += `<tr data-key=${+row.index}>
-    <td data-index=${+row.index} data-column-name="column-1" class="cell column-1" style="background-color:${
-      row["column-1-bg"] || "color"
-    }" >${row.index + 1}</td>
-    <td data-index=${+row.index} data-column-name="column-2" class="column-data cell column-2" data-key="method" style="background-color:${
-      row["column-2-bg"] || "color"
-    }" >${row.method}</td>
-    <td data-index=${+row.index} data-column-name="column-3" class="column-data cell column-3" data-key="syntax" style="background-color:${
-      row["column-3-bg"] || "color"
-    }" >${row.syntax}</td>
-    <td data-index=${+row.index} data-column-name="column-4" class="column-data cell column-4" data-key="involved" style="background-color:${
-      row["column-4-bg"] || "color"
-    }" >${row.involved}</td>
-    <td data-index=${+row.index} data-column-name="column-5" class="column-data cell column-5" data-key="description" style="background-color:${
-      row["column-5-bg"] || "color"
-    }" >${row.description}</td>${getButtonEdit(row)}</tr>`;
+  data.forEach((row, index) => {
+    console.log(22, row);
+    tableRow += `<tr data-key=${+index}>
+    <td data-index=${+index} data-column-name="column-1" class="cell column-1" style="background-color:${
+      row[`column-${index + 1}-bg`] || "color"
+    }" >${+index + 1}</td>
+    <td data-index=${+index} data-column-name="column-2" class="column-data cell column-2" data-key="method" style="background-color:${
+      row[`column-${index + 1}-bg`] || "color"
+    }" >${row.data}</td>
+    <td data-index=${+index} data-column-name="column-3" class="column-data cell column-3" data-key="syntax" style="background-color:${
+      row[`column-${index + 1}-bg`] || "color"
+    }" >${row.data}</td>
+    <td data-index=${+index} data-column-name="column-4" class="column-data cell column-4" data-key="involved" style="background-color:${
+      row[`column-${index + 1}-bg`] || "color"
+    }" >${row.data}</td>
+    <td data-index=${+index} data-column-name="column-5" class="column-data cell column-5" data-key="description" style="background-color:${
+      row[`column-${index + 1}-bg`] || "color"
+    }" >${row.data}</td>${getButtonEdit(row, index)}</tr>`;
   });
   return tableRow;
 }
 
 export function handleRender(app) {
-  renderTableHeader();
+  renderTableHeader(app);
   renderTableBody(app);
   rendermainContent(app.JsonData?.mainContent);
 }
@@ -54,22 +56,32 @@ function rendermainContent(mainContent) {
   }
 }
 
-// table
-
-function renderTableHeader() {
+function renderTableHeader(app) {
   const tHead = $("#table thead");
-  const newTHead = `
-  <tr>
-    <th class="cell column-1">STT</th>
-    <th class="cell column-2">Method Name</th>
-    <th class="cell column-3">Syntax</th>
-    <th class="cell column-4">Involved</th>
-    <th class="cell column-5">Description</th>
-    <th class="cell column-6 button-actions">Action</th>
-  </tr>
-`;
-  if (tHead.innerHTML !== newTHead) {
-    tHead.innerHTML = newTHead;
+  const newTHead = app.JsonData.tableHeader.map(
+    ({ text, buttonText }, index) => {
+      const aa = `<th class="cell column-${
+        index + 1
+      }">${text} - <button data-index=${index} >${buttonText}</button></th>`;
+      return aa;
+    }
+  );
+
+  tHead.innerHTML = newTHead.join("");
+  const buttonAdd = $$("#table thead button");
+
+  buttonAdd.forEach((item) => {
+    item.addEventListener("click", (event) => handleAddRightColumn(event, app));
+  });
+
+  function handleAddRightColumn(event, app) {
+    const indexInsert = +event.target.dataset.index + 1;
+    app.JsonData.tableHeader.splice(indexInsert, 0, {
+      text: "kkk",
+      buttonText: "lalala",
+    });
+
+    app.render();
   }
 }
 

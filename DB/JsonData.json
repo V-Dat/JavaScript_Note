@@ -1,1 +1,48 @@
-{"mainContent":"adasdad","methodHelper":[{"method":"asd","syntax":"ad","involved":"asd","description":"asdasdasda","index":0}],"headingMethodHelper":"      <a>Method Helper</a>"}
+{
+    "mainContent": "adasdad",
+    "tableHeader": [
+        {
+            "text": "STT",
+            "buttonText": "add"
+        },
+        {
+            "text": "Method Name",
+            "buttonText": "add"
+        },
+        {
+            "text": "Syntax",
+            "buttonText": "add"
+        },
+        {
+            "text": "Involved",
+            "buttonText": "add"
+        },
+        {
+            "text": "Description",
+            "buttonText": "add"
+        },
+        {
+            "text": "Action",
+            "buttonText": "add"
+        }
+    ],
+    "methodHelper": [
+        {
+            "name": "method",
+            "data": "asd"
+        },
+        {
+            "name": "syntax",
+            "data": "ad"
+        },
+        {
+            "name": "involved",
+            "data": "asd"
+        },
+        {
+            "name": "description",
+            "data": "aaaaaaaaaaaaaa"
+        }
+    ],
+    "headingMethodHelper": "      <a>Method Helper</a>"
+}
