@@ -7,21 +7,21 @@ function processRow(data) {
   let tableRow = "";
   data.forEach((row) => {
     tableRow += `<tr data-key=${+row.index}>
-    <td class="cell column-1" style="background-color:${
+    <td data-index=${+row.index} data-column-name="column-1" class="cell column-1" style="background-color:${
       row["column-1-bg"] || "color"
     }" >${row.index + 1}</td>
-    <td class="column-data cell column-2" data-key="method" style="background-color:${
+    <td data-index=${+row.index} data-column-name="column-2" class="column-data cell column-2" data-key="method" style="background-color:${
       row["column-2-bg"] || "color"
     }" >${row.method}</td>
-    <td class="column-data cell column-3" data-key="syntax" style="background-color:${
+    <td data-index=${+row.index} data-column-name="column-3" class="column-data cell column-3" data-key="syntax" style="background-color:${
       row["column-3-bg"] || "color"
     }" >${row.syntax}</td>
-    <td class="column-data cell column-4" data-key="involved" style="background-color:${
+    <td data-index=${+row.index} data-column-name="column-4" class="column-data cell column-4" data-key="involved" style="background-color:${
       row["column-4-bg"] || "color"
     }" >${row.involved}</td>
-    <td class="column-data cell column-5" data-key="description" style="background-color:${
+    <td data-index=${+row.index} data-column-name="column-5" class="column-data cell column-5" data-key="description" style="background-color:${
       row["column-5-bg"] || "color"
-    }" >${row.description}</td>${getButtonEdit(+row.index)}</tr>`;
+    }" >${row.description}</td>${getButtonEdit(row)}</tr>`;
   });
   return tableRow;
 }

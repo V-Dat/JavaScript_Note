@@ -1,3 +1,4 @@
+import { getRowData } from "./ModalRowDetail.js";
 import {
   handleSaveRecord,
   handleClickEraser,
@@ -22,7 +23,7 @@ export function handleLeftClickTable(event, app) {
   const isClickOnCell = checkIsClickOnCell(target);
   if (isClickOnCell) {
     // 1 click on cell
-    return handleClickOnCell(event);
+    return handleClickOnCell(event, app);
   }
 
   const node = target.closest("img"); // img as a button
@@ -37,10 +38,9 @@ export function handleLeftClickTable(event, app) {
   }
 }
 
-function handleClickOnCell(event) {
+function handleClickOnCell(event, app) {
   const highlighttNode = getNodeForHighlight(event);
   const targetNode = event.target;
-
   if (!highlighttNode) return;
   const isHighlight = checkIsHighlight(targetNode);
 
@@ -48,9 +48,9 @@ function handleClickOnCell(event) {
     (isHighlight && (event.shiftKey || event.altKey || event.ctrlKey)) ||
     buttonFeatureActive === BUTTON_FEATURE.ERASER
   ) {
-    removeHighlight(highlighttNode);
+    removeHighlight(highlighttNode, app);
   } else {
-    processHighlightRow(highlighttNode);
+    processHighlightRow(highlighttNode, app);
   }
 }
 
@@ -75,14 +75,18 @@ function removeHighlight(targetNode) {
     targetNode.style.backgroundColor = "";
   }
 }
-function processHighlightRow(targetNode) {
+function processHighlightRow(targetNode, app) {
   const backgroundColor = highlightRow();
+  const rowData = getRowData(app);
+
   if (targetNode.nodeName === "TR") {
     for (const cell of targetNode.children) {
       cell.style.backgroundColor = backgroundColor;
+      saveStyleToJsonData(cell, rowData, backgroundColor);
     }
   } else {
     targetNode.style.backgroundColor = backgroundColor;
+    saveStyleToJsonData(targetNode, rowData, backgroundColor);
   }
 }
 function getNodeForHighlight(event) {
@@ -110,13 +114,27 @@ export function selectFeatureHighlight(event) {
 
 // =======================================================================================
 
-export function getButtonEdit(key) {
-  return `<td class="button-actions">
-         <img key=${key} title="Save" class="save" src="./Assets/Icons/create-unactive-icon.svg" width="28px" height="28px"></img>
-         <img key=${key} title="Edit" class="edit active" src="./Assets/Icons/edit-active-icon.svg" width="28px" height="28px" ></img>
-         <img key=${key} title="Eraser" class="eraser" src="./Assets/Icons/delete-icon.svg" width="28px" height="28px"></img> 
-         <img key=${key} title="Undo" class="undo" src="./Assets/Icons/undo-unactive-icon.svg" width="28px" height="28px" ></img> 
-         <img key=${key} title="View Detail" class="view-detail" src="./Assets/Icons/view-detail-icon.svg" width="28px" height="28px" ></img> 
+export function getButtonEdit(row) {
+  return `<td data-index=${
+    row.index
+  }  data-column-name="column-6" class="cell column-6 button-actions"  data-key="actions"  style="background-color:${
+    row["column-6-bg"] || "color"
+  }" >
+         <img key=${
+           row.index
+         } title="Save" class="save" src="./Assets/Icons/create-unactive-icon.svg" width="28px" height="28px"></img>
+         <img key=${
+           row.index
+         } title="Edit" class="edit active" src="./Assets/Icons/edit-active-icon.svg" width="28px" height="28px" ></img>
+         <img key=${
+           row.index
+         } title="Eraser" class="eraser" src="./Assets/Icons/delete-icon.svg" width="28px" height="28px"></img> 
+         <img key=${
+           row.index
+         } title="Undo" class="undo" src="./Assets/Icons/undo-unactive-icon.svg" width="28px" height="28px" ></img> 
+         <img key=${
+           row.index
+         } title="View Detail" class="view-detail" src="./Assets/Icons/view-detail-icon.svg" width="28px" height="28px" ></img> 
       </td>`;
 }
 
@@ -167,4 +185,9 @@ function handleClickRowFeature(rowNode, app, node) {
   } else if (className.includes("view-detail")) {
     handleClickViewRow(rowNode, app);
   }
+}
+
+function saveStyleToJsonData(node, rowData, backgroundColor) {
+  const key = node.dataset["columnName"];
+  rowData[key + "-bg"] = backgroundColor;
 }

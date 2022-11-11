@@ -90,7 +90,7 @@ export function onEditNote(app) {
   disableButtonWhenEditing();
   showEditNoteNode();
   const textareaNode = $(".modal-row-detail .modal-row-detail-note textarea");
-  const rowData = getRowDataActiveViewDetail(app);
+  const rowData = getRowData(app);
   textareaNode.value = rowData.note || "";
   textareaNode.scrollIntoView();
 }
@@ -103,7 +103,7 @@ export function hideEditNoteNode() {
   const editNode = $(".modal-row-detail .modal-row-detail-note");
   editNode.style.display = "none";
 }
-export function getRowDataActiveViewDetail(app) {
+export function getRowData(app) {
   const rowData = app.JsonData.methodHelper.find(
     (row) => row.index === +app.activeRow
   );
@@ -112,7 +112,7 @@ export function getRowDataActiveViewDetail(app) {
 
 export function saveRowData(app) {
   const textareaNode = $(".modal-row-detail .modal-row-detail-note textarea");
-  const rowData = getRowDataActiveViewDetail(app);
+  const rowData = getRowData(app);
   if (!rowData) return;
   rowData.note = textareaNode.value;
   textareaNode.value = "";

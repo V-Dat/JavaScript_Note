@@ -22,7 +22,7 @@ import {
 import {
   showModalRowDetail,
   getDataRowNode,
-  getRowDataActiveViewDetail,
+  getRowData,
 } from "./ModalRowDetail.js";
 import { toggleNode } from "./SwitchDocument.js";
 
@@ -224,7 +224,7 @@ export function setactiveRow(app, index) {
 function replaceNodeWithTextareaNode(rowNode, app) {
   const columnsData = rowNode.querySelectorAll(".column-data");
   rowNode.setAttribute("isedit", true);
-  const rowData = getRowDataActiveViewDetail(app); // row data in json file
+  const rowData = getRowData(app); // row data in json file
 
   for (let i = 0; i < columnsData.length; i++) {
     const tdNode = rowNode.querySelector(
