@@ -4,46 +4,80 @@
         "dataTableHeader": [
             {
                 "text": "STT",
-                "buttonText": "Action"
+                "buttonText": "Action",
+                "index": 1
             },
             {
                 "text": "Method Name",
-                "buttonText": "Action"
+                "buttonText": "Action",
+                "index": 2
             },
             {
                 "text": "Syntax",
-                "buttonText": "Action"
+                "buttonText": "Action",
+                "index": 3
             },
             {
                 "text": "Involved",
-                "buttonText": "Action"
+                "buttonText": "Action",
+                "index": 4
             },
             {
                 "text": "Description",
-                "buttonText": "Action"
+                "buttonText": "Action",
+                "index": 5
             },
             {
                 "text": "Action",
-                "buttonText": "Action"
+                "buttonText": "Action",
+                "index": 6
             }
         ],
         "dataTableBody": [
-            {
-                "name": "method",
-                "data": "asd"
-            },
-            {
-                "name": "syntax",
-                "data": "ad"
-            },
-            {
-                "name": "involved",
-                "data": "asd"
-            },
-            {
-                "name": "description",
-                "data": "aaaaaaaaaaaaaa"
-            }
+            [
+                {
+                    "name": "method",
+                    "data": "asd",
+                    "index": 0
+                },
+                {
+                    "name": "syntax",
+                    "data": "ad",
+                    "index": 1
+                },
+                {
+                    "name": "involved",
+                    "data": "asd",
+                    "index": 2
+                },
+                {
+                    "name": "description",
+                    "data": "aaaaaaaaaaaaaa",
+                    "index": 3
+                }
+            ],
+            [
+                {
+                    "name": "method",
+                    "data": "asd",
+                    "index": 0
+                },
+                {
+                    "name": "syntax",
+                    "data": "ad",
+                    "index": 1
+                },
+                {
+                    "name": "involved",
+                    "data": "asd",
+                    "index": 2
+                },
+                {
+                    "name": "description",
+                    "data": "aaaaaaaaaaaaaa",
+                    "index": 3
+                }
+            ]
         ]
     },
     "headingdataTableBody": "      <a>Method Helper</a>"

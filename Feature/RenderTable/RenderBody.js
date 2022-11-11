@@ -2,33 +2,38 @@ import { getButtonEdit } from "../CellFeature.js";
 import { $ } from "../Util.js";
 
 export function renderTableBody(app) {
-  const tableRowData = processRow(app.JsonData?.dataTable.dataTableBody);
-  if (tableRowData) {
-    const tbody = $("#table tbody");
-    tbody.insertAdjacentHTML("beforeend", tableRowData);
-  }
+  if (!app?.JsonData?.dataTable?.dataTableBody) return;
+  const tableRowData = processRow(app.JsonData.dataTable.dataTableBody);
+  const tbody = $("#table tbody");
+  tbody.insertAdjacentHTML("beforeend", tableRowData);
 }
 
 function processRow(data) {
   if (!data) return;
   let tableRow = "";
-  data.forEach((row, index) => {
-    tableRow += `<tr data-indexRecord=${+index} data-key=${+index} >
-      <td type="cell" data-indexRecord=${+index} data-index=${+index} data-column-name="column-1" class="cell column-1" style="background-color:${
-      row[`column-${index + 1}-bg`] || "color"
-    }" >${+index + 1}</td>
-      <td type="cell" data-indexRecord=${+index} data-index=${+index} data-column-name="column-2" class="column-data cell column-2" data-key="method" style="background-color:${
-      row[`column-${index + 1}-bg`] || "color"
-    }" >${row.data}</td>
-      <td type="cell" data-indexRecord=${+index} data-index=${+index} data-column-name="column-3" class="column-data cell column-3" data-key="syntax" style="background-color:${
-      row[`column-${index + 1}-bg`] || "color"
-    }" >${row.data}</td>
-      <td type="cell" data-indexRecord=${+index} data-index=${+index} data-column-name="column-4" class="column-data cell column-4" data-key="involved" style="background-color:${
-      row[`column-${index + 1}-bg`] || "color"
-    }" >${row.data}</td>
-      <td type="cell" data-indexRecord=${+index} data-index=${+index} data-column-name="column-5" class="column-data cell column-5" data-key="description" style="background-color:${
-      row[`column-${index + 1}-bg`] || "color"
-    }" >${row.data}</td>${getButtonEdit(row, index)}</tr>`;
+
+  data.forEach((row, rowIndex) => {
+    tableRow += `<tr data-row-index=${rowIndex}>
+      <td type="cell" data-row-index=${rowIndex} data-column-index=${0} data-column-name="column-${0}" class="cell" style="background-color:${
+      row[rowIndex][`column-${rowIndex + 1}-bg`] || "color"
+    }" >${+rowIndex + 1}</td>`;
+
+    row.forEach((cell, cellIndex) => {
+      tableRow += `<td type="cell" data-row-index=${rowIndex} data-column-index=${
+        cellIndex + 1
+      } data-column-name="column-${
+        cellIndex + 1
+      }" class="column-data cell" style="background-color:${
+        cell[`column-${cellIndex + 1}-bg`] || "color"
+      }" >${cell.data}</td>`;
+    });
+
+    tableRow += `${getButtonEdit(
+      row[rowIndex],
+      rowIndex,
+      row.length + 1
+    )}</tr>`;
   });
+
   return tableRow;
 }

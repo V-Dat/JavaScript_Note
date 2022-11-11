@@ -68,27 +68,15 @@ export function selectFeatureHighlight(event) {
 
 // =======================================================================================
 
-export function getButtonEdit(row, index) {
-  return `<td type="cell" data-index=${
-    +index + 1
-  }  data-column-name="column-6" class="cell column-6 button-actions"  data-key="actions"  style="background-color:${
-    row[`column-${+index + 1}-bg`] || "color"
+export function getButtonEdit(cell, rowIndex, cellIndex) {
+  return `<td type="cell" data-row-index=${rowIndex} data-column-index=${cellIndex} data-column-name="column-${cellIndex}" class="cell button-actions" style="background-color:${
+    cell[`column-${rowIndex + 1}-bg`] || "color"
   }" >
-         <img type="feature" key=${
-           +index + 1
-         } title="Save" class="save" src="./Assets/Icons/create-unactive-icon.svg" width="28px" height="28px"></img>
-         <img type="feature" key=${
-           +index + 1
-         } title="Edit" class="edit active" src="./Assets/Icons/edit-active-icon.svg" width="28px" height="28px" ></img>
-         <img type="feature" key=${
-           +index + 1
-         } title="Eraser" class="eraser" src="./Assets/Icons/delete-icon.svg" width="28px" height="28px"></img> 
-         <img type="feature" key=${
-           +index + 1
-         } title="Undo" class="undo" src="./Assets/Icons/undo-unactive-icon.svg" width="28px" height="28px" ></img> 
-         <img type="feature" key=${
-           +index + 1
-         } title="View Detail" class="view-detail" src="./Assets/Icons/view-detail-icon.svg" width="28px" height="28px" ></img> 
+         <img type="feature" data-row-index=${rowIndex} key=${rowIndex} title="Save" class="save" src="./Assets/Icons/create-unactive-icon.svg" width="28px" height="28px"></img>
+         <img type="feature" data-row-index=${rowIndex} key=${rowIndex} title="Edit" class="edit active" src="./Assets/Icons/edit-active-icon.svg" width="28px" height="28px" ></img>
+         <img type="feature" data-row-index=${rowIndex} key=${rowIndex} title="Eraser" class="eraser" src="./Assets/Icons/delete-icon.svg" width="28px" height="28px"></img> 
+         <img type="feature" data-row-index=${rowIndex} key=${rowIndex} title="Undo" class="undo" src="./Assets/Icons/undo-unactive-icon.svg" width="28px" height="28px" ></img> 
+         <img type="feature" data-row-index=${rowIndex} key=${rowIndex} title="View Detail" class="view-detail" src="./Assets/Icons/view-detail-icon.svg" width="28px" height="28px" ></img> 
       </td>`;
 }
 
