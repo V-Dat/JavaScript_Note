@@ -68,16 +68,15 @@ export function selectFeatureHighlight(event) {
 
 // =======================================================================================
 
-export function getButtonEdit(cell, rowIndex, cellIndex) {
-  return `<td type="cell" data-row-index=${rowIndex} data-column-index=${cellIndex} data-column-name="column-${cellIndex}" class="cell button-actions" style="background-color:${
-    cell[`column-${rowIndex + 1}-bg`] || "color"
-  }" >
-         <img type="feature" data-row-index=${rowIndex} key=${rowIndex} title="Save" class="save" src="./Assets/Icons/create-unactive-icon.svg" width="28px" height="28px"></img>
-         <img type="feature" data-row-index=${rowIndex} key=${rowIndex} title="Edit" class="edit active" src="./Assets/Icons/edit-active-icon.svg" width="28px" height="28px" ></img>
-         <img type="feature" data-row-index=${rowIndex} key=${rowIndex} title="Eraser" class="eraser" src="./Assets/Icons/delete-icon.svg" width="28px" height="28px"></img> 
-         <img type="feature" data-row-index=${rowIndex} key=${rowIndex} title="Undo" class="undo" src="./Assets/Icons/undo-unactive-icon.svg" width="28px" height="28px" ></img> 
-         <img type="feature" data-row-index=${rowIndex} key=${rowIndex} title="View Detail" class="view-detail" src="./Assets/Icons/view-detail-icon.svg" width="28px" height="28px" ></img> 
-      </td>`;
+export function getButtonEdit(rowIndex, cellIndex) {
+  // sau này thay key = feature name
+  return `
+         <img type="feature" data-row-index=${rowIndex} data-column-index=${cellIndex} key=${rowIndex} title="Save" class="save" src="./Assets/Icons/create-unactive-icon.svg" width="28px" height="28px"></img>
+         <img type="feature" data-row-index=${rowIndex} data-column-index=${cellIndex} key=${rowIndex} title="Edit" class="edit active" src="./Assets/Icons/edit-active-icon.svg" width="28px" height="28px" ></img>
+         <img type="feature" data-row-index=${rowIndex} data-column-index=${cellIndex} key=${rowIndex} title="Eraser" class="eraser" src="./Assets/Icons/delete-icon.svg" width="28px" height="28px"></img> 
+         <img type="feature" data-row-index=${rowIndex} data-column-index=${cellIndex} key=${rowIndex} title="Undo" class="undo" src="./Assets/Icons/undo-unactive-icon.svg" width="28px" height="28px" ></img> 
+         <img type="feature" data-row-index=${rowIndex} data-column-index=${cellIndex} key=${rowIndex} title="View Detail" class="view-detail" src="./Assets/Icons/view-detail-icon.svg" width="28px" height="28px" ></img> 
+    `;
 }
 
 function checkIsHeaderFeature(rowNode) {

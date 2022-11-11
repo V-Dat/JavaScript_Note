@@ -13,26 +13,17 @@ function processRow(data) {
   let tableRow = "";
 
   data.forEach((row, rowIndex) => {
-    tableRow += `<tr data-row-index=${rowIndex}>
-      <td type="cell" data-row-index=${rowIndex} data-column-index=${0} data-column-name="column-${0}" class="cell" style="background-color:${
-      row[rowIndex][`column-${rowIndex + 1}-bg`] || "color"
-    }" >${+rowIndex + 1}</td>`;
-
+    tableRow += `<tr data-row-index=${rowIndex}>`;
     row.forEach((cell, cellIndex) => {
-      tableRow += `<td type="cell" data-row-index=${rowIndex} data-column-index=${
-        cellIndex + 1
-      } data-column-name="column-${
-        cellIndex + 1
-      }" class="column-data cell" style="background-color:${
-        cell[`column-${cellIndex + 1}-bg`] || "color"
-      }" >${cell.data}</td>`;
+      tableRow += `<td type="cell" data-row-type="row-data" data-row-index=${
+        rowIndex + 2
+      } data-column-index=${cellIndex} data-column-name=${
+        cell.name
+      } class="column-data cell" style="background-color:${
+        cell.bg || "color"
+      }" >${cell.data ? cell.data : getButtonEdit(rowIndex, cellIndex)}</td>`;
     });
-
-    tableRow += `${getButtonEdit(
-      row[rowIndex],
-      rowIndex,
-      row.length + 1
-    )}</tr>`;
+    tableRow += "</tr>";
   });
 
   return tableRow;

@@ -5,7 +5,7 @@ import { saveStyleToJsonData } from "./SaveStyle.js";
 
 export function handlePaintTable(cellNode, app) {
   const feature = getFeaturePaint();
-
+  const rowName = cellNode.dataset.rowName;
   switch (feature) {
     case FEATURE.MAKE_UP_ROW:
       processMakeUpRow(cellNode, app);
@@ -42,10 +42,10 @@ function processMakeUpRow(cellNode, app) {
 
 function processMakeUpCell(cellNode, app) {
   const backgroundColor = randomColor();
-  const rowIndex = cellNode.dataset.index;
-  const rowData = getRowData(app);
+  const cellData = getCellData(cellNode, app);
+
   cellNode.style.backgroundColor = backgroundColor;
-  saveStyleToJsonData(cellNode, rowData, backgroundColor);
+  saveStyleToJsonData(cellNode, cellData, backgroundColor);
 }
 
 function getFeaturePaint() {
@@ -79,9 +79,28 @@ function removeHighlight(targetNode, app) {
     saveStyleToJsonData(targetNode, rowData, "");
   }
 }
-export function getCellRecord(cell, app) {
-  const rowData = app.JsonData.dataTable.dataTableBody.find(
-    (item) => item.index === +cell.dataset.indexRecord
-  );
-  return rowData;
+export function getCellData(cellNode, app) {
+  const rowIndex = cellNode.dataset.rowIndex;
+  switch (rowIndex) {
+    case "0": {
+      let rowData = app.JsonData.dataTable.dataTableHeader.find((_, index) => {
+        return index === +cellNode.dataset.columnIndex;
+      });
+      return rowData;
+    }
+    case "1": {
+      let rowData = app.JsonData.dataTable.dataTableFirstRow.find(
+        (_, index) => {
+          return index === +cellNode.dataset.columnIndex;
+        }
+      );
+      return rowData;
+    }
+    default: {
+      let rowData = app.JsonData.dataTable.dataTableBody.find((_, index) => {
+        return index === +cellNode.dataset.rowIndex - 2;
+      });
+      return rowData[cellNode.dataset.columnIndex];
+    }
+  }
 }
