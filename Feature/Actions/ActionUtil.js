@@ -1,7 +1,7 @@
 // ============ BUTTON BUTTON SAVE NEW RECORD ============
 
-import { setactiveRow } from "../TextAreaCrud.js";
 import { $$ } from "../Util.js";
+import { setActiveRow } from "./AccessData.js";
 
 export function activeButtonSaveNewRecord(rowNode) {
   if (!rowNode) return;
@@ -122,7 +122,7 @@ export function unActiveButtonEraserRowAndShowButtonDelete(node) {
 export function unActiveAllEditingRow(app) {
   const allEditingRowNode = $$("tr.editing");
   if (!allEditingRowNode) return;
-  setactiveRow(app, null);
+  setActiveRow(app, null);
   allEditingRowNode.forEach((rowEditing) => {
     rowEditing.classList.remove("editing");
   });
@@ -130,7 +130,7 @@ export function unActiveAllEditingRow(app) {
 
 export function activeEditingRow(rowNode, app) {
   rowNode.classList.add("editing");
-  setactiveRow(app, rowNode.dataset.rowIndex);
+  setActiveRow(app, rowNode.dataset.rowIndex);
 }
 
 //

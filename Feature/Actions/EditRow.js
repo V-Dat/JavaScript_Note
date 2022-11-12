@@ -1,6 +1,6 @@
 import {
   getRowDataFromDB,
-  getRowDataForUpdateRecord,
+  getRowDataFromActiveRow,
   getRowDataPrevious,
 } from "./AccessData.js";
 import {
@@ -17,7 +17,7 @@ import {
   focusNode,
 } from "./ActionUtil.js";
 import { $$, $ } from "../Util.js";
-import { setactiveRow, setPreviousActiveRow } from "../TextAreaCrud.js";
+import { setActiveRow } from "./AccessData.js";
 
 export function handleEditRow(event, app) {
   const rowNode = event.target.closest("tr");
@@ -63,7 +63,7 @@ function handleUpdateStateEdit(rowNode, app) {
   if (app.activeRow !== null) {
     app.previousActiveRow = String(app.activeRow);
   }
-  setactiveRow(app, rowNode.dataset.rowIndex);
+  setActiveRow(app, rowNode.dataset.rowIndex);
 }
 
 function handleResetRowNoSave(app) {

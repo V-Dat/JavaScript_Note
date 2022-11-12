@@ -5,7 +5,7 @@ export function getRowDataFromDB(app) {
   return result.slice(1, -1);
 }
 
-export function getRowDataForUpdateRecord(app) {
+export function getRowDataFromActiveRow(app) {
   const result = app.JsonData.dataTable.dataTableBody.find((_, index) => {
     return +index === +app.activeRow;
   });
@@ -18,4 +18,8 @@ export function getRowDataPrevious(app) {
     return +index === +app.previousActiveRow;
   });
   return result.slice(1, -1);
+}
+
+export function setActiveRow(app, index) {
+  app.activeRow = index;
 }

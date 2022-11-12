@@ -7,26 +7,17 @@ import { $, highlightNode } from "./Util.js";
 
 export function processDataModalDetail(rowData) {
   if (!rowData) return;
-  const html = `
-    <div class="content-method">
-      ${rowData.method}
-    </div>
-    <div class="content-syntax">
-      <h2>I - Syntax  </h2>
-      ${rowData.syntax}
-    </div>
-    <div class="content-involved">
-      <h2>II - Involved </h2>
-      ${rowData.involved}
-    </div>
-    <div class="content-description">
-      <h2>III - Description  </h2>
-      ${rowData.description}
-    </div>
-    <div class="content-note">${
-      rowData.note ? `<h2>IV - Note </h2>${rowData.note}` : ""
-    }</div>
-    `;
+  let html = ``;
+  rowData.forEach((cellData, index) => {
+    if (cellData.show.includes("detail")) {
+      html += `
+      <div class="content-${cellData.name}">
+      <h2>${index} - ${cellData.name.toUpperCase()}  </h2>
+      ${cellData.data}
+      </div>
+      `;
+    }
+  });
   return html;
 }
 

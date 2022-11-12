@@ -1,4 +1,4 @@
-import { getRowDataForUpdateRecord } from "./AccessData.js";
+import { getRowDataFromActiveRow } from "./AccessData.js";
 import {
   activeButtonEdit,
   unActiveAllEditingRow,
@@ -22,10 +22,9 @@ export function handleSaveUpdateRecord(event, app) {
 
 function updateDataAfterEdit(rowNode, app) {
   const columnsData = rowNode.querySelectorAll("td.cell");
-  const rowData = getRowDataForUpdateRecord(app);
+  const rowData = getRowDataFromActiveRow(app);
 
   columnsData.forEach((cell, index) => {
-    if (index === 0 || index === columnsData.length - 1) return;
     rowData[index].data = cell.querySelector("textarea").value;
     cell.innerHTML = cell.querySelector("textarea").value;
   });

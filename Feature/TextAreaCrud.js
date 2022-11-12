@@ -5,12 +5,6 @@ import {
   activeButtonEditContent,
   activeButtonSaveEditContent,
 } from "./Util.js";
-import {
-  showModalRowDetail,
-  getDataRowNode,
-  getRowData,
-} from "./ModalRowDetail.js";
-import { toggleNode } from "./SwitchDocument.js";
 
 export function hanlePreRender() {
   // const listDataNodes = $$("table tr[data-key]");
@@ -37,17 +31,6 @@ export function handleEditMainContent(JsonData) {
     activeButtonSaveEditContent($(".button-edit-main-content"));
   }
 }
-
-export function handleClickViewRow(rowNode, app) {
-  const rowData = getDataRowNode(rowNode, app);
-  setactiveRow(app, rowData.index);
-  showModalRowDetail(rowData);
-  toggleNode($(".switch-document-group .btn-switch"));
-}
-
-export function setactiveRow(app, index) {
+export function setActiveRow(app, index) {
   app.activeRow = index;
-}
-export function setPreviousActiveRow(app, index) {
-  app.previousActiveRow = +index;
 }

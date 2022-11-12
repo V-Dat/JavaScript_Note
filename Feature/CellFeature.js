@@ -1,8 +1,6 @@
-import { handleEditRow } from "./Actions/EditRow.js";
 import { handleRowFeature } from "./Actions/RowFeature.js";
 import { handlePaintTable } from "./PaintTable/PaintTable.js";
-import { handleClickViewRow } from "./TextAreaCrud.js";
-import { highlightNode, $ } from "./Util.js";
+import { $ } from "./Util.js";
 
 export function handleClickOnTable(event, app) {
   const targetNode = event.target;

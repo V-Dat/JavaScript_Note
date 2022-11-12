@@ -76,96 +76,162 @@
                 {
                     "name": "stt",
                     "data": "1",
-                    "index": 0
+                    "index": 0,
+                    "show": [
+                        "home"
+                    ]
                 },
                 {
                     "name": "method",
                     "data": "1111111111111111111111",
-                    "index": 1
+                    "index": 1,
+                    "show": [
+                        "detail",
+                        "home"
+                    ]
                 },
                 {
                     "name": "syntax",
                     "data": "1111111111111111111111",
-                    "index": 2
+                    "index": 2,
+                    "show": [
+                        "detail",
+                        "home"
+                    ]
                 },
                 {
                     "name": "involved",
                     "data": "1111111111111111111111",
-                    "index": 3
+                    "index": 3,
+                    "show": [
+                        "detail",
+                        "home"
+                    ]
                 },
                 {
                     "name": "description",
                     "data": "1111111111111111111111",
-                    "index": 4
+                    "index": 4,
+                    "show": [
+                        "detail",
+                        "home"
+                    ]
                 },
                 {
                     "name": "action",
                     "data": null,
-                    "index": 5
+                    "index": 5,
+                    "show": [
+                        "home"
+                    ]
                 }
             ],
             [
                 {
                     "name": "stt",
                     "data": "2",
-                    "index": 0
+                    "index": 0,
+                    "show": [
+                        "home"
+                    ]
                 },
                 {
                     "name": "method",
-                    "data": "222222222222222222",
-                    "index": 1
+                    "data": "2222222222222222222222",
+                    "index": 1,
+                    "show": [
+                        "detail",
+                        "home"
+                    ]
                 },
                 {
                     "name": "syntax",
-                    "data": "222222222222222222",
-                    "index": 2
+                    "data": "2222222222222222222222",
+                    "index": 2,
+                    "show": [
+                        "detail",
+                        "home"
+                    ]
                 },
                 {
                     "name": "involved",
-                    "data": "222222222222222222",
-                    "index": 3
+                    "data": "2222222222222222222222",
+                    "index": 3,
+                    "show": [
+                        "detail",
+                        "home"
+                    ]
                 },
                 {
                     "name": "description",
-                    "data": "222222222222222222",
-                    "index": 4
+                    "data": "2222222222222222222222",
+                    "index": 4,
+                    "show": [
+                        "detail",
+                        "home"
+                    ]
                 },
                 {
-                    "name": "description",
+                    "name": "action",
                     "data": null,
-                    "index": 5
+                    "index": 5,
+                    "show": [
+                        "home"
+                    ]
                 }
             ],
             [
                 {
                     "name": "stt",
                     "data": "3",
-                    "index": 0
+                    "index": 0,
+                    "show": [
+                        "home"
+                    ]
                 },
                 {
                     "name": "method",
-                    "data": "3333333333333333333",
-                    "index": 1
+                    "data": "33333333333333333333",
+                    "index": 1,
+                    "show": [
+                        "detail",
+                        "home"
+                    ]
                 },
                 {
                     "name": "syntax",
-                    "data": "3333333333333333333",
-                    "index": 2
+                    "data": "33333333333333333333",
+                    "index": 2,
+                    "show": [
+                        "detail",
+                        "home"
+                    ]
                 },
                 {
                     "name": "involved",
-                    "data": "3333333333333333333",
-                    "index": 3
+                    "data": "33333333333333333333",
+                    "index": 3,
+                    "show": [
+                        "detail",
+                        "home"
+                    ]
                 },
                 {
                     "name": "description",
-                    "data": "3333333333333333333",
-                    "index": 4
+                    "data": "33333333333333333333",
+                    "index": 4,
+                    "show": [
+                        "detail",
+                        "home"
+                    ]
                 },
                 {
-                    "name": "description",
+                    "name": "action",
                     "data": null,
-                    "index": 5
+                    "index": 5,
+                    "show": [
+                        "home"
+                    ]
                 }
             ]
         ]
