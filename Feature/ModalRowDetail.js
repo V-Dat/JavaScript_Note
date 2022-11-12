@@ -4,6 +4,7 @@ import {
 } from "./ModalPlaygrounds.js";
 import { toggleNode } from "./SwitchDocument.js";
 import { $, highlightNode } from "./Util.js";
+import { checkIsEditNote } from "./ViewDetail/ActionWhenEditNote.js";
 
 export function processDataModalDetail(rowData) {
   if (!rowData) return;
@@ -25,7 +26,7 @@ export function showModalRowDetail(rowData) {
   limitHeightAndWidthBody();
   showNodeModalRowDetail();
   showButtonCloseModalRowDetail();
-  showButtonEditNote();
+  showButthandleClickEditNote();
   embedDataModalDetail(rowData);
 }
 
@@ -33,7 +34,7 @@ function showButtonCloseModalRowDetail() {
   const buttonCloseModal = $(".button-close-modal-row-detail");
   buttonCloseModal.style.display = "block";
 }
-function showButtonEditNote() {
+function showButthandleClickEditNote() {
   const buttonCloseModal = $(".button-edit-note");
   buttonCloseModal.style.display = "block";
 }
@@ -44,7 +45,7 @@ export function hideModalRowDetail() {
   unlimitHeightAndWidthBody();
   hideButtonCloseModalRowDetail();
   hideNodeModalRowDetail();
-  hideButtonEditNote();
+  hideButthandleClickEditNote();
   toggleNode($(".switch-document-group .btn-switch"));
 }
 
@@ -53,12 +54,12 @@ export function hideButtonCloseModalRowDetail() {
   buttonCloseModal.style.display = "none";
 }
 
-function hideButtonEditNote() {
+function hideButthandleClickEditNote() {
   const buttonCloseModal = $(".button-edit-note");
   buttonCloseModal.style.display = "none";
 }
 
-function embedDataModalDetail(rowData) {
+export function embedDataModalDetail(rowData) {
   const embed = $(".modal-row-detail-content");
   embed.innerHTML = processDataModalDetail(rowData);
   highlightNode(embed);
@@ -73,91 +74,4 @@ export function hideNodeModalRowDetail() {
   const modalDetail = $(".modal-row-detail");
   modalDetail.style.display = "none";
   modalDetail.classList.remove("active");
-}
-
-export function onEditNote(app) {
-  const isEditing = checkIsEditNote();
-  if (isEditing) return;
-  disableButtonWhenEditing();
-  showEditNoteNode();
-  const textareaNode = $(".modal-row-detail .modal-row-detail-note textarea");
-  const rowData = getRowData(app);
-  textareaNode.value = rowData.note || "";
-  textareaNode.scrollIntoView();
-}
-
-function showEditNoteNode() {
-  const editNode = $(".modal-row-detail .modal-row-detail-note");
-  editNode.style.display = "block";
-}
-export function hideEditNoteNode() {
-  const editNode = $(".modal-row-detail .modal-row-detail-note");
-  editNode.style.display = "none";
-}
-export function getRowData(app) {
-  const rowData = app.JsonData.dataTable.dataTableBody.find(
-    (row) => row.index === +app.activeRow
-  );
-  return rowData;
-}
-
-export function saveRowData(app) {
-  const textareaNode = $(".modal-row-detail .modal-row-detail-note textarea");
-  const rowData = getRowData(app);
-  if (!rowData) return;
-  rowData.note = textareaNode.value;
-  textareaNode.value = "";
-  return rowData;
-}
-
-export function clearNote(JsonData) {
-  const textareaNode = $(".modal-row-detail .modal-row-detail-note textarea");
-  JsonData.node = "";
-  textareaNode.value = "";
-  textareaNode.focus();
-}
-
-export function handleActionNote(event, app) {
-  const targetNote = event.target.closest("img");
-  if (!targetNote) return;
-  switch (targetNote.getAttribute("type")) {
-    case "action__send": {
-      const rowData = saveRowData(app);
-      if (!rowData) return;
-      hideEditNoteNode();
-      embedDataModalDetail(rowData);
-      enableButtonWhenFinishedEdit();
-      break;
-    }
-    case "action__clear":
-      clearNote(app);
-      break;
-    case "action__preview":
-      console.log("in developing");
-      break;
-  }
-}
-export function getDataRowNode(rowNode, app) {
-  const rowData = app.JsonData.dataTable.dataTableBody.find(
-    (item) => item.index === +rowNode.dataset.key
-  );
-  return rowData;
-}
-
-function checkIsEditNote() {
-  const editNode = $(".modal-row-detail .modal-row-detail-note");
-  return editNode.style.display === "block";
-}
-function enableButtonWhenFinishedEdit() {
-  const buttonEditNote = $(".button-edit-note");
-  const buttonCloseModalRowDetail = $(".button-close-modal-row-detail");
-  buttonEditNote.src = "./Assets/Icons/comment-active-icon.svg";
-  buttonCloseModalRowDetail.src = "./Assets/Icons/home-active-icon.svg";
-}
-
-function disableButtonWhenEditing() {
-  const buttonEditNote = $(".button-edit-note");
-  const buttonCloseModalRowDetail = $(".button-close-modal-row-detail");
-  buttonEditNote.src = "./Assets/Icons/comment-unactive-icon.svg";
-  buttonCloseModalRowDetail.src = "./Assets/Icons/home-unactive-icon.svg";
 }

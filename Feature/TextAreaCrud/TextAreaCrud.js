@@ -1,18 +1,9 @@
 import {
   $,
-  $$,
   highlightNode,
   activeButtonEditContent,
   activeButtonSaveEditContent,
-} from "./Util.js";
-
-export function hanlePreRender() {
-  // const listDataNodes = $$("table tr[data-key]");
-  const listDataNodes = $$("table tr"); // tạm thời xóa hết sau này chỉ xóa data row
-  for (let i = 0; i < listDataNodes.length; i++) {
-    listDataNodes[i].remove();
-  }
-}
+} from "../Util.js";
 
 export function handleEditMainContent(JsonData) {
   const mainContent = $(".main-content");
@@ -30,7 +21,4 @@ export function handleEditMainContent(JsonData) {
     mainContent.innerHTML = `<textarea style="width: 95%; max-width: 95%">${JsonData.mainContent}</textarea>`;
     activeButtonSaveEditContent($(".button-edit-main-content"));
   }
-}
-export function setActiveRow(app, index) {
-  app.activeRow = index;
 }

@@ -23,3 +23,21 @@ export function getRowDataPrevious(app) {
 export function setActiveRow(app, index) {
   app.activeRow = index;
 }
+
+export function findNoteObject(app) {
+  const result = getRowDataFromActiveRow(app);
+  const noteObject = result.findLast((item, index) => {
+    return item.name === "note";
+  });
+  if (noteObject) {
+    return noteObject;
+  } else {
+    const newLength = result.push({
+      name: "note",
+      data: "",
+      index: result.length,
+      show: ["detail"],
+    });
+    return result[newLength - 1];
+  }
+}

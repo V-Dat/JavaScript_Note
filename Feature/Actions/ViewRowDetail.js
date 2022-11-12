@@ -7,7 +7,6 @@ export function handleClickViewRow(event, app) {
   const rowNode = event.target.closest("tr");
   setActiveRow(app, rowNode.dataset.rowIndex);
   const rowData = getRowDataFromActiveRow(app);
-
   showModalRowDetail(rowData);
   toggleNode($(".switch-document-group .btn-switch"));
 }

@@ -6,7 +6,6 @@ export function processDefaultState() {
   app = {
     ...app,
     JsonData: { mainContent: "", dataTableBody: [] },
-    isEditingCrudState: false,
     // isFillAllCrudState: false,
     counterId: null,
     activeRow: null,

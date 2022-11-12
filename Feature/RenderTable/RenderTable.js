@@ -1,6 +1,5 @@
 import { rendermainContent } from "../MainContent/RenderMainContent.js";
-import { hanlePreRender } from "../TextAreaCrud.js";
-import { $, highlightNode } from "../Util.js";
+import { $, $$, highlightNode } from "../Util.js";
 import { renderTableBody } from "./RenderBody.js";
 import { renderFirstRowTable } from "./RenderFirstRow.js";
 import { renderdataTableHeader } from "./RenderHeader.js";
@@ -31,4 +30,11 @@ export async function renderDataImport(event, app) {
       highlightNode($("body"));
       // saveLocalStorage(data); // Do not save localStorage when open file
     });
+}
+
+export function hanlePreRender() {
+  const listDataNodes = $$("table tr"); // tạm thời xóa hết sau này chỉ xóa data row
+  for (let i = 0; i < listDataNodes.length; i++) {
+    listDataNodes[i].remove();
+  }
 }

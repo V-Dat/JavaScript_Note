@@ -1,7 +1,9 @@
 import { $, highlightNode } from "./Feature/Util.js";
 import { readData } from "./Feature/FeatureLocalStorage.js";
-import { handleRender } from "./Feature/RenderTable/RenderTable.js";
-import { hanlePreRender } from "./Feature/TextAreaCrud.js";
+import {
+  handleRender,
+  hanlePreRender,
+} from "./Feature/RenderTable/RenderTable.js";
 import { renderHeading } from "./Feature/RenderHeading.js";
 import { processListener } from "./Feature/ProcessListener.js";
 import { processDefaultState } from "./Feature/ProcessDefaultState.js";
