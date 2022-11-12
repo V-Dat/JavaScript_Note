@@ -1,9 +1,9 @@
 import { handleRender } from "../RenderTable/RenderTable.js";
 import { $, $$ } from "../Util.js";
 import {
-  activeButtonCreate,
+  activeButtonSaveNewRecord,
   activeButtonEraserNewNode,
-  unActiveButtonCreate,
+  unactiveButtonSaveNewRecord,
   unActiveButtonEraserNewNode,
 } from "./ActionUtil.js";
 
@@ -12,13 +12,13 @@ export function handleInputCrudTextArea(app) {
   const isFillOne = checkIsInputOne();
   const rowNode = $(".crud-group");
   if (!isFillAll && !isFillOne) {
-    unActiveButtonCreate(rowNode);
+    unactiveButtonSaveNewRecord(rowNode);
     unActiveButtonEraserNewNode(rowNode);
   } else if (!isFillAll && isFillOne) {
     activeButtonEraserNewNode(rowNode);
-    unActiveButtonCreate(rowNode);
+    unactiveButtonSaveNewRecord(rowNode);
   } else {
-    activeButtonCreate(rowNode);
+    activeButtonSaveNewRecord(rowNode);
     activeButtonEraserNewNode(rowNode);
   }
 }
@@ -34,7 +34,7 @@ export function handleSaveRecord(event, app) {
   handleResetTextArea(".crud-group textarea");
   handleRender(app.JsonData);
   // app.isFillAllCrudState = false;
-  unActiveButtonCreate(rowNode);
+  unactiveButtonSaveNewRecord(rowNode);
   unActiveButtonEraserNewNode(rowNode);
   // highlightNode($("table tbody"));
   app.render();
@@ -81,7 +81,7 @@ function checkCrudTextArea() {
 export function handleEraserNewRecord(event) {
   const rowNode = event.target.closest("tr");
   unActiveButtonEraserNewNode(rowNode);
-  unActiveButtonCreate(rowNode);
+  unactiveButtonSaveNewRecord(rowNode);
   handleResetTextArea(".crud-group textarea");
 }
 

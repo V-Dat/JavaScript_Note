@@ -1,7 +1,8 @@
 import { handleEraserNewRecord, handleSaveRecord } from "./ActionFirstRow.js";
+import { handleEditRow } from "./EditRow.js";
+import { handleSaveUpdateRecord } from "./SaveRow.js";
 
 export function handleRowFeature(event, featureNode, app) {
-  // console.log(333, event, featureNode, app);
   const feature = featureNode.getAttribute("key");
   switch (feature) {
     case FEATURE_NAME.SAVE_NEW:
@@ -11,8 +12,10 @@ export function handleRowFeature(event, featureNode, app) {
       handleEraserNewRecord(event);
       break;
     case FEATURE_NAME.SAVE:
+      handleSaveUpdateRecord(event, app);
       break;
     case FEATURE_NAME.EDIT:
+      handleEditRow(event, app);
       break;
     case FEATURE_NAME.ERASER:
       break;

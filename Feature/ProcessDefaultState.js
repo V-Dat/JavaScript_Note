@@ -10,6 +10,7 @@ export function processDefaultState() {
     // isFillAllCrudState: false,
     counterId: null,
     activeRow: null,
+    previousActiveRow: null,
   };
   $(".button-feature.button-feature__eraser").setAttribute("active", true);
   countTimeSaveLocalStorage(app);
