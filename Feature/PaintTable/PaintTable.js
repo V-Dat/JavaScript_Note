@@ -31,6 +31,8 @@ function processPaintWithHotKey(cellNode, app) {
       processRemoveMakeUpRow(cellNode, app);
       break;
     case FEATURE.MAKE_UP_CELL:
+      processRemoveMakeUpCell(cellNode, app);
+      break;
     case FEATURE.REMOVE_MAKE_UP_CELL:
       processRemoveMakeUpCell(cellNode, app);
       break;
@@ -53,7 +55,7 @@ function processMakeUpCell(cellNode, app) {
   const cellData = getCellData(cellNode, app);
 
   cellNode.style.backgroundColor = backgroundColor;
-  saveStyleToJsonData(cellNode, cellData, backgroundColor);
+  saveStyleToJsonData(cellData, backgroundColor);
 }
 
 function processRemoveMakeUpCell(cellNode, app) {

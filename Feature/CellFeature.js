@@ -1,9 +1,8 @@
+import { handleRowFeature } from "./Actions/RowFeature.js";
 import { handlePaintTable } from "./PaintTable/PaintTable.js";
 import {
-  handleSaveRecord,
   handleClickEraser,
   handleSaveAfterEdit,
-  handleResetInput,
   handleEditRow,
   handleClickUndo,
   handleClickViewRow,
@@ -11,13 +10,15 @@ import {
 import { highlightNode, $ } from "./Util.js";
 
 export function handleClickOnTable(event, app) {
+  const targetNode = event.target;
   const isClickOnFeature = event.target.closest(`img[type="feature"]`);
   const isClickOnCell = event.target.closest(`td[type="cell"]`);
   const cellNode = isClickOnCell;
-  if (isClickOnCell) {
+  const featureNode = isClickOnFeature;
+  if (isClickOnCell && targetNode.nodeName !== "IMG") {
     handlePaintTable(event, cellNode, app);
-  } else if (isClickOnFeature) {
-    console.log("kkkkkkkkkkk");
+  } else if (isClickOnFeature && targetNode.nodeName === "IMG") {
+    handleRowFeature(event, featureNode, app);
   }
 }
 
@@ -46,29 +47,6 @@ export function getButtonEdit(rowIndex, cellIndex) {
          <img  ${attr} data-row-index=${rowIndex} data-column-index=${cellIndex} key="undo" title="Undo" class="undo" src="./Assets/Icons/undo-unactive-icon.svg"  ></img> 
          <img  ${attr} data-row-index=${rowIndex} data-column-index=${cellIndex} key="view-detail"  title="View Detail" class="view-detail" src="./Assets/Icons/view-detail-icon.svg"  ></img> 
     `;
-}
-
-function checkIsHeaderFeature(rowNode) {
-  return rowNode.classList.contains("crud-group");
-}
-function checkIsClickOnCell(target) {
-  const node = target.closest("img");
-  return !node;
-}
-function handleClickHeaderFeature(node, rowNode, app) {
-  if (
-    node.getAttribute("key") === "new-record" &&
-    node.getAttribute("type") === "save"
-  ) {
-    handleSaveRecord(rowNode, app);
-  } else if (
-    node.getAttribute("key") === "new-record" &&
-    node.getAttribute("type") === "clear"
-  ) {
-    unActiveButtonEraserNewNode(rowNode);
-    unActiveButtonCreate(rowNode);
-    handleResetInput();
-  }
 }
 
 function handleClickRowFeature(rowNode, app, node) {

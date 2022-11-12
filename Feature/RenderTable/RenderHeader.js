@@ -5,7 +5,7 @@ export function renderdataTableHeader(app) {
   const tHead = $("#table thead");
 
   const newTHead = app.JsonData.dataTable.dataTableHeader.map((cell) => {
-    return `<td type="cell" data-row-type="header" data-column-name=${
+    return `<td type="cell"  data-row-type="header" data-column-name=${
       cell.name
     } data-row-index=0 data-column-index=${cell.index} class="cell column-${
       cell.index

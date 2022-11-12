@@ -26,50 +26,6 @@ import {
   unActiveButtonEraserNewNode,
 } from "./Actions/ActionUtil.js";
 
-function getValueTextArea() {
-  const textAreaGroup = $$(".crud-group textarea");
-  const dataAreaInput = {};
-  textAreaGroup.forEach((item) => {
-    dataAreaInput[item.dataset.key] = item.value;
-  });
-  return dataAreaInput;
-}
-
-export function handleResetInput() {
-  const textAreaGroup = $$(".crud-group textarea");
-  for (let elem of textAreaGroup) {
-    elem.value = "";
-  }
-}
-
-export function handleSaveRecord(rowNode, app) {
-  // const isFillAll = app.isFillAllCrudState;
-  // if (!isFillAll || !rowNode) return;
-  const textAreaInput = getValueTextArea();
-
-  if (app.JsonData.dataTable.dataTableBody) {
-    app.JsonData.dataTable.dataTableBody.push({
-      ...textAreaInput,
-      index: app.JsonData.dataTable.dataTableBody.length,
-    });
-  } else {
-    app.JsonData.dataTable.dataTableBody = [
-      {
-        ...textAreaInput,
-        index: 0,
-      },
-    ];
-  }
-
-  handleResetInput();
-  handleRender(app.JsonData);
-  // app.isFillAllCrudState = false;
-  unActiveButtonCreate(rowNode);
-  unActiveButtonEraserNewNode(rowNode);
-  // highlightNode($("table tbody"));
-  app.render();
-}
-
 export function handleClickEraser(rowNode, app) {
   if (rowNode && rowNode.getAttribute("isedit") !== "true") {
     handleDeleteRow(app, rowNode);

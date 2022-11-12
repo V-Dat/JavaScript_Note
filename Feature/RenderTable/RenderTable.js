@@ -6,6 +6,12 @@ import { renderFirstRowTable } from "./RenderFirstRow.js";
 import { renderdataTableHeader } from "./RenderHeader.js";
 
 export function handleRender(app) {
+  if (!app.JsonData) return;
+  if (!app.JsonData.dataTable) return;
+  if (!app.JsonData.dataTable.dataTableFirstRow) return;
+  if (!app.JsonData.dataTable.dataTableBody) return;
+  if (!app.JsonData.dataTable.dataTableHeader) return;
+
   renderdataTableHeader(app);
   renderFirstRowTable(app);
   renderTableBody(app);

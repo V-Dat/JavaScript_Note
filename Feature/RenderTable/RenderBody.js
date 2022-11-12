@@ -2,7 +2,6 @@ import { getButtonEdit } from "../CellFeature.js";
 import { $ } from "../Util.js";
 
 export function renderTableBody(app) {
-  if (!app?.JsonData?.dataTable?.dataTableBody) return;
   const tableRowData = processRow(app.JsonData.dataTable.dataTableBody);
   const tbody = $("#table tbody");
   tbody.insertAdjacentHTML("beforeend", tableRowData);
@@ -11,8 +10,6 @@ export function renderTableBody(app) {
 function processRow(data) {
   if (!data) return;
   let tableRow = "";
-
-  console.log(33, data);
 
   data.forEach((row, rowIndex) => {
     tableRow += `<tr data-row-index=${rowIndex}>`;
