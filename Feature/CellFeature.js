@@ -41,15 +41,3 @@ export function getButtonEdit(rowIndex, cellIndex) {
          <img  ${attr} data-row-index=${rowIndex} data-column-index=${cellIndex} key="view-detail"  title="View Detail" class="view-detail" src="./Assets/Icons/view-detail-icon.svg"  ></img> 
     `;
 }
-
-function handleClickRowFeature(rowNode, app, node) {
-  const className = node.getAttribute("class");
-  if (!className && !Number(node.getAttribute("key")) >= 0) return;
-
-  if (className.includes("save")) {
-  } else if (className.includes("undo")) {
-    handleClickUndoRow(rowNode, app);
-  } else if (className.includes("view-detail")) {
-    handleClickViewRow(rowNode, app);
-  }
-}

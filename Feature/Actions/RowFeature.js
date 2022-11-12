@@ -16,9 +16,12 @@ export function handleRowFeature(event, featureNode, app) {
       break;
     case FEATURE_NAME.SAVE:
       handleSaveUpdateRecord(event, app);
+      console.log("save --- ", app.JsonData.dataTable.dataTableBody);
       break;
     case FEATURE_NAME.EDIT:
       handleEditRow(event, app);
+      console.log("edit --- ", app.JsonData.dataTable.dataTableBody);
+
       break;
     case FEATURE_NAME.ERASER:
       handleClickEraserRow(event, app);
