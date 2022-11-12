@@ -21,7 +21,7 @@ export function handleSaveUpdateRecord(event, app) {
 }
 
 function updateDataAfterEdit(rowNode, app) {
-  const columnsData = rowNode.querySelectorAll("td.cell");
+  const columnsData = rowNode.querySelectorAll("td.column-data.cell");
   const rowData = getRowDataFromActiveRow(app);
 
   columnsData.forEach((cell, index) => {
