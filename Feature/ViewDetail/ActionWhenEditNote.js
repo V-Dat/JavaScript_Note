@@ -1,5 +1,5 @@
-import { getRowDataFromDB } from "../Actions/AccessData.js";
 import { $ } from "../Util.js";
+import { handleClearNote } from "./ClearNote.js";
 import { handleSaveNote } from "./SaveNote.js";
 
 export function handleActionNote(event, app) {
@@ -10,7 +10,7 @@ export function handleActionNote(event, app) {
       handleSaveNote(app);
       break;
     case ACTION_NOTE.CLEAR:
-      handleClearNote(app);
+      handleClearNote();
       break;
     case ACTION_NOTE.PREVIEW:
       console.log("in developing");

@@ -1,4 +1,4 @@
-import { findNoteObject, getRowDataFromDB } from "../Actions/AccessData.js";
+import { findNoteObject } from "../Actions/AccessData.js";
 import { $ } from "../Util.js";
 import { checkIsEditNote } from "./ActionWhenEditNote.js";
 export function handleClickEditNote(app) {
