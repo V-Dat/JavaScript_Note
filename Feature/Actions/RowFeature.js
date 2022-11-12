@@ -2,6 +2,7 @@ import { handleEraserNewRecord, handleSaveRecord } from "./ActionFirstRow.js";
 import { handleEditRow } from "./EditRow.js";
 import { handleClickEraserRow } from "./EraserRow.js";
 import { handleSaveUpdateRecord } from "./SaveRow.js";
+import { handleClickUndoRow } from "./UndoRow.js";
 
 export function handleRowFeature(event, featureNode, app) {
   const feature = featureNode.getAttribute("key");
@@ -22,6 +23,7 @@ export function handleRowFeature(event, featureNode, app) {
       handleClickEraserRow(event, app);
       break;
     case FEATURE_NAME.UNDO:
+      handleClickUndoRow(event, app);
       break;
     case FEATURE_NAME.VIEW_DETAIL:
       break;

@@ -1,5 +1,5 @@
 import {
-  getRowDataForEdit,
+  getRowDataFromDB,
   getRowDataForUpdateRecord,
   getRowDataPrevious,
 } from "./AccessData.js";
@@ -14,6 +14,7 @@ import {
   activeButtonEraserRow,
   unActiveAllEditingRow,
   activeEditingRow,
+  focusNode,
 } from "./ActionUtil.js";
 import { $$, $ } from "../Util.js";
 import { setactiveRow, setPreviousActiveRow } from "../TextAreaCrud.js";
@@ -49,12 +50,13 @@ export function handleEditRow(event, app) {
   activeEditingRow(rowNode, app);
 }
 
-function showTextAreaForEdit(rowNode, app) {
+export function showTextAreaForEdit(rowNode, app) {
   const columnsData = rowNode.querySelectorAll("td.column-data.cell");
-  const rowData = getRowDataForEdit(app);
+  const rowData = getRowDataFromDB(app);
   columnsData.forEach((dataNode, index) => {
     dataNode.innerHTML = `<textarea>${rowData[index].data}</textarea>`;
   });
+  focusNode(rowNode);
 }
 
 function handleUpdateStateEdit(rowNode, app) {

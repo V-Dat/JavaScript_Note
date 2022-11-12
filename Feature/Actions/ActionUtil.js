@@ -132,3 +132,11 @@ export function activeEditingRow(rowNode, app) {
   rowNode.classList.add("editing");
   setactiveRow(app, rowNode.dataset.rowIndex);
 }
+
+//
+export function focusNode(rowNode) {
+  const textAreaGroup = rowNode.querySelectorAll("textarea");
+  const maxLength = textAreaGroup[0].value.length;
+  textAreaGroup[0].setSelectionRange(maxLength, maxLength);
+  textAreaGroup[0].focus();
+}

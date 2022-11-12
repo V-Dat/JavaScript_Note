@@ -12,21 +12,6 @@ import {
 } from "./ModalRowDetail.js";
 import { toggleNode } from "./SwitchDocument.js";
 
-export function handleClickUndo(rowNode, app) {
-  const isEdit = rowNode.getAttribute("isedit");
-  if (isEdit === "false" || isEdit === null) return;
-
-  const rowData = getDataRowNode(rowNode, app);
-
-  const columnsData = rowNode.querySelectorAll(".column-data");
-
-  for (let i = 0; i < columnsData.length; i++) {
-    const textAreaNode = columnsData[i].querySelector("textarea");
-    const textAreaValue = rowData[columnsData[i].dataset.key];
-    textAreaNode.value = textAreaValue;
-  }
-}
-
 export function hanlePreRender() {
   // const listDataNodes = $$("table tr[data-key]");
   const listDataNodes = $$("table tr"); // tạm thời xóa hết sau này chỉ xóa data row
@@ -51,10 +36,6 @@ export function handleEditMainContent(JsonData) {
     mainContent.innerHTML = `<textarea style="width: 95%; max-width: 95%">${JsonData.mainContent}</textarea>`;
     activeButtonSaveEditContent($(".button-edit-main-content"));
   }
-}
-
-function getIndexRowEdit(rowNode) {
-  return rowNode.dataset.key;
 }
 
 export function handleClickViewRow(rowNode, app) {
