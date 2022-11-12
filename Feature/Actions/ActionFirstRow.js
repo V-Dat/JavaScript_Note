@@ -51,18 +51,21 @@ function processRowTableData(app) {
         data: textAreaNode.value || " ",
         index: item.dataset.columnIndex,
         name: item.dataset.columnName,
+        show: ["home", "detail"],
       });
     } else if (!textAreaNode && +item.dataset.columnIndex === 0) {
       dataAreaInput.push({
         data: dataTableBody.length + 1,
         index: item.dataset.columnIndex,
         name: item.dataset.columnName,
+        show: ["home"],
       });
     } else {
       dataAreaInput.push({
         data: null,
         index: item.dataset.columnIndex,
         name: item.dataset.columnName,
+        show: ["home"],
       });
     }
   });
