@@ -10,10 +10,7 @@ import {
 export function handleSaveUpdateRecord(event, app) {
   const rowNode = event.target.closest("tr");
   const isEdit = rowNode.classList.contains("editing");
-  if (String(isEdit) === "false" || isEdit === null) {
-    console.log("do nothing");
-    return;
-  }
+  if (String(isEdit) === "false" || isEdit === null) return;
   updateDataAfterEdit(rowNode, app);
   unActiveAllEditingRow(app);
   handleUpdateStateEditAfterSave(app);

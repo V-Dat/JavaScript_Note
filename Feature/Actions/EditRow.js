@@ -16,15 +16,12 @@ import {
   activeEditingRow,
   focusNode,
 } from "./ActionUtil.js";
-import { $$, $ } from "../Util.js";
+import { $$ } from "../Util.js";
 import { setActiveRow } from "./AccessData.js";
 
 export function handleEditRow(event, app) {
   const rowNode = event.target.closest("tr");
-  if (rowNode.classList.contains("editing")) {
-    console.log("do nothing");
-    return;
-  }
+  if (rowNode.classList.contains("editing")) return;
   const buttonEdit = event.target.closest("img[key='edit']");
   const buttonUndo = rowNode.querySelector("img.undo");
   const buttonSave = rowNode.querySelector("img.save");
