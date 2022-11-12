@@ -9,13 +9,18 @@ export function renderdataTableHeader(app) {
       cell.name
     } data-row-index=0 data-column-index=${cell.index} class="cell column-${
       cell.index
-    }" style="background-color:${cell.bg || "color"}">${
+    }" style="background-color:${
+      cell.bg || "color"
+    }; position:sticky ;text-align:center;  vertical-align:middle">${
       cell.data
-    } - <button data-index=${cell.index} >${cell.buttonText}</button></td>`;
+    } ${
+      cell.actionSrc
+        ? `<img class="header-feature" width=16px style="position: absolute; right: 12px; top : 34%" data-index=${cell.index} src=${cell.actionSrc} />` 
+        :""}</td>`;
   });
 
   tHead.innerHTML = newTHead.join("");
-  const buttonAdd = $$("#table thead button");
+  const buttonAdd = $$("#table thead .header-feature");
 
   buttonAdd.forEach((item) => {
     item.addEventListener("click", (event) => showModalConfirm(event, app));

@@ -15,7 +15,19 @@
     position: sticky;
 }
 
-.table-block th,
+.table-block table thead tr td:first-child {
+    min-width: 50px;
+}
+
+.table-block table tbody tr td:first-child {
+    text-align: center;
+}
+
+.table-block table thead tr td:first-child img {
+    right: 5px !important;
+    text-align: start !important;
+}
+
 .table-block td {
     padding: 5px 10px;
     min-height: 75px;
@@ -24,36 +36,6 @@
 }
 .table-block thead tr {
     height: 50px;
-}
-.table-block thead tr th {
-    background: #edf2f7;
-    padding: 0.75rem 1.5rem;
-    vertical-align: middle;
-}
-
-.table-block .cell column-1 {
-    text-align: center;
-    width: 30px;
-}
-
-.table-block .cell column-2 {
-    min-width: 260px;
-}
-
-.table-block .cell column-3 {
-    min-width: 420px;
-}
-.table-block .cell column-4 {
-    min-width: 420px;
-}
-.table-block .cell column-5 {
-    min-width: 420px;
-    width: 600px;
-}
-
-.table-block .cell column-6 {
-    min-width: 80px;
-    width: 80px;
 }
 
 /* css text area  */
@@ -82,6 +64,8 @@
 .table-block tbody tr:nth-child(odd) td {
     background: #fff;
 }
+
+.table-block thead tr:nth-child(odd) td,
 .table-block tbody tr:nth-child(even) td {
     background: #edf2f7;
 }

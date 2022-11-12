@@ -5,37 +5,37 @@
             {
                 "data": "STT",
                 "name": "STT",
-                "buttonText": "Action",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
                 "index": 0
             },
             {
                 "data": "Method Name",
                 "name": "Method Name",
-                "buttonText": "Action",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
                 "index": 1
             },
             {
                 "data": "Syntax",
                 "name": "Syntax",
-                "buttonText": "Action",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
                 "index": 2
             },
             {
                 "data": "Involved",
                 "name": "Involved",
-                "buttonText": "Action",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
                 "index": 3
             },
             {
                 "data": "Description",
                 "name": "Description",
-                "buttonText": "Action",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
                 "index": 4
             },
             {
                 "data": "Action",
                 "name": "Action",
-                "buttonText": "Action",
+                "actionSrc": null,
                 "index": 5
             }
         ],
