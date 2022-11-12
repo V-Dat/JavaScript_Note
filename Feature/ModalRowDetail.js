@@ -9,11 +9,13 @@ import { checkIsEditNote } from "./ViewDetail/ActionWhenEditNote.js";
 export function processDataModalDetail(rowData) {
   if (!rowData) return;
   let html = ``;
-  rowData.forEach((cellData, index) => {
+  rowData.forEach((cellData) => {
     if (cellData.show.includes("detail")) {
       html += `
       <div class="content-${cellData.name}">
-      <h2>${index} - ${cellData.name.toUpperCase()}  </h2>
+      <h2>${
+        cellData.name === "note" ? cellData.index - 1 : cellData.index
+      } - ${cellData.name.toUpperCase()}  </h2>
       ${cellData.data}
       </div>
       `;
