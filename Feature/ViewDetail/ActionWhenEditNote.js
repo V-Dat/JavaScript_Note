@@ -7,7 +7,7 @@ export function handleActionNote(event, app) {
   if (!targetNote) return;
   switch (targetNote.getAttribute("type")) {
     case ACTION_NOTE.SAVE:
-      handleSaveNote(rowData, node);
+      handleSaveNote(app);
       break;
     case ACTION_NOTE.CLEAR:
       handleClearNote(app);

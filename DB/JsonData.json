@@ -78,7 +78,7 @@
                     "data": "1",
                     "index": 0,
                     "show": [
-                        "home"
+                        "default-home"
                     ]
                 },
                 {
@@ -122,7 +122,7 @@
                     "data": null,
                     "index": 5,
                     "show": [
-                        "home"
+                        "default-home"
                     ]
                 }
             ],

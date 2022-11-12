@@ -50,6 +50,7 @@ export function handleEditRow(event, app) {
 export function showTextAreaForEdit(rowNode, app) {
   const columnsData = rowNode.querySelectorAll("td.column-data.cell");
   const rowData = getRowDataFromDB(app);
+  console.log(33, rowData);
   columnsData.forEach((dataNode, index) => {
     dataNode.innerHTML = `<textarea>${rowData[index].data}</textarea>`;
   });

@@ -1,8 +1,9 @@
 export function getRowDataFromDB(app) {
-  const result = app.JsonData.dataTable.dataTableBody.find((_, index) => {
+  const rowData = app.JsonData.dataTable.dataTableBody.find((_, index) => {
     return +index === +app.activeRow;
   });
-  return result.slice(1, -1);
+  const result = rowData.filter((item) => item.show.includes("home"));
+  return result;
 }
 
 export function getRowDataFromActiveRow(app) {
@@ -14,10 +15,11 @@ export function getRowDataFromActiveRow(app) {
 }
 
 export function getRowDataPrevious(app) {
-  const result = app.JsonData.dataTable.dataTableBody.find((_, index) => {
+  const rowData = app.JsonData.dataTable.dataTableBody.find((_, index) => {
     return +index === +app.previousActiveRow;
   });
-  return result.slice(1, -1);
+  const result = rowData.filter((item) => item.show.includes("home"));
+  return result;
 }
 
 export function setActiveRow(app, index) {
@@ -40,4 +42,10 @@ export function findNoteObject(app) {
     });
     return result[newLength - 1];
   }
+}
+
+export function getRowDataShowInDetail(app) {
+  const rowData = getRowDataFromActiveRow(app);
+  const result = rowData.filter((item) => item.show.includes("detail"));
+  return result;
 }

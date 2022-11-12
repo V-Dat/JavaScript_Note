@@ -1,10 +1,14 @@
-import { getRowDataFromDB } from "../Actions/AccessData.js";
+import {
+  findNoteObject,
+  getRowDataShowInDetail,
+} from "../Actions/AccessData.js";
 import { embedDataModalDetail } from "../ModalRowDetail.js";
+import { $ } from "../Util.js";
 import { hideEditNoteNode } from "./ActionWhenEditNote.js";
 
-export function handleSaveNote() {
-  const rowData = saveRowData(app);
-  if (!rowData) return;
+export function handleSaveNote(app) {
+  saveRowData(app);
+  const rowData = getRowDataShowInDetail(app);
   hideEditNoteNode();
   embedDataModalDetail(rowData);
   enableButtonWhenFinishedEdit();
@@ -17,9 +21,8 @@ function enableButtonWhenFinishedEdit() {
 }
 function saveRowData(app) {
   const textareaNode = $(".modal-row-detail .modal-row-detail-note textarea");
-  const rowData = getRowDataFromDB(app);
-  if (!rowData) return;
-  rowData.note = textareaNode.value;
+  const objectNote = findNoteObject(app);
+  if (!objectNote) return;
+  objectNote.data = textareaNode.value;
   textareaNode.value = "";
-  return rowData;
 }
