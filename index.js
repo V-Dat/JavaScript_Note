@@ -16,7 +16,7 @@ const app = {
     readData().then((data) => {
       if (data) {
         _this.JsonData = JSON.parse(data);
-        hanlePreRender(); // xóa hết row
+        hanlePreRender();
         renderHeading(_this.JsonData); // render heading từ db
         handleRender(_this);
         highlightNode($("body"));
