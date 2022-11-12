@@ -1,5 +1,6 @@
 import { handleEraserNewRecord, handleSaveRecord } from "./ActionFirstRow.js";
 import { handleEditRow } from "./EditRow.js";
+import { handleClickEraserRow } from "./EraserRow.js";
 import { handleSaveUpdateRecord } from "./SaveRow.js";
 
 export function handleRowFeature(event, featureNode, app) {
@@ -18,6 +19,7 @@ export function handleRowFeature(event, featureNode, app) {
       handleEditRow(event, app);
       break;
     case FEATURE_NAME.ERASER:
+      handleClickEraserRow(event, app);
       break;
     case FEATURE_NAME.UNDO:
       break;

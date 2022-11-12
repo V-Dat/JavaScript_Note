@@ -12,31 +12,6 @@ import {
 } from "./ModalRowDetail.js";
 import { toggleNode } from "./SwitchDocument.js";
 
-export function handleClickEraser(rowNode, app) {
-  if (rowNode && rowNode.getAttribute("isedit") !== "true") {
-    handleDeleteRow(app, rowNode);
-  } else {
-    handleEraserValueInTextArea(rowNode);
-  }
-}
-export function handleDeleteRow(app, rowNode) {
-  const newData = app.JsonData.dataTable.dataTableBody.filter((item) => {
-    return +item.index !== +getIndexRowEdit(rowNode);
-  });
-  app.JsonData.dataTable.dataTableBody = newData.map((item, index) => ({
-    ...item,
-    index: index,
-  }));
-  app.render();
-}
-export function handleEraserValueInTextArea(rowNode) {
-  const textAreaGroup = rowNode.querySelectorAll("textarea");
-  for (let i = 0; i < textAreaGroup.length; i++) {
-    textAreaGroup[i].value = "";
-  }
-  textAreaGroup[0].focus();
-}
-
 export function handleClickUndo(rowNode, app) {
   const isEdit = rowNode.getAttribute("isedit");
   if (isEdit === "false" || isEdit === null) return;

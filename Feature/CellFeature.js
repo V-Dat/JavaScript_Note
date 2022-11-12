@@ -1,11 +1,7 @@
 import { handleEditRow } from "./Actions/EditRow.js";
 import { handleRowFeature } from "./Actions/RowFeature.js";
 import { handlePaintTable } from "./PaintTable/PaintTable.js";
-import {
-  handleClickEraser,
-  handleClickUndo,
-  handleClickViewRow,
-} from "./TextAreaCrud.js";
+import { handleClickUndo, handleClickViewRow } from "./TextAreaCrud.js";
 import { highlightNode, $ } from "./Util.js";
 
 export function handleClickOnTable(event, app) {
@@ -54,7 +50,6 @@ function handleClickRowFeature(rowNode, app, node) {
 
   if (className.includes("save")) {
   } else if (className.includes("eraser")) {
-    handleClickEraser(rowNode, app);
   } else if (className.includes("edit")) {
     handleEditRow(rowNode, app);
   } else if (className.includes("undo")) {
