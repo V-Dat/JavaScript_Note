@@ -1,14 +1,14 @@
 import { saveDataUploadToLocalStore } from "../FeatureLocalStorage.js";
 import { rendermainContent } from "../MainContent/RenderMainContent.js";
 import { $, $$, highlightNode } from "../Util.js";
-import { renderTableBody } from "./RenderBody.js";
+import { insertAndRenderRowToTableBody } from "./RenderBody.js";
 import { renderFirstRowTable } from "./RenderFirstRow.js";
 import { renderdataTableHeader } from "./RenderHeader.js";
 
 export function handleRender(app) {
   renderdataTableHeader(app);
   renderFirstRowTable(app);
-  renderTableBody(app);
+  insertAndRenderRowToTableBody(app.JsonData.dataTable.dataTableBody);
   rendermainContent(app.JsonData?.mainContent);
 }
 

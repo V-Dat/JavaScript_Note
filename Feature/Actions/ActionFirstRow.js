@@ -1,4 +1,4 @@
-import { handleRender } from "../RenderTable/RenderTable.js";
+import { insertAndRenderRowToTableBody } from "../RenderTable/RenderBody.js";
 import { $, $$ } from "../Util.js";
 import {
   activeButtonSaveNewRecord,
@@ -23,21 +23,19 @@ export function handleInputCrudTextArea(app) {
   }
 }
 
-export function handleSaveRecord(event, app) {
+export function handleSaveRecord(app) {
   if (!app.JsonData.dataTable.dataTableBody) return;
   const isFillAll = checkCrudTextArea();
   if (!isFillAll) return;
-
   const rowNode = $(".crud-group");
-  processRowTableData(app);
+  processRowTableData(app); // This make side-effect - dont move it
+  const dataBody = app.JsonData.dataTable.dataTableBody;
+  const newRecord = dataBody[dataBody.length - 1];
 
   handleResetTextArea(".crud-group textarea");
-  handleRender(app.JsonData);
-  // app.isFillAllCrudState = false;
+  insertAndRenderRowToTableBody([newRecord]);
   unactiveButtonSaveNewRecord(rowNode);
   unActiveButtonEraserNewNode(rowNode);
-  // highlightNode($("table tbody"));
-  app.render();
 }
 
 function processRowTableData(app) {
