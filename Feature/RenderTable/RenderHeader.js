@@ -11,7 +11,8 @@ export function renderdataTableHeader(app) {
             cell.bg || 'color'
         }; position:sticky ;text-align:center;  vertical-align:middle">${cell.data} ${
             cell.actionSrc
-                ? `<img class="header-feature" width=16px style="position: absolute; right: 12px; top : 34%" data-index=${cell.index} src=${cell.actionSrc} />`
+                ? `<img class="header-feature" width=16px style="position: absolute; right: 12px; top : 34%; border-radius: 50%;
+                padding: 1px; background: #d4d4d4;" data-index=${cell.index} src=${cell.actionSrc} />`
                 : ''
         }</td>`;
     });
