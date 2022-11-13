@@ -1,8 +1,8 @@
 {
     "documentTitle": "JavaScript | Note",
-    "headingMethodHelper": "<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions\">Function</a>",
+    "HeadingOne": "<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions\">Function</a>",
     "mainContent": ".....",
-    "headingMainContent": "<a href=\"\">Summary</a>",
+    "headingMainTwo": "<a href=\"\">Summary</a>",
     "referanceContent": "<ol>\n    <li><a href=\"https://developer.mozilla.org/en-US/docs/Learn/JavaScript\">Javascript on Mozilla</a></li>\n    <li><a href=\"https://stephengrider.github.io/JSPlaygrounds/\">Playgrounds</a></li>\n    <li><a href=\"https://sabe.io/classes/javascript/primitive-data-types/\">Style CSS</a></li>\n</ol>\n    ",
     "dataTable": {
         "dataTableHeader": [
@@ -77,5 +77,5 @@
         ],
         "dataTableBody": []
     },
-    "headingdataTableBody": "      <a href=\"\">Method Helper</a>\n    "
+    "HeadingOne": "      <a href=\"\">Method Helper</a>\n    "
 }

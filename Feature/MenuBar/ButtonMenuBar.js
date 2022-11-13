@@ -1,6 +1,6 @@
 import { $ } from "../Util.js";
 
-export function handleClickMenuBar() {
+export function handleClickMenuBar(app) {
   const docBar = $(".switch-document-group .side-bar");
   const buttonSwitchDoc = $(".switch-document-group .btn-switch");
   const isShow = toggleNode(docBar);
@@ -8,7 +8,7 @@ export function handleClickMenuBar() {
   toggleNode($(".open-javascript-playgrounds")); // toggle feature playgrounds
   toggleNode($(".open-stackblitz")); // toggle feature stackbliz
   isShow ? fixedButton(buttonSwitchDoc) : absuluteNode(buttonSwitchDoc);
-  embedDataMenu(); // handle chỉ đọc lần đầu tiên thôi
+  embedDataMenu(app); // handle chỉ đọc lần đầu tiên thôi
 }
 
 export function toggleNode(node, dispay = "block") {
@@ -30,21 +30,21 @@ function absuluteNode(node) {
   node.style.position = "absolute";
 }
 
-function embedDataMenu() {
+function embedDataMenu(app) {
   const emmbed = $(".switch-document-group .side-bar .embed");
-  emmbed.innerHTML = processDataMenu();
+  emmbed.innerHTML = processDataMenu(app);
 }
 
-function processDataMenu() {
+function processDataMenu(app) {
   let html = "";
   DOCS.forEach((doc, index) => {
     html += `
     <div><label style="cursor:pointer" for=${doc.key}>
     <input style="cursor:pointer"name="document" type="radio" id=${
       doc.key
-    }  value=${doc.name} ${index === 0 ? "checked" : ""}>${index + 1} - ${
-      doc.name
-    }</label>
+    }  value=${doc.name} ${app.document === doc.key ? "checked" : ""}>${
+      index + 1
+    } - ${doc.name}</label>
     </div>
     `;
   });

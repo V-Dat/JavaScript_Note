@@ -9,8 +9,9 @@ export function processDefaultState() {
     counterId: null,
     activeRow: null,
     previousActiveRow: null,
-    document: "Default",
-    // document: "Boolean",
+    document: localStorage.getItem("document")
+      ? localStorage.getItem("document")
+      : "Default",
   };
   $(".button-feature.button-feature__eraser").setAttribute("active", true);
   countTimeSaveLocalStorage(app);
