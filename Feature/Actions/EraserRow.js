@@ -10,10 +10,10 @@ export function handleClickEraserRow(event, app) {
 export function handleDeleteRow(app, rowNode) {
   // show modal confirm before delete [later]
   const newDataTableBody = JSON.parse(
-    JSON.stringify(app.DB.dataTable.dataTableBody)
+    JSON.stringify(app.JsonData.dataTable.dataTableBody)
   );
   newDataTableBody.splice(rowNode.dataset.rowIndex, 1);
-  app.DB.dataTable.dataTableBody = newDataTableBody;
+  app.JsonData.dataTable.dataTableBody = newDataTableBody;
   app.render();
 }
 

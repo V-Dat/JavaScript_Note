@@ -1,3 +1,4 @@
+import { highlightNode } from "../Util.js";
 import { getRowDataFromDB } from "./AccessData.js";
 import {
   activeButtonEdit,
@@ -15,6 +16,7 @@ export function handleSaveUpdateRecord(event, app) {
   unActiveAllEditingRow(app);
   handleUpdateStateEditAfterSave(app);
   hanleChangeFeatureStateImage(rowNode);
+  highlightNode(rowNode);
 }
 
 function updateDataAfterEdit(rowNode, app) {

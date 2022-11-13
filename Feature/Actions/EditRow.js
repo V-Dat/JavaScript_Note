@@ -1,4 +1,8 @@
-import { getRowDataFromDB, getRowDataPrevious } from "./AccessData.js";
+import {
+  getRowDataFromDB,
+  getRowDataPrevious,
+  setPreviousActiveRow,
+} from "./AccessData.js";
 import {
   activeAllButtonEdit,
   activeButtonSave,
@@ -12,7 +16,7 @@ import {
   activeEditingRow,
   focusNode,
 } from "./ActionUtil.js";
-import { $$ } from "../Util.js";
+import { $, $$, highlightNode } from "../Util.js";
 import { setActiveRow } from "./AccessData.js";
 
 export function handleEditRow(event, app) {
@@ -53,10 +57,13 @@ export function showTextAreaForEdit(rowNode, app) {
 }
 
 function handleUpdateStateEdit(rowNode, app) {
-  if (app.activeRow !== null) {
-    app.previousActiveRow = String(app.activeRow);
+  const isFirstClickActive = app.activeRow === null;
+  if (isFirstClickActive) {
+    setActiveRow(app, rowNode.dataset.rowIndex);
+  } else {
+    setPreviousActiveRow(app, app.activeRow);
+    setActiveRow(app, rowNode.dataset.rowIndex);
   }
-  setActiveRow(app, rowNode.dataset.rowIndex);
 }
 
 function handleResetRowNoSave(app) {
@@ -68,5 +75,6 @@ function handleResetRowNoSave(app) {
     previousRowNode.forEach((cell, index) => {
       cell.innerHTML = previousRowData[index].data;
     });
+    highlightNode($("#table tbody"));
   }
 }

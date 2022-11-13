@@ -6,7 +6,7 @@ export function renderFirstRowTable(app) {
   const tbody = $("#table tbody");
 
   let tableRow = "<tr class='crud-group'>";
-  const dataFirstRow = app.DB.dataTable.dataTableFirstRow;
+  const dataFirstRow = app.JsonData.dataTable.dataTableFirstRow;
   dataFirstRow.forEach((cell) => {
     tableRow += `<td type="cell" data-row-type="first-row" data-row-index=1 data-column-index=${
       cell.index
