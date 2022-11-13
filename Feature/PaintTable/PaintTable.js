@@ -80,21 +80,19 @@ function getCellData(cellNode, app) {
   const rowIndex = cellNode.dataset.rowIndex;
   switch (rowIndex) {
     case "0": {
-      let rowData = app.JsonData.dataTable.dataTableHeader.find((_, index) => {
+      let rowData = app.DB.dataTable.dataTableHeader.find((_, index) => {
         return index === +cellNode.dataset.columnIndex;
       });
       return rowData;
     }
     case "1": {
-      let rowData = app.JsonData.dataTable.dataTableFirstRow.find(
-        (_, index) => {
-          return index === +cellNode.dataset.columnIndex;
-        }
-      );
+      let rowData = app.DB.dataTable.dataTableFirstRow.find((_, index) => {
+        return index === +cellNode.dataset.columnIndex;
+      });
       return rowData;
     }
     default: {
-      let rowData = app.JsonData.dataTable.dataTableBody.find((_, index) => {
+      let rowData = app.DB.dataTable.dataTableBody.find((_, index) => {
         return index === +cellNode.dataset.rowIndex - 2;
       });
       return rowData[cellNode.dataset.columnIndex];

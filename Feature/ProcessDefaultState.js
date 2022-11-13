@@ -11,7 +11,8 @@ export function processDefaultState() {
     previousActiveRow: null,
     document: localStorage.getItem("document")
       ? localStorage.getItem("document")
-      : "Default",
+      : // : "Default",
+        "String",
   };
   $(".button-feature.button-feature__eraser").setAttribute("active", true);
   countTimeSaveLocalStorage(app);

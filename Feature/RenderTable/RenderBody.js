@@ -2,7 +2,7 @@ import { getButtonEdit } from "../CellFeature.js";
 import { $ } from "../Util.js";
 
 export function renderTableBody(app) {
-  const tableRowData = processRow(app.JsonData.dataTable.dataTableBody);
+  const tableRowData = processRow(app.DB.dataTable.dataTableBody);
   const tbody = $("#table tbody");
   tbody.insertAdjacentHTML("beforeend", tableRowData);
 }

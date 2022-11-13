@@ -7,8 +7,14 @@ function downloadJson(JsonData) {
 }
 
 function saveLocalStorage(JsonData) {
+  const isUpload = checkIsUploadFile();
   const data = JSON.stringify(JsonData);
   localStorage.setItem("data", data);
+
+  if (isUpload) {
+    localStorage.setItem("dataUpload", data);
+  }
+
   console.log(
     `%c ${getCurrentDataTime()} - save local successed`,
     "background: blue; color: white"
@@ -16,6 +22,9 @@ function saveLocalStorage(JsonData) {
 }
 
 export function cleanupLocalStorage() {
+  // case 1 : user upload data
+
+  // case 2: user using available data
   localStorage.removeItem("data");
   console.log(
     `%c ${getCurrentDataTime()} - cleaning successed`,
@@ -24,7 +33,16 @@ export function cleanupLocalStorage() {
 }
 
 function readLocalStorage() {
-  const data = localStorage.getItem("data") ? localStorage.getItem("data") : [];
+  const isUpload = checkIsUploadFile();
+  let data;
+  if (isUpload) {
+    // case 1 : user upload data
+    data = localStorage.getItem("dataUpload");
+    localStorage.setItem("data", data);
+  } else {
+    // case 2: user using available data
+    data = localStorage.getItem("data") ? localStorage.getItem("data") : [];
+  }
   return data;
 }
 
@@ -35,6 +53,7 @@ export function readData(app) {
       `%c ${getCurrentDataTime()} - read data from default file`,
       "background: green; color: white"
     );
+
     return readTextFile(`./DB/${app.document}.json`);
   }
 
@@ -50,14 +69,14 @@ export function handleClickFeaturesPlace(event, app) {
   if (!targetButton) return;
   switch (targetButton.getAttribute("type")) {
     case "button-download":
-      downloadJson(app.JsonData);
+      downloadJson(app.DB);
       break;
     case "button-save-local-storage":
       countTimeSaveLocalStorage(app);
-      saveLocalStorage(app.JsonData);
+      saveLocalStorage(app.DB);
       break;
     case "button-cleanup-local-storage":
-      cleanupLocalStorage(app.JsonData);
+      cleanupLocalStorage(app.DB);
       break;
   }
 }
@@ -81,4 +100,17 @@ export function getCurrentDataTime() {
     today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   const dateTime = time + " " + date;
   return dateTime;
+}
+
+export function saveDataUploadToLocalStore(app, data) {
+  app.document = "Upload";
+  localStorage.setItem("document", "Upload");
+  const isUpload = checkIsUploadFile();
+  if (isUpload) {
+    localStorage.setItem("dataUpload", data);
+    localStorage.setItem("data", data);
+  }
+}
+function checkIsUploadFile() {
+  return localStorage.getItem("document") === "Upload";
 }
