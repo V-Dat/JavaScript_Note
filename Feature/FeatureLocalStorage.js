@@ -28,14 +28,14 @@ function readLocalStorage() {
   return data;
 }
 
-export function readData() {
+export function readData(app) {
   let data = readLocalStorage();
   if (data.length === 0) {
     console.log(
       `%c ${getCurrentDataTime()} - read data from default file`,
       "background: green; color: white"
     );
-    return readTextFile("./DB/JsonData.json");
+    return readTextFile(`./DB/${app.document}.json`);
   }
 
   console.log(

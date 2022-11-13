@@ -2,7 +2,7 @@ import {
   limitHeightAndWidthBody,
   unlimitHeightAndWidthBody,
 } from "./ModalPlaygrounds.js";
-import { toggleNode } from "./SwitchDocument.js";
+import { toggleNode } from "./MenuBar/ButtonMenuBar.js";
 import { $, highlightNode } from "./Util.js";
 import { checkIsEditNote } from "./ViewDetail/ActionWhenEditNote.js";
 
