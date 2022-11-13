@@ -1,8 +1,8 @@
 import { getButtonEdit } from "../CellFeature.js";
 import { $ } from "../Util.js";
 
-export function renderTableBody(app) {
-  const tableRowData = processRow(app.JsonData.dataTable.dataTableBody);
+export function insertAndRenderRowToTableBody(dataTableBody) {
+  const tableRowData = processRow(dataTableBody);
   const tbody = $("#table tbody");
   tbody.insertAdjacentHTML("beforeend", tableRowData);
 }

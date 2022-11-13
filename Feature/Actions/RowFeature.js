@@ -9,7 +9,7 @@ export function handleRowFeature(event, featureNode, app) {
   const feature = featureNode.getAttribute("key");
   switch (feature) {
     case FEATURE_NAME.SAVE_NEW:
-      handleSaveRecord(event, app);
+      handleSaveRecord(app);
       break;
     case FEATURE_NAME.ERASER_NEW:
       handleEraserNewRecord(event);
