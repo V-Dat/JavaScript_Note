@@ -6,16 +6,10 @@ import { renderFirstRowTable } from "./RenderFirstRow.js";
 import { renderdataTableHeader } from "./RenderHeader.js";
 
 export function handleRender(app) {
-  if (!app.DB) return;
-  if (!app.DB.dataTable) return;
-  if (!app.DB.dataTable.dataTableFirstRow) return;
-  if (!app.DB.dataTable.dataTableBody) return;
-  if (!app.DB.dataTable.dataTableHeader) return;
-
   renderdataTableHeader(app);
   renderFirstRowTable(app);
   renderTableBody(app);
-  rendermainContent(app.DB?.mainContent);
+  rendermainContent(app.JsonData?.mainContent);
 }
 
 export async function renderDataImport(event, app) {
@@ -25,7 +19,7 @@ export async function renderDataImport(event, app) {
     .then((res) => res.json())
     .then((data) => {
       console.log("read data from import file");
-      app.DB = JSON.parse(JSON.stringify(data));
+      app.JsonData = JSON.parse(JSON.stringify(data));
       saveDataUploadToLocalStore(app, JSON.stringify(data));
       hanlePreRender();
       handleRender(app);

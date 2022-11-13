@@ -69,14 +69,14 @@ export function handleClickFeaturesPlace(event, app) {
   if (!targetButton) return;
   switch (targetButton.getAttribute("type")) {
     case "button-download":
-      downloadJson(app.DB);
+      downloadJson(app.JsonData);
       break;
     case "button-save-local-storage":
       countTimeSaveLocalStorage(app);
-      saveLocalStorage(app.DB);
+      saveLocalStorage(app.JsonData);
       break;
     case "button-cleanup-local-storage":
-      cleanupLocalStorage(app.DB);
+      cleanupLocalStorage(app.JsonData);
       break;
   }
 }

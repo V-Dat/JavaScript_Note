@@ -41,7 +41,7 @@ function showButthandleClickEditNote() {
   buttonCloseModal.style.display = "block";
 }
 
-export function hideModalRowDetail() {
+export function hideModalRowDetail(app) {
   const isEditing = checkIsEditNote();
   if (isEditing) return;
   unlimitHeightAndWidthBody();
@@ -49,6 +49,7 @@ export function hideModalRowDetail() {
   hideNodeModalRowDetail();
   hideButthandleClickEditNote();
   toggleNode($(".switch-document-group .btn-switch"));
+  resetActiveRow(app);
 }
 
 export function hideButtonCloseModalRowDetail() {
@@ -76,4 +77,9 @@ export function hideNodeModalRowDetail() {
   const modalDetail = $(".modal-row-detail");
   modalDetail.style.display = "none";
   modalDetail.classList.remove("active");
+}
+function resetActiveRow(app) {
+  const hasAnyRowEditing = $("#table tbody tr.editing");
+  if (hasAnyRowEditing) return;
+  app.activeRow = null;
 }

@@ -24,7 +24,7 @@ export function handleInputCrudTextArea(app) {
 }
 
 export function handleSaveRecord(event, app) {
-  if (!app.DB.dataTable.dataTableBody) return;
+  if (!app.JsonData.dataTable.dataTableBody) return;
   const isFillAll = checkCrudTextArea();
   if (!isFillAll) return;
 
@@ -32,7 +32,7 @@ export function handleSaveRecord(event, app) {
   processRowTableData(app);
 
   handleResetTextArea(".crud-group textarea");
-  handleRender(app.DB);
+  handleRender(app.JsonData);
   // app.isFillAllCrudState = false;
   unactiveButtonSaveNewRecord(rowNode);
   unActiveButtonEraserNewNode(rowNode);
@@ -43,7 +43,7 @@ export function handleSaveRecord(event, app) {
 function processRowTableData(app) {
   const crudGroup = $$(".crud-group td");
   const dataAreaInput = [];
-  const dataTableBody = app.DB.dataTable.dataTableBody;
+  const dataTableBody = app.JsonData.dataTable.dataTableBody;
   crudGroup.forEach((item) => {
     const textAreaNode = item.querySelector("textarea");
     if (textAreaNode) {

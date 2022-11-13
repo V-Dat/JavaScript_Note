@@ -15,9 +15,9 @@ const app = {
     const _this = this;
     readData(_this).then((data) => {
       if (data) {
-        _this.DB = JSON.parse(data);
+        _this.JsonData = JSON.parse(data);
         hanlePreRender();
-        renderHeading(_this.DB);
+        renderHeading(_this.JsonData);
         handleRender(_this);
         highlightNode($("body"));
       }

@@ -19,7 +19,6 @@ export function handleRowFeature(event, featureNode, app) {
       break;
     case FEATURE_NAME.EDIT:
       handleEditRow(event, app);
-
       break;
     case FEATURE_NAME.ERASER:
       handleClickEraserRow(event, app);

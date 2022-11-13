@@ -49,7 +49,7 @@ export function processListener() {
     renderDataImport(event, _this)
   );
   buttonEditmainContent.addEventListener("click", () =>
-    handleEditMainContent(_this.DB)
+    handleEditMainContent(_this.JsonData)
   );
 
   buttonOpenStackBlitz.addEventListener("click", toggleStackBlitz);
@@ -57,15 +57,17 @@ export function processListener() {
   arrowFeatureBlock.addEventListener("click", handleClickArrowFeature);
   window.onload = embedProject;
   window.onscroll = arrowFeature;
-  buttonCloseModalRowDetail.addEventListener("click", hideModalRowDetail);
+  buttonCloseModalRowDetail.addEventListener("click", () =>
+    hideModalRowDetail(_this)
+  );
   buttonEditHeadingContent.addEventListener("click", () =>
-    onChangeHeadingContent(_this.DB)
+    onChangeHeadingContent(_this.JsonData)
   );
   buttonEditHeadingMethod.addEventListener("click", () =>
-    onChangeHeadingMethod(_this.DB)
+    onChangeHeadingMethod(_this.JsonData)
   );
   buttonEditReferance.addEventListener("click", () =>
-    onChangeReferanceContent(_this.DB)
+    onChangeReferanceContent(_this.JsonData)
   );
   butthandleClickEditNote.addEventListener("click", () =>
     handleClickEditNote(_this)

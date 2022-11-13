@@ -1,5 +1,5 @@
 export function getRowDataFromDB(app) {
-  const rowData = app.DB.dataTable.dataTableBody.find((_, index) => {
+  const rowData = app.JsonData.dataTable.dataTableBody.find((_, index) => {
     return +index === +app.activeRow;
   });
   const result = rowData.filter((item) => item.show.includes("home"));
@@ -7,7 +7,7 @@ export function getRowDataFromDB(app) {
 }
 
 export function getRowDataFromActiveRow(app) {
-  const result = app.DB.dataTable.dataTableBody.find((_, index) => {
+  const result = app.JsonData.dataTable.dataTableBody.find((_, index) => {
     return +index === +app.activeRow;
   });
 
@@ -15,7 +15,7 @@ export function getRowDataFromActiveRow(app) {
 }
 
 export function getRowDataPrevious(app) {
-  const rowData = app.DB.dataTable.dataTableBody.find((_, index) => {
+  const rowData = app.JsonData.dataTable.dataTableBody.find((_, index) => {
     return +index === +app.previousActiveRow;
   });
   const result = rowData.filter((item) => item.show.includes("home"));
@@ -25,7 +25,9 @@ export function getRowDataPrevious(app) {
 export function setActiveRow(app, index) {
   app.activeRow = index;
 }
-
+export function setPreviousActiveRow(app, index) {
+  app.previousActiveRow = index;
+}
 export function findNoteObject(app) {
   const result = getRowDataFromActiveRow(app);
   const noteObject = result.findLast((item, index) => {
