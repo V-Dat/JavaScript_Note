@@ -18,6 +18,7 @@ import { handleEditMainContent } from "./TextAreaCrud/TextAreaCrud.js";
 import { handleActionNote } from "./ViewDetail/ActionWhenEditNote.js";
 import { handleClickEditNote } from "./ViewDetail/EditNote.js";
 import { handleClickMenuBar } from "./MenuBar/ButtonMenuBar.js";
+import { handleRadioDocument } from "./MenuBar/RadioDocument.js";
 const buttonFeatureLocalStorage = $(".features-localstorage");
 const inputFile = $("#reading-file");
 const table = $("#table");
@@ -72,12 +73,10 @@ export function processListener() {
   actionsNote.addEventListener("click", (event) =>
     handleActionNote(event, _this)
   );
-  buttonSwitchDoc.addEventListener("click", handleClickMenuBar);
-  radioDocument.addEventListener("click", (event, _this) => {
-    // event.preventDefault();
-    if (!event.target.closest("input")) return;
-    console.log(333, event.target);
-  });
+  buttonSwitchDoc.addEventListener("click", () => handleClickMenuBar(_this));
+  radioDocument.addEventListener("click", (event) =>
+    handleRadioDocument(event, _this)
+  );
 
   return this;
 }

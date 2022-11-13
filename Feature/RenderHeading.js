@@ -16,14 +16,14 @@ function changDocumentTitle(JsonData) {
 }
 
 function renderHeadingMethod(JsonData) {
-  if (JsonData.headingdataTableBody)
-    $(".heading-method-group .heading-text").innerHTML =
-      JsonData.headingdataTableBody;
+  if (JsonData.HeadingOne) {
+    $(".heading-method-group .heading-text").innerHTML = JsonData.HeadingOne;
+  }
 }
 
 function renderHeadingContent(JsonData) {
-  if (JsonData.headingMainContent)
-    $(".content-notes .heading-text").innerHTML = JsonData.headingMainContent;
+  if (JsonData.headingMainTwo)
+    $(".content-notes .heading-text").innerHTML = JsonData.headingMainTwo;
 }
 
 function renderReferanceContent(JsonData) {
@@ -36,7 +36,7 @@ export function onChangeHeadingMethod(JsonData) {
   const isEditing = headingText.querySelector("textarea");
   if (isEditing) {
     activeButtonEditContent($(".heading-method-group .btn-edit"));
-    JsonData.headingdataTableBody = isEditing.value;
+    JsonData.HeadingOne = isEditing.value;
     headingText.innerHTML = isEditing.value;
   } else {
     activeButtonSaveEditContent($(".heading-method-group .btn-edit"));
@@ -48,7 +48,7 @@ export function onChangeHeadingContent(JsonData) {
   const headingText = $(".content-notes .heading-text");
   const isEditing = headingText.querySelector("textarea");
   if (isEditing) {
-    JsonData.headingMainContent = isEditing.value;
+    JsonData.headingMainTwo = isEditing.value;
     headingText.innerHTML = isEditing.value;
     activeButtonEditContent($(".content-notes .btn-edit"));
   } else {

@@ -15,7 +15,7 @@ function saveLocalStorage(JsonData) {
   );
 }
 
-function cleanupLocalStorage() {
+export function cleanupLocalStorage() {
   localStorage.removeItem("data");
   console.log(
     `%c ${getCurrentDataTime()} - cleaning successed`,
