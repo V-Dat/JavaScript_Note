@@ -41,15 +41,15 @@
 /* css text area  */
 .table-block table .crud-group textarea {
     min-height: 46px;
-    min-width: 220px;
+    min-width: 70%;
     width: calc(100% - 6px);
 }
 
-.table-block table tr[isedit="true"] textarea {
+.table-block table tr.editing textarea {
     width: calc(100% - 6px);
     height: 95%;
     min-height: 200px;
-    min-width: 200px;
+    min-width: 70%;
 }
 
 /* disable cursor */
