@@ -38,6 +38,8 @@ function embedDataMenu(app) {
 function processDataMenu(app) {
   let html = "";
   DOCS.forEach((doc, index) => {
+    if (doc.key === "Upload" && localStorage.getItem("document") !== "Upload")
+      return;
     html += `
     <div><label style="cursor:pointer" for=${doc.key}>
     <input style="cursor:pointer"name="document" type="radio" id=${
@@ -89,7 +91,7 @@ const DOCS = [
     key: "AJAX",
   },
   {
-    name: "YOUR - UPLOAD",
+    name: "Upload",
     key: "Upload",
   },
 ];
