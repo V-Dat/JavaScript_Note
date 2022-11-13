@@ -9,10 +9,14 @@ export function handleClickEraserRow(event, app) {
 }
 export function handleDeleteRow(app, rowNode) {
   // show modal confirm before delete [later]
-  const newDataTableBody = JSON.parse(
+  let newDataTableBody = JSON.parse(
     JSON.stringify(app.JsonData.dataTable.dataTableBody)
   );
   newDataTableBody.splice(rowNode.dataset.rowIndex, 1);
+  newDataTableBody.map((record, index) => {
+    record[0].data = index + 1;
+    return record;
+  });
   app.JsonData.dataTable.dataTableBody = newDataTableBody;
   app.render();
 }
