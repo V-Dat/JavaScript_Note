@@ -1,9 +1,9 @@
 {
     "documentTitle": "JavaScript | Note",
-    "HeadingOne": "      <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#function_properties\">Function properties</a>\n    ",
+    "HeadingOne": "   <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#function_properties\">Function properties</a>\n  ",
     "mainContent": "<!-- ================================ 0 . Content ================================ -->\n<h3>Content</h3>\n- <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#function_properties\">0. Function properties</a> <br>\n- <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval\">1. eval()</a> <br>\n\n\n\n<!-- ================================ 1 . Function Properties ================================ -->\n\n<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#function_properties\">1. Function properties</a></h3>\n\n\n\n<h3>Topic Ref</h3>\n<a href=\"https://javascript.info/object-toprimitive\">JS Info</a> <br>\n<a href=\"https://phambinh.net/bai-viet/javascript-global-cac-ham-hang-mac-dinh-trong-javascript/\">PhamBinh.net</a> <br>\n<a href=\"https://vi.wikipedia.org/wiki/URI\">URI</a> <br>",
     "headingMainTwo": "<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#function_properties\">Function properties Summary</a>\n \n",
-    "referanceContent": "      <ol>\n        <li>\n          <a href=\"https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore\">You Dont Need Lodash Underscore</a>\n        </li>\n        <li>\n          <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array\">Mozilla\n            Array</a>\n        </li>\n        <li>\n          <a href=\"https://stephengrider.github.io/JSPlaygrounds/\">Playgrounds</a>\n        </li>\n        <li>\n          <a href=\"https://medium.com/frontend-canteen/with-these-articles-you-will-not-be-confused-when-learning-typescript-d96a5c99e229\">TS</a>\n        </li>\n        <li>\n          <a href=\"https://github.com/zloirock/core-js#ecmascript-array\">Core JS</a>\n        </li>\n        <li>\n          <a href=\"https://www.totaltypescript.com/tutorials\">TS totorial</a>\n        </li>\n      </ol>\n    ",
+    "referanceContent": "   <ol>\n <li>\n  <a href=\"https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore\">You Dont Need Lodash Underscore</a>\n </li>\n <li>\n  <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array\">Mozilla\n   Array</a>\n </li>\n <li>\n  <a href=\"https://stephengrider.github.io/JSPlaygrounds/\">Playgrounds</a>\n </li>\n <li>\n  <a href=\"https://medium.com/frontend-canteen/with-these-articles-you-will-not-be-confused-when-learning-typescript-d96a5c99e229\">TS</a>\n </li>\n <li>\n  <a href=\"https://github.com/zloirock/core-js#ecmascript-array\">Core JS</a>\n </li>\n <li>\n  <a href=\"https://www.totaltypescript.com/tutorials\">TS totorial</a>\n </li>\n   </ol>\n  ",
     "dataTable": {
         "dataTableHeader": [
             {
@@ -96,7 +96,7 @@
                 },
                 {
                     "name": "syntax",
-                    "data": "<pre class='js'><code  class=\"javascript\">eval(string)</code></pre>\n\n\n",
+                    "data": "<pre class='js'><code class=\"javascript\">eval(string)</code></pre>\n\n\n",
                     "index": 2,
                     "show": [
                         "detail",
@@ -114,7 +114,7 @@
                 },
                 {
                     "name": "description",
-                    "data": "<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval\">eval()</a></h3>\n\n- Đối số của hàm <b  class='red'>Eval(arguments)</b> có thể là JavaScript expression, statement, or sequence of statements. <br>\n\n- Javascript sẽ handle hàm eval tương tự với <-S-C-R-I-P-T->, Tức là Eval chỉ chấp nhận các đối số liên quan đến CommonJS. So import declarations (which can only exist in modules) are not allowed. <br>\n\n- A string representing a JavaScript expression, statement, or sequence of statements. The expression can include variables and properties of existing objects. It will be parsed as a script, so <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import\">import</a> declarations (which can only exist in modules) are not allowed. <br>\n\n- The completion value of evaluating the given code. If the completion value is empty,\n<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined\">undefined</a> is returned.<br>\n\n<h3  class='red'>Đặc Tả: <a href='https://tc39.es/ecma262/multipage/global-object.html#sec-eval-x'>Eval</a></h3>",
+                    "data": "<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval\">eval()</a></h3>\n\n- Đối số của hàm <b class='red'>Eval(arguments)</b> có thể là JavaScript expression, statement, or sequence of statements. <br>\n\n- Javascript sẽ handle hàm eval tương tự với <-S-C-R-I-P-T->, Tức là Eval chỉ chấp nhận các đối số liên quan đến CommonJS. So import declarations (which can only exist in modules) are not allowed. <br>\n\n- A string representing a JavaScript expression, statement, or sequence of statements. The expression can include variables and properties of existing objects. It will be parsed as a script, so <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import\">import</a> declarations (which can only exist in modules) are not allowed. <br>\n\n- The completion value of evaluating the given code. If the completion value is empty,\n<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined\">undefined</a> is returned.<br>\n\n<h3 class='red'>Đặc Tả: <a href='https://tc39.es/ecma262/multipage/global-object.html#sec-eval-x'>Eval</a></h3>",
                     "index": 4,
                     "show": [
                         "detail",
@@ -158,7 +158,7 @@
                 },
                 {
                     "name": "syntax",
-                    "data": "<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isFinite\">isFinite()</a></h3>\n\n<pre class='js'><code  class=\"javascript\">// == Example Code ==\nisFinite(Infinity);// false\nisFinite(NaN); // false\nisFinite(-Infinity); // false\nisFinite(0); // true\nisFinite(2e64);// true\nisFinite(910); // true\nisFinite(null);// true\nisFinite('0'); // true\n</code></pre>",
+                    "data": "<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isFinite\">isFinite()</a></h3>\n\n<pre class='js'><code class=\"javascript\">// == Example Code ==\nisFinite(Infinity);// false\nisFinite(NaN); // false\nisFinite(-Infinity); // false\nisFinite(0); // true\nisFinite(2e64);// true\nisFinite(910); // true\nisFinite(null);// true\nisFinite('0'); // true\n</code></pre>",
                     "index": 2,
                     "show": [
                         "detail",
@@ -176,7 +176,7 @@
                 },
                 {
                     "name": "description",
-                    "data": "Algorithm isFinite (fainait) <br> \n1. Let num be ? ToNumber(number). <br> \n2. If num is not finite, return false. <br> \n3. Otherwise, return true. <br> \n\n\n- The global isFinite() function determines whether the passed value is a finite number. If needed, the parameter is first converted to a number. <br>\n\n\n- Finite number is number and not +-Infinity. <br>\n\n\n- Check if argument is Finite (value is number and not +-Infinity), First Implicit argument into number => <b style=\"color:green\">isFinite(Number(args))</b>  <br>\n\n\n\n<br>\n<h3  class='red'>Đặc Tả: <a href='https://tc39.es/ecma262/multipage/global-object.html#sec-isfinite-number'>isFinite(number)</a></h3>",
+                    "data": "Algorithm isFinite (fainait) <br> \n1. Let num be ? ToNumber(number). <br> \n2. If num is not finite, return false. <br> \n3. Otherwise, return true. <br> \n\n\n- The global isFinite() function determines whether the passed value is a finite number. If needed, the parameter is first converted to a number. <br>\n\n\n- Finite number is number and not +-Infinity. <br>\n\n\n- Check if argument is Finite (value is number and not +-Infinity), First Implicit argument into number => <b style=\"color:green\">isFinite(Number(args))</b> <br>\n\n\n\n<br>\n<h3 class='red'>Đặc Tả: <a href='https://tc39.es/ecma262/multipage/global-object.html#sec-isfinite-number'>isFinite(number)</a></h3>",
                     "index": 4,
                     "show": [
                         "detail",
@@ -220,7 +220,7 @@
                 },
                 {
                     "name": "syntax",
-                    "data": "<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN\">isNaN()</a></h3>\n\n\n<pre class='js'><code  class=\"javascript\">// == Example Code == (All argument in Number conversion - it will be implicit into Number)\nisNaN(NaN); // Number(NaN) return NaN => true\nisNaN(undefined); // Number(undefined) return NaN => true\nisNaN({});// Number({}) return NaN => true\nisNaN(true);// Number(true) return 1 => fales \nisNaN(null);// Number(false) return 0 => false\nisNaN(37);// Number(37) => return 37 => false\nisNaN('37');// Number(\"37\") => return 37 => false\nisNaN('37.37'); // Number(\"37.37\") => return 37.37 => false\nisNaN(\"37,5\");// Number(\"37,5\") => return NaN (because string) => true\nisNaN('123ABC');// true:parseInt(\"123ABC\") is 123 but Number(\"123ABC\") is NaN\nisNaN('');// Number(\"\") => return 0 => false\nisNaN(' '); // Number(\" \") => return 0 => false\nisNaN(new Date());// Number(new Date()) => return NaN (because new Date() => return String) => true\nisNaN(new Date().toString()); // true\nisNaN('blabla'); // Number(\"blabla\") => return NaN \n</code></pre>",
+                    "data": "<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN\">isNaN()</a></h3>\n\n\n<pre class='js'><code class=\"javascript\">// == Example Code == (All argument in Number conversion - it will be implicit into Number)\nisNaN(NaN); // Number(NaN) return NaN => true\nisNaN(undefined); // Number(undefined) return NaN => true\nisNaN({});// Number({}) return NaN => true\nisNaN(true);// Number(true) return 1 => fales \nisNaN(null);// Number(false) return 0 => false\nisNaN(37);// Number(37) => return 37 => false\nisNaN('37');// Number(\"37\") => return 37 => false\nisNaN('37.37'); // Number(\"37.37\") => return 37.37 => false\nisNaN(\"37,5\");// Number(\"37,5\") => return NaN (because string) => true\nisNaN('123ABC');// true:parseInt(\"123ABC\") is 123 but Number(\"123ABC\") is NaN\nisNaN('');// Number(\"\") => return 0 => false\nisNaN(' '); // Number(\" \") => return 0 => false\nisNaN(new Date());// Number(new Date()) => return NaN (because new Date() => return String) => true\nisNaN(new Date().toString()); // true\nisNaN('blabla'); // Number(\"blabla\") => return NaN \n</code></pre>",
                     "index": 2,
                     "show": [
                         "detail",
@@ -229,7 +229,7 @@
                 },
                 {
                     "name": "involved",
-                    "data": "<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN\">isNaN()</a></h3>\n\n\n- Because of NaN !== NaN => So we have a reliable way for ECMAScript code to test if a value X is a NaN is an expression of the form X !== X. The result will be true if and only if X is a NaN. <br>\n\n- isNaN sử dụng thuật toán khác với Number.isNaN  <br>\n- isNaN(arg) implicit argument into number <br>\n- Number.isNaN(arg) do not implicit <br>\n\n<b  class='red'>Kiểm tra lại chỗ thuật toán của Number.isNaN</b> <br>\n\n<b> <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN#useful_special-case_behavior\"> Đọc thêm cái này --- hiện tại chưa cần thiết </a></b>",
+                    "data": "<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN\">isNaN()</a></h3>\n\n\n- Because of NaN !== NaN => So we have a reliable way for ECMAScript code to test if a value X is a NaN is an expression of the form X !== X. The result will be true if and only if X is a NaN. <br>\n\n- isNaN sử dụng thuật toán khác với Number.isNaN <br>\n- isNaN(arg) implicit argument into number <br>\n- Number.isNaN(arg) do not implicit <br>\n\n<b class='red'>Kiểm tra lại chỗ thuật toán của Number.isNaN</b> <br>\n\n<b> <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN#useful_special-case_behavior\"> Đọc thêm cái này --- hiện tại chưa cần thiết </a></b>",
                     "index": 3,
                     "show": [
                         "detail",
@@ -238,7 +238,7 @@
                 },
                 {
                     "name": "description",
-                    "data": "<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN\">isNaN()</a></h3>\n\n<!-- ==== Algorithm ==== -->\n\nAlgorithm isNaN <br>\n\n1. Let num be ? ToNumber(number). <br>\n2. If num is NaN, return true. <br>\n3. Otherwise, return false. <br>\n\n<!-- ==== Đặc tả ==== -->\n\n<br>\n<h3  class='red'>Đặc Tả: <a href='https://tc39.es/ecma262/multipage/global-object.html#sec-isnan-number'>isNaN(number)</a></h3>",
+                    "data": "<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN\">isNaN()</a></h3>\n\n<!-- ==== Algorithm ==== -->\n\nAlgorithm isNaN <br>\n\n1. Let num be ? ToNumber(number). <br>\n2. If num is NaN, return true. <br>\n3. Otherwise, return false. <br>\n\n<!-- ==== Đặc tả ==== -->\n\n<br>\n<h3 class='red'>Đặc Tả: <a href='https://tc39.es/ecma262/multipage/global-object.html#sec-isnan-number'>isNaN(number)</a></h3>",
                     "index": 4,
                     "show": [
                         "detail",
@@ -282,7 +282,7 @@
                 },
                 {
                     "name": "syntax",
-                    "data": "<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat\">parseFloat()</a></h3>\n\n<pre class='js'><code  class=\"javascript\">// == Example Code == (All statement below return number 3.14)\nparseFloat(3.14);\nparseFloat(\"3.14\");\nparseFloat(\"3.14\");\nparseFloat(\"314e-2\");\nparseFloat(\"0.0314E+2\");\nparseFloat(\"3.14some non-digit characters\");\nparseFloat({ toString() {return \"3.14\";} });\n</code></pre>",
+                    "data": "<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat\">parseFloat()</a></h3>\n\n<pre class='js'><code class=\"javascript\">// == Example Code == (All statement below return number 3.14)\nparseFloat(3.14);\nparseFloat(\"3.14\");\nparseFloat(\"3.14\");\nparseFloat(\"314e-2\");\nparseFloat(\"0.0314E+2\");\nparseFloat(\"3.14some non-digit characters\");\nparseFloat({ toString() {return \"3.14\";} });\n</code></pre>",
                     "index": 2,
                     "show": [
                         "detail",
@@ -300,7 +300,7 @@
                 },
                 {
                     "name": "description",
-                    "data": "<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat\">parseFloat()</a></h3>\n\n\n<!-- ==== Đặc tả ==== -->\n\n<br>\n<h3  class='red'>Đặc Tả: <a href='https://tc39.es/ecma262/multipage/global-object.html#sec-parsefloat-string'>parseFloat(number)</a></h3>\n",
+                    "data": "<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat\">parseFloat()</a></h3>\n\n\n<!-- ==== Đặc tả ==== -->\n\n<br>\n<h3 class='red'>Đặc Tả: <a href='https://tc39.es/ecma262/multipage/global-object.html#sec-parsefloat-string'>parseFloat(number)</a></h3>\n",
                     "index": 4,
                     "show": [
                         "detail",
@@ -335,7 +335,7 @@
                 },
                 {
                     "name": "method",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt\">parseInt()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt\">parseInt()</a></h3>\n",
                     "index": 1,
                     "show": [
                         "detail",
@@ -344,7 +344,7 @@
                 },
                 {
                     "name": "syntax",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt\">parseInt()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt\">parseInt()</a></h3>\n",
                     "index": 2,
                     "show": [
                         "detail",
@@ -353,7 +353,7 @@
                 },
                 {
                     "name": "involved",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt\">parseInt()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt\">parseInt()</a></h3>\n",
                     "index": 3,
                     "show": [
                         "detail",
@@ -362,7 +362,7 @@
                 },
                 {
                     "name": "description",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt\">parseInt()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt\">parseInt()</a></h3>\n",
                     "index": 4,
                     "show": [
                         "detail",
@@ -397,7 +397,7 @@
                 },
                 {
                     "name": "method",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI\">encodeURI()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI\">encodeURI()</a></h3>\n",
                     "index": 1,
                     "show": [
                         "detail",
@@ -406,7 +406,7 @@
                 },
                 {
                     "name": "syntax",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI\">encodeURI()</a></h3>\n\n\n<br> https://phambinh.net/bai-viet/su-khac-biet-giua-encodeuri-va-encodeuricomponent-trong-javascript/ <br>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI\">encodeURI()</a></h3>\n\n\n<br> https://phambinh.net/bai-viet/su-khac-biet-giua-encodeuri-va-encodeuricomponent-trong-javascript/ <br>\n",
                     "index": 2,
                     "show": [
                         "detail",
@@ -415,7 +415,7 @@
                 },
                 {
                     "name": "involved",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI\">encodeURI()</a></h3>\n\n- <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/URI\">URI - là gì ?</a> <br>\n\n- <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/UTF-8\">UTF-8 - là gì ?</a> <br>\n\n- <a href=\"https://youtube.com/playlist?list=PL75xdq9Y-GaTZaU5l4z2J9-IFyFBQg6lP\">HTTP Method - LQuan</a> <br>\n\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI\">encodeURI()</a></h3>\n\n- <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/URI\">URI - là gì ?</a> <br>\n\n- <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/UTF-8\">UTF-8 - là gì ?</a> <br>\n\n- <a href=\"https://youtube.com/playlist?list=PL75xdq9Y-GaTZaU5l4z2J9-IFyFBQg6lP\">HTTP Method - LQuan</a> <br>\n\n",
                     "index": 3,
                     "show": [
                         "detail",
@@ -424,7 +424,7 @@
                 },
                 {
                     "name": "description",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI\">encodeURI()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI\">encodeURI()</a></h3>\n",
                     "index": 4,
                     "show": [
                         "detail",
@@ -459,7 +459,7 @@
                 },
                 {
                     "name": "method",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent\">encodeURIComponent()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent\">encodeURIComponent()</a></h3>\n",
                     "index": 1,
                     "show": [
                         "detail",
@@ -468,7 +468,7 @@
                 },
                 {
                     "name": "syntax",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent\">encodeURIComponent()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent\">encodeURIComponent()</a></h3>\n",
                     "index": 2,
                     "show": [
                         "detail",
@@ -477,7 +477,7 @@
                 },
                 {
                     "name": "involved",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent\">encodeURIComponent()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent\">encodeURIComponent()</a></h3>\n",
                     "index": 3,
                     "show": [
                         "detail",
@@ -486,7 +486,7 @@
                 },
                 {
                     "name": "description",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent\">encodeURIComponent()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent\">encodeURIComponent()</a></h3>\n",
                     "index": 4,
                     "show": [
                         "detail",
@@ -521,7 +521,7 @@
                 },
                 {
                     "name": "method",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI\">decodeURI()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI\">decodeURI()</a></h3>\n",
                     "index": 1,
                     "show": [
                         "detail",
@@ -530,7 +530,7 @@
                 },
                 {
                     "name": "syntax",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI\">decodeURI()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI\">decodeURI()</a></h3>\n",
                     "index": 2,
                     "show": [
                         "detail",
@@ -539,7 +539,7 @@
                 },
                 {
                     "name": "involved",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI\">decodeURI()</a></h3>\n\n- <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/URI\">URI - là gì ?</a> <br>\n\n- <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/UTF-8\">UTF-8 - là gì ?</a> <br>\n\n- <a href=\"https://youtube.com/playlist?list=PL75xdq9Y-GaTZaU5l4z2J9-IFyFBQg6lP\">HTTP Method - LQuan</a> <br>\n\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI\">decodeURI()</a></h3>\n\n- <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/URI\">URI - là gì ?</a> <br>\n\n- <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/UTF-8\">UTF-8 - là gì ?</a> <br>\n\n- <a href=\"https://youtube.com/playlist?list=PL75xdq9Y-GaTZaU5l4z2J9-IFyFBQg6lP\">HTTP Method - LQuan</a> <br>\n\n",
                     "index": 3,
                     "show": [
                         "detail",
@@ -548,7 +548,7 @@
                 },
                 {
                     "name": "description",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI\">decodeURI()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI\">decodeURI()</a></h3>\n",
                     "index": 4,
                     "show": [
                         "detail",
@@ -583,7 +583,7 @@
                 },
                 {
                     "name": "method",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent\">decodeURIComponent()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent\">decodeURIComponent()</a></h3>\n",
                     "index": 1,
                     "show": [
                         "detail",
@@ -592,7 +592,7 @@
                 },
                 {
                     "name": "syntax",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent\">decodeURIComponent()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent\">decodeURIComponent()</a></h3>\n",
                     "index": 2,
                     "show": [
                         "detail",
@@ -601,7 +601,7 @@
                 },
                 {
                     "name": "involved",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent\">decodeURIComponent()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent\">decodeURIComponent()</a></h3>\n",
                     "index": 3,
                     "show": [
                         "detail",
@@ -610,7 +610,7 @@
                 },
                 {
                     "name": "description",
-                    "data": "  <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent\">decodeURIComponent()</a></h3>\n",
+                    "data": " <h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent\">decodeURIComponent()</a></h3>\n",
                     "index": 4,
                     "show": [
                         "detail",

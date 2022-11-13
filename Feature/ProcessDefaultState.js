@@ -1,28 +1,26 @@
-import { countTimeSaveLocalStorage } from "./FeatureLocalStorage.js";
-import { $ } from "./Util.js";
+import { countTimeSaveLocalStorage } from './FeatureLocalStorage.js';
+import { $ } from './Util.js';
 
 export function processDefaultState() {
-  let app = this;
-  app = {
-    ...app,
-    JsonData: { ...DEFAULT_STATE },
-    counterId: null,
-    activeRow: null,
-    previousActiveRow: null,
-    document: localStorage.getItem("document")
-      ? localStorage.getItem("document")
-      : "String",
-  };
-  $(".button-feature.button-feature__eraser").setAttribute("active", true);
-  countTimeSaveLocalStorage(app);
-  return app;
+    let app = this;
+    app = {
+        ...app,
+        JsonData: { ...DEFAULT_STATE },
+        counterId: null,
+        activeRow: null,
+        previousActiveRow: null,
+        document: localStorage.getItem('document') ? localStorage.getItem('document') : 'String',
+    };
+    $('.button-feature.button-feature__eraser').setAttribute('active', true);
+    countTimeSaveLocalStorage(app);
+    return app;
 }
 const DEFAULT_STATE = {
-  documentTitle: "JavaScript | Note",
-  HeadingOne: '<a href="">Heading</a>',
-  mainContent: "...",
-  headingMainTwo: '<a href="">Summary</a>',
-  referanceContent: `<ol>
+    documentTitle: 'JavaScript | Note',
+    HeadingOne: '<a href="">Heading</a>',
+    mainContent: '...',
+    headingMainTwo: '<a href="">Summary</a>',
+    referanceContent: `<ol>
     <li>
       <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla Javascript</a>
     </li>
@@ -36,9 +34,9 @@ const DEFAULT_STATE = {
       <a href="https://www.totaltypescript.com/tutorials">TS totorial</a>
     </li>
   </ol>`,
-  dataTable: {
-    dataTableHeader: [],
-    dataTableFirstRow: [],
-    dataTableBody: [],
-  },
+    dataTable: {
+        dataTableHeader: [],
+        dataTableFirstRow: [],
+        dataTableBody: [],
+    },
 };

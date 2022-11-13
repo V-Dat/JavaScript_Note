@@ -1,202 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JavaScript | Note</title>
+        <link rel="shortcut icon" type="image/svg+xml" href="./Assets/Icons/Js-icon.svg" />
+        <link rel="stylesheet" href="./index.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/hardcore.min.css"
+            integrity="sha512-p8yi+TFFlSnC5MTPpjKsJguTczJYkt5Dj3Iyxdyb5Yd7vk7nR+Y8Xiqr7oRgWEINvrgdNnA7kc+JQ0m5EKHZ4g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/highlight.min.js"></script>
+        <script src="https://unpkg.com/@stackblitz/sdk@1/bundles/sdk.umd.js"></script>
+    </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JavaScript | Note</title>
-  <link rel="shortcut icon" type="image/svg+xml" href="./Assets/Icons/Js-icon.svg" />
-  <link rel="stylesheet" href="./index.css" />
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/hardcore.min.css"
-    integrity="sha512-p8yi+TFFlSnC5MTPpjKsJguTczJYkt5Dj3Iyxdyb5Yd7vk7nR+Y8Xiqr7oRgWEINvrgdNnA7kc+JQ0m5EKHZ4g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/highlight.min.js"></script>
-  <script src="https://unpkg.com/@stackblitz/sdk@1/bundles/sdk.umd.js"></script>
-</head>
+    <body>
+        <!-- Subject -->
+        <section class="heading-method-group">
+            <h2 class="heading-text">
+                <a>Method Helper</a>
+            </h2>
+            <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px" title="Edit" />
+        </section>
 
-<body>
-  <!-- Subject -->
-  <section class="heading-method-group">
-    <h2 class="heading-text">
-      <a>Method Helper</a>
-    </h2>
-    <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px" title="Edit" />
-  </section>
+        <!-- Github cover -->
+        <a class="github-cover" href="https://github.com/V-Dat/JavaScript_Note" aria-label="Github">
+            <img src="./Assets/Icons//github-icon.svg" alt="github-cover" title="Github" />
+        </a>
 
-  <!-- Github cover -->
-  <a class="github-cover" href="https://github.com/V-Dat/JavaScript_Note" aria-label="Github">
-    <img src="./Assets/Icons//github-icon.svg" alt="github-cover" title="Github">
-  </a>
+        <!-- Nav Bar - Switch Document -->
+        <section class="switch-document-group nav-bar">
+            <img
+                class="btn-switch btn-edit"
+                src="./Assets/Icons/menu-icon.svg"
+                width="30px"
+                height="30px"
+                title="Show MenuBar"
+            />
+            <aside class="side-bar" style="display: none; box-shadow: grey 3px 18px 14px 3px">
+                <div class="side-bar__content">
+                    <h2>Chose Document</h2>
+                    <div class="embed"></div>
+                </div>
+            </aside>
+        </section>
 
-  <!-- Nav Bar - Switch Document -->
-  <section class="switch-document-group nav-bar">
-    <img class="btn-switch btn-edit" src="./Assets/Icons/menu-icon.svg" width="30px" height="30px"
-      title="Show MenuBar" />
-    <aside class="side-bar" style="display: none; box-shadow: grey 3px 18px 14px 3px;">
-      <div class="side-bar__content">
-        <h2>Chose Document</h2>
-        <div class="embed"></div>
-      </div>
-    </aside>
-  </section>
+        <!-- Stackblitz modal -->
+        <img class="open-stackblitz" src="./Assets/Icons/thunder-active-icon.svg" title="Open Stackblitz" />
+        <div class="modal modal-stackblitz" style="display: none">
+            <div class="modal-content modal-stackblitz-content">
+                <div id="embed-stackblitz">
+                    <p>Embed will go here</p>
+                </div>
+            </div>
+        </div>
 
-  <!-- Stackblitz modal -->
-  <img class="open-stackblitz" src="./Assets/Icons/thunder-active-icon.svg" title="Open Stackblitz" />
-  <div class="modal modal-stackblitz" style="display: none">
-    <div class="modal-content modal-stackblitz-content">
-      <div id="embed-stackblitz">
-        <p>Embed will go here</p>
-      </div>
-    </div>
-  </div>
+        <!-- JSPlaygrounds modal -->
+        <img class="open-javascript-playgrounds" src="./Assets/Icons/Js-icon.svg" title="Open Js Playgrounds" />
+        <div class="modal modal-JSPlaygrounds" style="display: none">
+            <div class="modal-content modal-JSPlaygrounds-content">
+                <iframe src="about:blank"></iframe>
+            </div>
+        </div>
 
-  <!-- JSPlaygrounds modal -->
-  <img class="open-javascript-playgrounds" src="./Assets/Icons/Js-icon.svg" title="Open Js Playgrounds" />
-  <div class="modal modal-JSPlaygrounds" style="display: none">
-    <div class="modal-content modal-JSPlaygrounds-content">
-      <iframe src="about:blank"></iframe>
-    </div>
-  </div>
+        <!-- Modal View Row Detail -->
+        <img
+            class="button-close-modal-row-detail"
+            src="./Assets/Icons/home-active-icon.svg"
+            title="Go Back"
+            style="display: none"
+        />
 
-  <!-- Modal View Row Detail -->
-  <img class="button-close-modal-row-detail" src="./Assets/Icons/home-active-icon.svg" title="Go Back"
-    style="display:none" />
+        <img
+            class="button-edit-note"
+            src="./Assets/Icons/comment-active-icon.svg"
+            title="Edit Note"
+            style="display: none"
+        />
 
-  <img class="button-edit-note" src="./Assets/Icons/comment-active-icon.svg" title="Edit Note" style="display:none" />
+        <div class="modal modal-row-detail" style="display: none">
+            <div class="modal-content modal-row-detail-content"></div>
+            <div class="modal-row-detail-note note-block" style="display: none">
+                <h2 class="take-note-title">Take Note</h2>
+                <textarea></textarea>
+                <div class="actions">
+                    <img
+                        class="save-note"
+                        type="save-note"
+                        src="./Assets/Icons/create-active-icon.svg"
+                        width="45px"
+                        height="45px"
+                        title="Save"
+                    />
+                    <img
+                        class="clear-note"
+                        type="clear-note"
+                        src="./Assets/Icons/eraser-active-icon.svg"
+                        width="45px"
+                        height="45px"
+                        title="Clear"
+                    />
+                    <img
+                        class="preview-note"
+                        type="preview-note"
+                        src="./Assets/Icons/preview-icon.svg"
+                        width="45px"
+                        height="45px"
+                        title="Preview"
+                    />
+                </div>
+            </div>
+        </div>
 
-  <div class="modal modal-row-detail" style="display: none">
-    <div class="modal-content modal-row-detail-content">
-    </div>
-    <div class="modal-row-detail-note note-block" style="display: none">
-      <h2 class="take-note-title">Take Note</h2>
-      <textarea></textarea>
-      <div class="actions">
-        <img class="save-note" type="save-note" src="./Assets/Icons/create-active-icon.svg" width="45px"
-          height="45px" title="Save" />
-        <img class="clear-note" type="clear-note" src="./Assets/Icons/eraser-active-icon.svg" width="45px"
-          height="45px" title="Clear" />
-        <img class="preview-note" type="preview-note" src="./Assets/Icons/preview-icon.svg" width="45px"
-          height="45px" title="Preview" />
-      </div>
-    </div>
-  </div>
+        <!-- Table -->
+        <div class="table-block" style="overflow-x: auto">
+            <table id="table">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
 
-  <!-- Table -->
-  <div class="table-block" style="overflow-x:auto;">
-    <table id="table">
-      <thead></thead>
-      <tbody></tbody>
-    </table>
-  </div>
+        <!-- button feature group -->
+        <div class="button-feature-group">
+            <button
+                type="make-up-row"
+                class="button-feature button-feature__row"
+                title="click on table cell to change row color. Combine with alt or ctrl + click to remove color"
+            >
+                <img src="./Assets/Icons/paint-row-icon.svg" width="46px" height="46px" />
+                <figcaption>HighLight Row</figcaption>
+            </button>
+            <button
+                type="make-up-cell"
+                class="button-feature button-feature__cell"
+                title="click on table cell to change cell color. Combine with alt or ctrl + click to remove color"
+            >
+                <img src="./Assets/Icons/paint-cell-icon.svg" width="46px" height="46px" />
+                <figcaption>HighLight Cell</figcaption>
+            </button>
+            <button
+                type="remove-make-up-cell"
+                class="button-feature button-feature__eraser"
+                title="click on table cell to remove cell color"
+            >
+                <img src="./Assets/Icons/remove-color-icon.svg" width="46px" height="46px" />
+                <figcaption>Remove Color</figcaption>
+            </button>
+        </div>
+        <hr />
 
-  <!-- button feature group -->
-  <div class="button-feature-group">
-    <button type="make-up-row" class="button-feature button-feature__row"
-      title="click on table cell to change row color. Combine with alt or ctrl + click to remove color">
+        <!-- arrow group -->
+        <div class="arrow-features" style="display: none">
+            <img class="up" src="./Assets/Icons/arrow-up-icon.svg" width="40px" height="40px" title="Move To Top" />
+            <img
+                class="down"
+                src="./Assets/Icons/arrow-up-icon.svg"
+                width="40px"
+                height="40px"
+                title="Move To End"
+                style="transform: rotate(180deg)"
+            />
+        </div>
 
-      <img src="./Assets/Icons/paint-row-icon.svg" width="46px" height="46px" />
-      <figcaption>
-        HighLight Row
-      </figcaption>
-    </button>
-    <button type="make-up-cell" class="button-feature button-feature__cell"
-      title="click on table cell to change cell color. Combine with alt or ctrl + click to remove color">
-      <img src="./Assets/Icons/paint-cell-icon.svg" width="46px" height="46px" />
-      <figcaption>
-        HighLight Cell
-      </figcaption>
-    </button>
-    <button type="remove-make-up-cell" class="button-feature button-feature__eraser" title="click on table cell to remove cell color">
-      <img src="./Assets/Icons/remove-color-icon.svg" width="46px" height="46px" />
-      <figcaption>
-        Remove Color
-      </figcaption>
-    </button>
-  </div>
-  <hr />
+        <!-- content  group -->
+        <section class="content-notes">
+            <h2 class="heading-text">
+                <a>Content Summary</a>
+            </h2>
+            <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px" title="Edit" />
 
-  <!-- arrow group -->
-  <div class="arrow-features" style="display:none">
-    <img class="up" src="./Assets/Icons/arrow-up-icon.svg" width="40px" height="40px" title="Move To Top">
-    <img class="down" src="./Assets/Icons/arrow-up-icon.svg" width="40px" height="40px" title="Move To End"
-      style="transform:rotate(180deg)">
-  </div>
+            <div class="main-content-group">
+                <div class="main-content">....</div>
+                <img
+                    class="button-edit-main-content"
+                    src="./Assets/Icons/pen-icon.svg"
+                    title="Edit"
+                    width="32px"
+                    height="32px"
+                />
+            </div>
+        </section>
 
-  <!-- content  group -->
-  <section class="content-notes">
-    <h2 class="heading-text">
-      <a>Content Summary</a>
-    </h2>
-    <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px" title="Edit" />
+        <!-- feature localstorage -->
+        <section class="features-localstorage">
+            <form class="upload-file-section">
+                <label for="reading-file"
+                    ><img src="./Assets/Icons/upload-icon.svg" width="30px" height="30px" title="Upload Json File"
+                /></label>
+                <input id="reading-file" type="file" style="display: none" />
+            </form>
 
-    <div class="main-content-group">
-      <div class="main-content">....</div>
-      <img class="button-edit-main-content" src="./Assets/Icons/pen-icon.svg" title="Edit" width="32px"
-        height="32px"></img>
-    </div>
+            <img
+                type="button-download"
+                class="button-download"
+                src="./Assets/Icons/download-icon.svg"
+                title="Save As Json"
+            />
+            <img
+                type="button-save-local-storage"
+                class="button-save-local-storage"
+                src="./Assets/Icons/save-icon.svg"
+                title="Save Local Storage"
+            />
+            <span class="timmer">0</span>
+            <img
+                type="button-cleanup-local-storage"
+                class="button-cleanup-local-storage"
+                src="./Assets/Icons/clear-local-storage-icon.svg"
+                title="Clean Local Storage"
+            />
+        </section>
 
-  </section>
+        <!-- Referance -->
+        <section class="referance-section">
+            <h3>Referance :</h3>
+            <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px" />
+            <div class="referance-content">
+                <ol>
+                    <li>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla</a>
+                    </li>
+                    <li>
+                        <a href="https://stephengrider.github.io/JSPlaygrounds/">Playgrounds</a>
+                    </li>
+                    <li>
+                        <a href="https://www.totaltypescript.com/tutorials">TS totorial</a>
+                    </li>
+                </ol>
+            </div>
+        </section>
 
-  <!-- feature localstorage -->
-  <section class="features-localstorage">
+        <!-- footer -->
+        <footer>© 2022<a href="https://github.com/V-Dat/JavaScript_Note"> V-Dat</a></footer>
 
-    <form class="upload-file-section">
-      <label for="reading-file"><img src="./Assets/Icons/upload-icon.svg" width="30px" height="30px"
-          title="Upload Json File" /></label>
-      <input id="reading-file" type="file" style="display:none">
-    </form>
+        <!-- Modal Place -->
 
-    <img type="button-download" class="button-download" src="./Assets/Icons/download-icon.svg" title="Save As Json" />
-    <img type="button-save-local-storage" class="button-save-local-storage" src="./Assets/Icons/save-icon.svg"
-      title="Save Local Storage" />
-    <span class="timmer">0</span>
-    <img type="button-cleanup-local-storage" class="button-cleanup-local-storage"
-      src="./Assets/Icons/clear-local-storage-icon.svg" title="Clean Local Storage" />
-  </section>
+        <div class="modal modal-common" style="display: none">
+            <!-- Modal content -->
+            <div class="modal-content center" style="position: relative">
+                <div style="position: relative">
+                    <dib class="button-modal-close" style="position: absolute; cursor: pointer">&times;</dib>
+                    <div class="embed">Some text in the Modal..</div>
+                </div>
+            </div>
+        </div>
 
-
-  <!-- Referance -->
-  <section class="referance-section">
-    <h3>Referance :</h3>
-    <img class="btn-edit" src="./Assets/Icons/pen-icon.svg" width="30px" height="30px" />
-    <div class="referance-content">
-      <ol>
-        <li>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla</a>
-        </li>
-        <li>
-          <a href="https://stephengrider.github.io/JSPlaygrounds/">Playgrounds</a>
-        </li>
-        <li>
-          <a href="https://www.totaltypescript.com/tutorials">TS totorial</a>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- footer -->
-  <footer>© 2022<a href="https://github.com/V-Dat/JavaScript_Note"> V-Dat</a></footer>
-
-
-  <!-- Modal Place -->
-
-
-  <div class="modal modal-common" style="display: none">
-    <!-- Modal content -->
-    <div class="modal-content center" style="position: relative;">
-      <div style="position: relative;">
-        <dib class="button-modal-close" style="position: absolute; cursor: pointer;">&times;</dib>
-        <div class="embed">Some text in the Modal..</div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <script src="./index.js" type="module"></script>
-
-</body>
-
+        <script src="./index.js" type="module"></script>
+    </body>
 </html>
