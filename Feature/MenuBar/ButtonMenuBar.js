@@ -88,4 +88,8 @@ const DOCS = [
     name: "AJAX",
     key: "AJAX",
   },
+  {
+    name: "YOUR - UPLOAD",
+    key: "Upload",
+  },
 ];

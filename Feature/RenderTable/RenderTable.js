@@ -24,6 +24,7 @@ export async function renderDataImport(event, app) {
     .then((res) => res.json())
     .then((data) => {
       console.log("read data from import file");
+      setDocumentToUpload(app);
       app.JsonData = JSON.parse(JSON.stringify(data));
       hanlePreRender();
       handleRender(app);
@@ -37,4 +38,9 @@ export function hanlePreRender() {
   for (let i = 0; i < listDataNodes.length; i++) {
     listDataNodes[i].remove();
   }
+}
+
+function setDocumentToUpload(app) {
+  app.document = "Upload";
+  localStorage.setItem("document", "Upload");
 }
