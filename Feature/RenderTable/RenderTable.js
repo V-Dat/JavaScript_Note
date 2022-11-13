@@ -1,3 +1,4 @@
+import { saveDataUploadToLocalStore } from "../FeatureLocalStorage.js";
 import { rendermainContent } from "../MainContent/RenderMainContent.js";
 import { $, $$, highlightNode } from "../Util.js";
 import { renderTableBody } from "./RenderBody.js";
@@ -5,16 +6,16 @@ import { renderFirstRowTable } from "./RenderFirstRow.js";
 import { renderdataTableHeader } from "./RenderHeader.js";
 
 export function handleRender(app) {
-  if (!app.JsonData) return;
-  if (!app.JsonData.dataTable) return;
-  if (!app.JsonData.dataTable.dataTableFirstRow) return;
-  if (!app.JsonData.dataTable.dataTableBody) return;
-  if (!app.JsonData.dataTable.dataTableHeader) return;
+  if (!app.DB) return;
+  if (!app.DB.dataTable) return;
+  if (!app.DB.dataTable.dataTableFirstRow) return;
+  if (!app.DB.dataTable.dataTableBody) return;
+  if (!app.DB.dataTable.dataTableHeader) return;
 
   renderdataTableHeader(app);
   renderFirstRowTable(app);
   renderTableBody(app);
-  rendermainContent(app.JsonData?.mainContent);
+  rendermainContent(app.DB?.mainContent);
 }
 
 export async function renderDataImport(event, app) {
@@ -24,8 +25,8 @@ export async function renderDataImport(event, app) {
     .then((res) => res.json())
     .then((data) => {
       console.log("read data from import file");
-      setDocumentToUpload(app);
-      app.JsonData = JSON.parse(JSON.stringify(data));
+      app.DB = JSON.parse(JSON.stringify(data));
+      saveDataUploadToLocalStore(app, JSON.stringify(data));
       hanlePreRender();
       handleRender(app);
       highlightNode($("body"));
@@ -38,9 +39,4 @@ export function hanlePreRender() {
   for (let i = 0; i < listDataNodes.length; i++) {
     listDataNodes[i].remove();
   }
-}
-
-function setDocumentToUpload(app) {
-  app.document = "Upload";
-  localStorage.setItem("document", "Upload");
 }
