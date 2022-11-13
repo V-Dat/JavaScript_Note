@@ -6,10 +6,11 @@ export function processDefaultState() {
   app = {
     ...app,
     JsonData: { mainContent: "", dataTableBody: [] },
-    // isFillAllCrudState: false,
     counterId: null,
     activeRow: null,
     previousActiveRow: null,
+    document: "Default",
+    // document: "Boolean",
   };
   $(".button-feature.button-feature__eraser").setAttribute("active", true);
   countTimeSaveLocalStorage(app);

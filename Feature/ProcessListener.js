@@ -14,10 +14,10 @@ import {
   onChangeHeadingMethod,
 } from "./RenderHeading.js";
 import { onChangeReferanceContent } from "./Referance.js";
-import { onClickSwitchDoc } from "./SwitchDocument.js";
 import { handleEditMainContent } from "./TextAreaCrud/TextAreaCrud.js";
 import { handleActionNote } from "./ViewDetail/ActionWhenEditNote.js";
 import { handleClickEditNote } from "./ViewDetail/EditNote.js";
+import { handleClickMenuBar } from "./MenuBar/ButtonMenuBar.js";
 const buttonFeatureLocalStorage = $(".features-localstorage");
 const inputFile = $("#reading-file");
 const table = $("#table");
@@ -33,6 +33,7 @@ const butthandleClickEditNote = $(".button-edit-note");
 const actionsNote = $(".note-block .actions");
 const buttonSwitchDoc = $(".switch-document-group .btn-switch");
 const buttonFeature = $(".button-feature-group");
+const radioDocument = $(".switch-document-group .side-bar .embed");
 export function processListener() {
   const _this = this;
   buttonFeatureLocalStorage.addEventListener("click", (event) => {
@@ -71,6 +72,12 @@ export function processListener() {
   actionsNote.addEventListener("click", (event) =>
     handleActionNote(event, _this)
   );
-  buttonSwitchDoc.addEventListener("click", onClickSwitchDoc);
+  buttonSwitchDoc.addEventListener("click", handleClickMenuBar);
+  radioDocument.addEventListener("click", (event, _this) => {
+    // event.preventDefault();
+    if (!event.target.closest("input")) return;
+    console.log(333, event.target);
+  });
+
   return this;
 }

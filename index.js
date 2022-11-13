@@ -13,7 +13,7 @@ const app = {
   handler: processListener,
   firstRender: function () {
     const _this = this;
-    readData().then((data) => {
+    readData(_this).then((data) => {
       if (data) {
         _this.JsonData = JSON.parse(data);
         hanlePreRender();

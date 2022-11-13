@@ -1,5 +1,5 @@
 import { showModalRowDetail } from "../ModalRowDetail.js";
-import { toggleNode } from "../SwitchDocument.js";
+import { toggleNode } from "../MenuBar/ButtonMenuBar.js";
 import { $ } from "../Util.js";
 import { getRowDataFromActiveRow, setActiveRow } from "./AccessData.js";
 
