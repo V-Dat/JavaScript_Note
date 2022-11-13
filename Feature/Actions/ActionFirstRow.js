@@ -56,14 +56,14 @@ function processRowTableData(app) {
         data: dataTableBody.length + 1,
         index: item.dataset.columnIndex,
         name: item.dataset.columnName,
-        show: ["home"],
+        show: ["default-home"],
       });
     } else {
       dataAreaInput.push({
         data: null,
         index: item.dataset.columnIndex,
         name: item.dataset.columnName,
-        show: ["home"],
+        show: ["default-home"],
       });
     }
   });
