@@ -17,7 +17,7 @@ export function renderdataTableHeader(app) {
         }</td>`;
     });
 
-    tHead.innerHTML = newTHead.join('');
+    tHead.innerHTML = `<tr data-row-type="header" data-row-index=0>${newTHead.join('')}</tr>`;
     const buttonAdd = $$('#table thead .header-feature');
 
     buttonAdd.forEach((item) => {

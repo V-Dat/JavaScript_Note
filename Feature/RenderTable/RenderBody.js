@@ -12,7 +12,7 @@ function processRow(data) {
     let tableRow = '';
     data.forEach((row) => {
         // minus 1 because in json start at 0
-        let rowIndex = row[0].data - 1;
+        let rowIndex = +row[0].data + 1;
         let cellIndex = 0;
         tableRow += `<tr data-row-index=${rowIndex}>`;
         row.forEach((cell) => {
