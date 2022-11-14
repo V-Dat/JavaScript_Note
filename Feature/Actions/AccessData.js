@@ -1,6 +1,6 @@
 export function getRowDataFromDB(app) {
     const rowData = app.JsonData.dataTable.dataTableBody.find((_, index) => {
-        return +index === +app.activeRow;
+        return +index === +app.activeRow - 2;
     });
     const result = rowData.filter((item) => item.show.includes('home'));
     return result;
