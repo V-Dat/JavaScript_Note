@@ -102,3 +102,14 @@
 .table-block table tbody tr td.cell column-2 > * {
     word-break: break-all;
 }
+
+/* another table */
+table th,
+table td {
+    border: 2px solid gray;
+    padding: 5px 10px;
+}
+table {
+    border: 2px solid gray;
+    width: 100%;
+}
