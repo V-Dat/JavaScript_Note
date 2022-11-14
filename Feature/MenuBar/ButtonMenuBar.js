@@ -1,4 +1,5 @@
 import { $ } from '../Util.js';
+import { DOCS } from './MenuBarData.js';
 
 export function handleClickMenuBar(app) {
     const docBar = $('.switch-document-group .side-bar');
@@ -49,46 +50,3 @@ function processDataMenu(app) {
     });
     return html;
 }
-
-const DOCS = [
-    {
-        name: 'Default',
-        key: 'Default',
-    },
-    {
-        name: 'Boolean',
-        key: 'Boolean',
-    },
-    {
-        name: 'Iterator',
-        key: 'Iterator',
-    },
-    {
-        name: 'Function',
-        key: 'Function',
-    },
-    {
-        name: 'HTTP',
-        key: 'HTTP',
-    },
-    {
-        name: 'String',
-        key: 'String',
-    },
-    {
-        name: 'Collections',
-        key: 'Collections',
-    },
-    {
-        name: 'Builtin Function',
-        key: 'Builtin_Function',
-    },
-    {
-        name: 'AJAX',
-        key: 'AJAX',
-    },
-    {
-        name: 'Upload',
-        key: 'Upload',
-    },
-];
