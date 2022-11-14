@@ -40,12 +40,12 @@ export const DOCS = [
         key: 'Code_Formatter',
     },
     {
-        name: 'SPA - Routing vanilla (NoConfig)',
+        name: 'SPA - Routing vanilla (Not Yet)',
         key: 'Default',
     },
     {
-        name: 'Git - (NoConfig)',
-        key: 'Default',
+        name: 'Git',
+        key: 'Git',
     },
     {
         name: 'Upload',
