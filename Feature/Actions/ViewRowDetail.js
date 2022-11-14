@@ -5,7 +5,9 @@ import { getRowDataFromActiveRow, setActiveRow } from './AccessData.js';
 
 export function handleClickViewRow(event, app) {
     const rowNode = event.target.closest('tr');
+    // rowData start at index = 2 but data start at index = 0
     setActiveRow(app, rowNode.dataset.rowIndex);
+    console.log(333, app.activeRow);
     const rowData = getRowDataFromActiveRow(app);
     showModalRowDetail(rowData);
     toggleNode($('.switch-document-group .btn-switch'));

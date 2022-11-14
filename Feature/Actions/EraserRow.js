@@ -11,7 +11,7 @@ export function handleDeleteRow(app, rowNode) {
     // show modal confirm before delete [later]
     let newDataTableBody = JSON.parse(JSON.stringify(app.JsonData.dataTable.dataTableBody));
 
-    // rowData start at index = 2
+    // rowData start at index = 2 but data start at index = 0
     newDataTableBody.splice(rowNode.dataset.rowIndex - 2, 1);
     newDataTableBody.map((record, index) => {
         record[0].data = index + 1;

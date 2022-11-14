@@ -8,7 +8,7 @@ export function getRowDataFromDB(app) {
 
 export function getRowDataFromActiveRow(app) {
     const result = app.JsonData.dataTable.dataTableBody.find((_, index) => {
-        return +index === +app.activeRow;
+        return +index === +app.activeRow - 2;
     });
 
     return result;
@@ -16,7 +16,7 @@ export function getRowDataFromActiveRow(app) {
 
 export function getRowDataPrevious(app) {
     const rowData = app.JsonData.dataTable.dataTableBody.find((_, index) => {
-        return +index === +app.previousActiveRow;
+        return +index === +app.previousActiveRow - 2;
     });
     const result = rowData.filter((item) => item.show.includes('home'));
     return result;
