@@ -41,7 +41,7 @@ function processDataMenu(app) {
     DOCS.forEach((doc, index) => {
         if (doc.key === 'Upload' && localStorage.getItem('document') !== 'Upload') return;
         html += `
-    <div><label style="cursor:pointer" for=${doc.key}>
+    <div style="margin-bottom: 4px"><label style="cursor:pointer" for=${doc.key}>
     <input style="cursor:pointer"name="document" type="radio" id=${doc.key}  value=${doc.name} ${
             app.document === doc.key ? 'checked' : ''
         }>${index + 1} - ${doc.name}</label>

@@ -9,7 +9,7 @@ export function processDefaultState() {
         counterId: null,
         activeRow: null,
         previousActiveRow: null,
-        document: localStorage.getItem('document') ? localStorage.getItem('document') : 'String',
+        document: localStorage.getItem('document') ? localStorage.getItem('document') : 'Default',
     };
     $('.button-feature.button-feature__eraser').setAttribute('active', true);
     countTimeSaveLocalStorage(app);
