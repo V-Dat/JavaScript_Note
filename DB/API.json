@@ -1,1 +1,92 @@
-{"documentTitle":"API - JavaScript | Note","HeadingOne":"<a href=\"\">API </a>","mainContent":"<h3>Content</h3>\n<details open>\n  <summary></summary>\n  <a href=\"#1\">1 - What is API </a> <br>\n  <a href=\"#2\">2 - Common API  </a> <br>\n  <a href=\"#3\">3 - RESTful API </a> <br>\n  <a href=\"#4\">4 - HTTP Method </a> <br>\n  <a href=\"#5\">5 - Free APIs for developers </a> <br>\n</details>\n\n\n<!-- =========================== 1 - What is API =========================== -->\n\n<h3 id=\"1\">1 - What is API</h3>\n\n- API is an application programming interface. It's not actually a visual interface like what you see in front of you. <br> \n\n- Basically any language that supports Internet communication will support APIs and restful APIs. And there is a difference. <br> \n\n- So computers use APIs to talk to each other over the Internet. Now, that's somewhat factually incorrect. It doesn't have to be over the Internet. They can talk to each other over different services, different softwares. It can be <b class=\"red\">basically you plug your MacBook into your Windows computer</b> and if there's a software in the middle that can can join them. <b class=\"red\">That might be considered an API.</b> It's not considered a restful API, but that would be considered some sort of <b class=\"blue\">API integration or interface</b>. <br>\n\n- Tóm lại API hay Application Programming Interface là <b class=\"purple\">phương thức hay cơ chế cho phép 2 thành phần của phần mềm giao tiếp với nhau.</b> <br>\n\n<!-- =========================== 2 - Common API =========================== -->\n\n<h3 id=\"2\">2 - Common API </h3>\n\n- Web API <br>\n- RESTful API <br>\n- Integration API <br>\n\n\n\n<!-- =========================== 3 - RESTful API =========================== -->\n\n<h3 id=\"3\">3 - RESTful API </h3>\n\n- Rest is a type of API and it stands for <b class=\"red\">Representational State Transfer</b> <br>\n\n- RESTfull API is simply put a client computer asking another computer for data, or maybe to take a particular action to modify data, delete data, create data, something like that.\n\n\n\n<!-- =========================== 4 - HTTP Method =========================== -->\n\n<h3 id=\"4\">4 - HTTP Method </h3>\n\n<table>\n  <tr>\n    <th>HTTP Method</th>\n    <th>CRUD Operation</th>\n    <th>Example URL(s)</th>\n  </tr>\n  <tr>\n    <td>GET</td>\n    <td>Read</td>\n    <td>\n      HTTP GET http://website.com/api/users/ HTTP GET\n      http://website.com/api/users/1/\n    </td>\n  </tr>\n  <tr>\n    <td>POST</td>\n    <td>Create</td>\n    <td>HTTP POST http://website.com/api/users/</td>\n  </tr>\n  <tr>\n    <td>DELETE</td>\n    <td>Delete</td>\n    <td>HTTP DELETE http://website.com/api/user/1/</td>\n  </tr>\n\n  <tr>\n    <td>PUT</td>\n    <td>Update/Replace</td>\n    <td>HTTP PUT http://website.com/api/user/1/</td>\n  </tr>\n  <tr>\n    <td>PATCH</td>\n    <td>Partial Update/Modify</td>\n    <td>HTTP PATCH http://website.com/api/user/1/</td>\n  </tr>\n</table>\n\n\n<!-- =========================== 5 - Free APIs for developers =========================== -->\n\n<h3 id=\"5\">5 - Free APIs for developers </h3>\n\n<b class=\"purple fs20\" id=\"dog-api\" class=\"ftwp-heading\">Dog API</b>\n<p><a href=\"https://dog.ceo/dog-api/\" target=\"_blank\" rel=\"noreferrer noopener\">API dog</a> hiện được phát hành hoàn toàn miễn phí. Nó cung cấp endpoints cho ảnh, các dữ liệu văn bản về chó. Đặc biệt, API Dog hỗ trợ Cors do đó người dùng có thể ứng dụng nó trực tiếp từ các ứng dụng font-end.</p> <br>\n\n\n<b class=\"purple fs20\" id=\"petfinder\" class=\"ftwp-heading\">Petfinder</b>\n<p>Loại API này cung cấp các dữ liệu về nhận nuôi thú cưng, có yêu cầu xác thực bằng OAuth để dễ dàng truy cập dữ liệu. API này cũng hỗ trợ CORS như Dog API đã nói đến ở trên.</p>\n<p><strong> Xem thêm: <a href=\"https://vietnix.vn/oauth2-la-gi/\" target=\"_blank\" rel=\"noreferrer noopener\">Oauth2 là gì? Cơ chế và cách hoạt động của Oauth2</a></strong></p> <br>\n\n\n\n<b class=\"purple fs20\" id=\"anime-news-network-api\" class=\"ftwp-heading\">Anime News Network API</b>\n<p>Nếu bạn thích anime, đây chính là API dành cho bạn. Nó trả về cho người dùng dữ liệu ở những định dạng khác nhau, phổ biến nhất là XML và HTML. Do đó, nếu bạn cần thao tác và hiển thị dữ liệu, bạn sẽ phải tiến hành chuyển đổi từ XML sang JSON.</p> <br>\n\n<b class=\"purple fs20\" id=\"shibe-online\" class=\"ftwp-heading\">Shibe.online</b>\n<p><a href=\"https://shibe.online/\" target=\"_blank\" rel=\"noreferrer noopener\">Shibe.online</a> cũng là một loại API miễn phí, được các lập trình viên sử dụng khá nhiều. Cung cấp URL cho các hình ảnh về những chú chó dễ thương, được sử dụng làm dữ liệu trong nhiều trường hợp. Hiểu đơn giản, nó sẽ dùng các chuỗi truy vấn để lấy dữ liệu từ API một cách hiệu quả.</p> <br>\n\n\n<b class=\"purple fs20\" id=\"jsonplaceholder\" class=\"ftwp-heading\">Jsonplaceholder</b>\n<p>Đây là loại API cung cấp cho người dùng các giải pháp để giải quyết yêu cầu như GET, POST, DELETE, PUT có được hỗ trợ Cors. Các Endpoints này được cung cấp với dữ liệu đã tải sẵn mà bạn có thể sử dụng để hiển thị, cập nhật một cách thông minh nhất.</p> <br>\n\n\n","headingMainTwo":"<a href=\"\">API Summary</a>","referanceContent":"<ol>\n <li><a href=\"https://developer.mozilla.org/en-US/docs/Learn/JavaScript\">Javascript on Mozilla</a></li>\n <li><a href=\"https://stephengrider.github.io/JSPlaygrounds/\">Playgrounds</a></li>\n <li><a href=\"https://www.udemy.com/course/learn-and-understand-apis-and-restful-apis/\">Udemy Course</a></li>\n <li><a href=\"https://docs.google.com/presentation/d/19QTZTiyeEo4mDy_yZuS5Id6afGaoI2OLfYOgRjT_YKo/edit#slide=id.g25f6af9dd6_0_0/\">API Slide</a></li>\n</ol>\n ","dataTable":{"dataTableHeader":[{"data":"STT","name":"STT","actionSrc":"./Assets/Icons/plus-icon.svg","index":0,"bg":"hsl(94.237117497127,50%,50%)"},{"data":"Method Name","name":"Method Name","actionSrc":"./Assets/Icons/plus-icon.svg","index":1,"bg":"hsl(94.237117497127,50%,50%)"},{"data":"Syntax","name":"Syntax","actionSrc":"./Assets/Icons/plus-icon.svg","index":2,"bg":"hsl(94.237117497127,50%,50%)"},{"data":"Involved","name":"Involved","actionSrc":"./Assets/Icons/plus-icon.svg","index":3,"bg":"hsl(94.237117497127,50%,50%)"},{"data":"Description","name":"Description","actionSrc":"./Assets/Icons/plus-icon.svg","index":4,"bg":"hsl(94.237117497127,50%,50%)"},{"data":"Action","name":"Action","actionSrc":null,"index":5,"bg":"hsl(94.237117497127,50%,50%)"}],"dataTableFirstRow":[{"name":"stt","data":"0","index":0,"bg":"hsl(40.90952713476702,50%,50%)"},{"name":"method","data":"<textarea></textarea>","index":1,"bg":"hsl(40.90952713476702,50%,50%)"},{"name":"syntax","data":"<textarea></textarea>","index":2,"bg":"hsl(40.90952713476702,50%,50%)"},{"name":"involved","data":"<textarea></textarea>","index":3,"bg":"hsl(40.90952713476702,50%,50%)"},{"name":"description","data":"<textarea></textarea>","index":4,"bg":"hsl(40.90952713476702,50%,50%)"},{"name":"action","data":null,"index":5,"bg":"hsl(40.90952713476702,50%,50%)"}],"dataTableBody":[]}}
+{
+    "documentTitle": "API - JavaScript | Note",
+    "HeadingOne": "<a href=\"\">API </a>",
+    "mainContent": "<h3>Content</h3>\n<details open>\n  <summary></summary>\n  <a href=\"#1\">1 - What is API </a> <br>\n  <a href=\"#2\">2 - Common API  </a> <br>\n  <a href=\"#3\">3 - RESTful API </a> <br>\n  <a href=\"#4\">4 - HTTP Method </a> <br>\n  <a href=\"#5\">5 - Free APIs for developers </a> <br>\n</details>\n\n\n<!-- =========================== 1 - What is API =========================== -->\n\n<h3 id=\"1\">1 - What is API</h3>\n\n- API is an application programming interface. It's not actually a visual interface like what you see in front of you. <br> \n\n- Basically any language that supports Internet communication will support APIs and restful APIs. And there is a difference. <br> \n\n- So computers use APIs to talk to each other over the Internet. Now, that's somewhat factually incorrect. It doesn't have to be over the Internet. They can talk to each other over different services, different softwares. It can be <b class=\"red\">basically you plug your MacBook into your Windows computer</b> and if there's a software in the middle that can can join them. <b class=\"red\">That might be considered an API.</b> It's not considered a restful API, but that would be considered some sort of <b class=\"blue\">API integration or interface</b>. <br>\n\n- Tóm lại API hay Application Programming Interface là <b class=\"purple\">phương thức hay cơ chế cho phép 2 thành phần của phần mềm giao tiếp với nhau.</b> <br>\n\n<!-- =========================== 2 - Common API =========================== -->\n\n<h3 id=\"2\">2 - Common API </h3>\n\n- Web API <br>\n- RESTful API <br>\n- Integration API <br>\n\n\n\n<!-- =========================== 3 - RESTful API =========================== -->\n\n<h3 id=\"3\">3 - RESTful API </h3>\n\n- Rest is a type of API and it stands for <b class=\"red\">Representational State Transfer</b> <br>\n\n- RESTfull API is simply put a client computer asking another computer for data, or maybe to take a particular action to modify data, delete data, create data, something like that.\n\n\n\n<!-- =========================== 4 - HTTP Method =========================== -->\n\n<h3 id=\"4\">4 - HTTP Method </h3>\n\n<table>\n  <tr>\n    <th>HTTP Method</th>\n    <th>CRUD Operation</th>\n    <th>Example URL(s)</th>\n  </tr>\n  <tr>\n    <td>GET</td>\n    <td>Read</td>\n    <td>\n      HTTP GET http://website.com/api/users/ HTTP GET\n      http://website.com/api/users/1/\n    </td>\n  </tr>\n  <tr>\n    <td>POST</td>\n    <td>Create</td>\n    <td>HTTP POST http://website.com/api/users/</td>\n  </tr>\n  <tr>\n    <td>DELETE</td>\n    <td>Delete</td>\n    <td>HTTP DELETE http://website.com/api/user/1/</td>\n  </tr>\n\n  <tr>\n    <td>PUT</td>\n    <td>Update/Replace</td>\n    <td>HTTP PUT http://website.com/api/user/1/</td>\n  </tr>\n  <tr>\n    <td>PATCH</td>\n    <td>Partial Update/Modify</td>\n    <td>HTTP PATCH http://website.com/api/user/1/</td>\n  </tr>\n</table>\n\n\n<!-- =========================== 5 - Free APIs for developers =========================== -->\n\n<h3 id=\"5\">5 - Free APIs for developers </h3>\n\n<b class=\"purple fs20\" id=\"dog-api\" class=\"ftwp-heading\">Dog API</b>\n<p><a href=\"https://dog.ceo/dog-api/\" target=\"_blank\" rel=\"noreferrer noopener\">API dog</a> hiện được phát hành hoàn toàn miễn phí. Nó cung cấp endpoints cho ảnh, các dữ liệu văn bản về chó. Đặc biệt, API Dog hỗ trợ Cors do đó người dùng có thể ứng dụng nó trực tiếp từ các ứng dụng font-end.</p> <br>\n\n\n<b class=\"purple fs20\" id=\"petfinder\" class=\"ftwp-heading\">Petfinder</b>\n<p>Loại API này cung cấp các dữ liệu về nhận nuôi thú cưng, có yêu cầu xác thực bằng OAuth để dễ dàng truy cập dữ liệu. API này cũng hỗ trợ CORS như Dog API đã nói đến ở trên.</p>\n<p><strong> Xem thêm: <a href=\"https://vietnix.vn/oauth2-la-gi/\" target=\"_blank\" rel=\"noreferrer noopener\">Oauth2 là gì? Cơ chế và cách hoạt động của Oauth2</a></strong></p> <br>\n\n\n\n<b class=\"purple fs20\" id=\"anime-news-network-api\" class=\"ftwp-heading\">Anime News Network API</b>\n<p>Nếu bạn thích anime, đây chính là API dành cho bạn. Nó trả về cho người dùng dữ liệu ở những định dạng khác nhau, phổ biến nhất là XML và HTML. Do đó, nếu bạn cần thao tác và hiển thị dữ liệu, bạn sẽ phải tiến hành chuyển đổi từ XML sang JSON.</p> <br>\n\n<b class=\"purple fs20\" id=\"shibe-online\" class=\"ftwp-heading\">Shibe.online</b>\n<p><a href=\"https://shibe.online/\" target=\"_blank\" rel=\"noreferrer noopener\">Shibe.online</a> cũng là một loại API miễn phí, được các lập trình viên sử dụng khá nhiều. Cung cấp URL cho các hình ảnh về những chú chó dễ thương, được sử dụng làm dữ liệu trong nhiều trường hợp. Hiểu đơn giản, nó sẽ dùng các chuỗi truy vấn để lấy dữ liệu từ API một cách hiệu quả.</p> <br>\n\n\n<b class=\"purple fs20\" id=\"jsonplaceholder\" class=\"ftwp-heading\">Jsonplaceholder</b>\n<p>Đây là loại API cung cấp cho người dùng các giải pháp để giải quyết yêu cầu như GET, POST, DELETE, PUT có được hỗ trợ Cors. Các Endpoints này được cung cấp với dữ liệu đã tải sẵn mà bạn có thể sử dụng để hiển thị, cập nhật một cách thông minh nhất.</p> <br>\n\n\n",
+    "headingMainTwo": "<a href=\"\">API Summary</a>",
+    "referanceContent": "<ol>\n <li><a href=\"https://developer.mozilla.org/en-US/docs/Learn/JavaScript\">Javascript on Mozilla</a></li>\n <li><a href=\"https://stephengrider.github.io/JSPlaygrounds/\">Playgrounds</a></li>\n <li><a href=\"https://www.udemy.com/course/learn-and-understand-apis-and-restful-apis/\">Udemy Course</a></li>\n <li><a href=\"https://docs.google.com/presentation/d/19QTZTiyeEo4mDy_yZuS5Id6afGaoI2OLfYOgRjT_YKo/edit#slide=id.g25f6af9dd6_0_0/\">API Slide</a></li>\n</ol>\n ",
+    "dataTable": {
+        "dataTableHeader": [
+            {
+                "data": "STT",
+                "name": "STT",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
+                "index": 0,
+                "bg": "hsl(94.237117497127,50%,50%)"
+            },
+            {
+                "data": "Method Name",
+                "name": "Method Name",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
+                "index": 1,
+                "bg": "hsl(94.237117497127,50%,50%)"
+            },
+            {
+                "data": "Syntax",
+                "name": "Syntax",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
+                "index": 2,
+                "bg": "hsl(94.237117497127,50%,50%)"
+            },
+            {
+                "data": "Involved",
+                "name": "Involved",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
+                "index": 3,
+                "bg": "hsl(94.237117497127,50%,50%)"
+            },
+            {
+                "data": "Description",
+                "name": "Description",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
+                "index": 4,
+                "bg": "hsl(94.237117497127,50%,50%)"
+            },
+            {
+                "data": "Action",
+                "name": "Action",
+                "actionSrc": null,
+                "index": 5,
+                "bg": "hsl(94.237117497127,50%,50%)"
+            }
+        ],
+        "dataTableFirstRow": [
+            {
+                "name": "stt",
+                "data": "0",
+                "index": 0,
+                "bg": "hsl(40.90952713476702,50%,50%)"
+            },
+            {
+                "name": "method",
+                "data": "<textarea></textarea>",
+                "index": 1,
+                "bg": "hsl(40.90952713476702,50%,50%)"
+            },
+            {
+                "name": "syntax",
+                "data": "<textarea></textarea>",
+                "index": 2,
+                "bg": "hsl(40.90952713476702,50%,50%)"
+            },
+            {
+                "name": "involved",
+                "data": "<textarea></textarea>",
+                "index": 3,
+                "bg": "hsl(40.90952713476702,50%,50%)"
+            },
+            {
+                "name": "description",
+                "data": "<textarea></textarea>",
+                "index": 4,
+                "bg": "hsl(40.90952713476702,50%,50%)"
+            },
+            {
+                "name": "action",
+                "data": null,
+                "index": 5,
+                "bg": "hsl(40.90952713476702,50%,50%)"
+            }
+        ],
+        "dataTableBody": []
+    }
+}

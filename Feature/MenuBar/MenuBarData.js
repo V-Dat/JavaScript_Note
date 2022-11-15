@@ -32,8 +32,8 @@ export const DOCS = [
         key: 'Builtin_Function',
     },
     {
-        name: 'AJAX',
-        key: 'AJAX',
+        name: 'XMLHttpRequest',
+        key: 'XMLHttpRequest',
     },
     {
         name: 'Symbol',
