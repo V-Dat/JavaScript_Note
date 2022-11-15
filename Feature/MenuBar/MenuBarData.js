@@ -40,6 +40,10 @@ export const DOCS = [
         key: 'Symbol',
     },
     {
+        name: 'API',
+        key: 'API',
+    },
+    {
         name: 'OOP',
         key: 'OOP',
     },
