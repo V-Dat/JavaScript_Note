@@ -40,6 +40,10 @@ export const DOCS = [
         key: 'Symbol',
     },
     {
+        name: 'Asynchronous - Synchronous',
+        key: 'Async_Sync',
+    },
+    {
         name: 'API',
         key: 'API',
     },
