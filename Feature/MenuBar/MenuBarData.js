@@ -36,6 +36,14 @@ export const DOCS = [
         key: 'AJAX',
     },
     {
+        name: 'Symbol',
+        key: 'Symbol',
+    },
+    {
+        name: 'OOP',
+        key: 'OOP',
+    },
+    {
         name: 'Code Formatter Prettier and ESlint',
         key: 'Code_Formatter',
     },
