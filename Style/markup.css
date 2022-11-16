@@ -60,3 +60,31 @@ pre.js {
 .navy {
     color: navy;
 }
+
+.quote {
+    border-left: 7px solid #eee !important;
+    padding: 16px !important;
+    margin: 10px auto !important;
+    border-top: 1px solid #eee !important;
+    border-bottom: 1px solid #eee !important;
+    position: relative;
+}
+
+.quote::before {
+    content: "Quoting";
+    background-color: #ffd900;
+    color: #000;
+    position: absolute;
+    font-weight: bold;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    top: 0px;
+    right: 8px;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}

@@ -113,3 +113,16 @@ table {
     border: 2px solid gray;
     width: 100%;
 }
+/* table */
+table.rs-css,
+table.rs-css th,
+table.rs-css td {
+    border: 2px solid gray;
+    text-align: center;
+}
+
+table.rs-css td,
+table.rs-css th {
+    padding-right: 12px;
+    padding-left: 12px;
+}

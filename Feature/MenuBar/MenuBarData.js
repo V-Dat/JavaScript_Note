@@ -4,6 +4,10 @@ export const DOCS = [
         key: 'Default',
     },
     {
+        name: 'Guideline',
+        key: 'Guideline',
+    },
+    {
         name: 'Boolean',
         key: 'Boolean',
     },
