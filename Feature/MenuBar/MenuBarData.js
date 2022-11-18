@@ -52,6 +52,10 @@ export const DOCS = [
         key: 'API',
     },
     {
+        name: 'Javascript Engine',
+        key: 'JavascriptEngine',
+    },
+    {
         name: 'OOP',
         key: 'OOP',
     },
