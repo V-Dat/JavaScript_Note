@@ -1,0 +1,92 @@
+{
+    "documentTitle": "ECMAScript | Note",
+    "HeadingOne": "<a href=\"\">OOP</a>",
+    "mainContent": "<h3>Content</h3>\n<a href=\"#1\">1 - Symbol</a> <br>\n<a href=\"#2\">2 - Heading</a> <br>\n<a href=\"#3\">3 - Javascript datatype inheritance</a> <br>\n<a href=\"#4\"></a> <br>\n\n\n<details>\n  <summary></summary>\n<pre><code>\n\n</code></pre>\n</details>\n\n\n\n<!-- =========================== 1 - Symbol =========================== -->\n\n<h3 id=\"#1\">1 - Symbol </h3>\n\n- Symbol is a built-in object whose constructor returns a symbol primitive — also called a Symbol value or just a Symbol <br>\n- Symbol là một built-in object mà constructor của nó sẽ trả về symbol primitive <br>\n<details>\n  <summary> <b class=\"purple fs22\">Compare Symbol and Object </b></summary>\n<pre><code>\nconst sym = Symbol('foo');\ntypeof sym      // \"symbol\"\nconst symObj = Object(sym);\ntypeof symObj   // \"object\"\n</code></pre>\n</details>\n\n\n\n\n<!-- =========================== 2 - Heading =========================== -->\n\n<h3 id=\"#2\">2 - Heading </h3>\n\n\n\n\n\n\n<!-- =========================== 3 - Heading =========================== -->\n\n<h3 id=\"#3\">3 - Javascript datatype inheritance</h3>\n\n\n<img width=100% src=\"https://yuml.me/dd0775fe.svg\" />",
+    "headingMainTwo": "<a href=\"\">OOP Summary</a>",
+    "referanceContent": "<ol>\n <li><a href=\"https://developer.mozilla.org/en-US/docs/Learn/JavaScript\">Javascript on Mozilla</a></li>\n <li><a href=\"https://stephengrider.github.io/JSPlaygrounds/\">Playgrounds</a></li>\n <li><a href=\"https://sabe.io/classes/javascript/primitive-data-types/\">Style CSS</a></li>\n</ol>\n ",
+    "dataTable": {
+        "dataTableHeader": [
+            {
+                "data": "STT",
+                "name": "STT",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
+                "index": 0,
+                "bg": "hsl(182.05460831270864,50%,50%)"
+            },
+            {
+                "data": "Method Name",
+                "name": "Method Name",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
+                "index": 1,
+                "bg": "hsl(182.05460831270864,50%,50%)"
+            },
+            {
+                "data": "Syntax",
+                "name": "Syntax",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
+                "index": 2,
+                "bg": "hsl(182.05460831270864,50%,50%)"
+            },
+            {
+                "data": "Involved",
+                "name": "Involved",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
+                "index": 3,
+                "bg": "hsl(182.05460831270864,50%,50%)"
+            },
+            {
+                "data": "Description",
+                "name": "Description",
+                "actionSrc": "./Assets/Icons/plus-icon.svg",
+                "index": 4,
+                "bg": "hsl(182.05460831270864,50%,50%)"
+            },
+            {
+                "data": "Action",
+                "name": "Action",
+                "actionSrc": null,
+                "index": 5,
+                "bg": "hsl(182.05460831270864,50%,50%)"
+            }
+        ],
+        "dataTableFirstRow": [
+            {
+                "name": "stt",
+                "data": "0",
+                "index": 0,
+                "bg": "hsl(53.25126570121689,50%,50%)"
+            },
+            {
+                "name": "method",
+                "data": "<textarea></textarea>",
+                "index": 1,
+                "bg": ""
+            },
+            {
+                "name": "syntax",
+                "data": "<textarea></textarea>",
+                "index": 2,
+                "bg": "hsl(53.25126570121689,50%,50%)"
+            },
+            {
+                "name": "involved",
+                "data": "<textarea></textarea>",
+                "index": 3,
+                "bg": "hsl(53.25126570121689,50%,50%)"
+            },
+            {
+                "name": "description",
+                "data": "<textarea></textarea>",
+                "index": 4,
+                "bg": "hsl(53.25126570121689,50%,50%)"
+            },
+            {
+                "name": "action",
+                "data": null,
+                "index": 5,
+                "bg": "hsl(53.25126570121689,50%,50%)"
+            }
+        ],
+        "dataTableBody": []
+    }
+}

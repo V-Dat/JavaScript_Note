@@ -72,6 +72,10 @@ export const DOCS = [
         key: 'Git',
     },
     {
+        name: 'NodeJS',
+        key: 'NodeJS',
+    },
+    {
         name: 'Upload',
         key: 'Upload',
     },
